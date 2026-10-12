@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# VSCode
+.vscode/*.log
+.vscode/.ropeproject/
+
+# Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# OneDrive sync remnants
+*.sync-conflict-*
+
+# LaTeX / Pandoc aux
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+docs/pmi/releases/*.pdf
+
+# Private reference artifacts - CRITICO, mai in repo pubblico
+reference/
+*.private.md
+*.private.pdf
+*.private.musicxml
+
+# Local test data / scratch
+scratch/
+tmp/
+.scratch/
+
+# OS
+.DS_Store
