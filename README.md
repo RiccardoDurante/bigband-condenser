@@ -48,7 +48,7 @@ The command line interface is not implemented yet.
 
 ## Project documentation
 
-Project management documents (Charter, Stakeholder Register, Risk Register, Change Log) are in [`docs/pmi/`](docs/pmi/). They are written in Italian. Italian readers: see `README.it.md` (in progress).
+Project management documents (Charter, Stakeholder Register, Risk Register, Roles Register, Change Log) are in [`docs/pmi/`](docs/pmi/). They are written in Italian. PDF releases are built at each milestone and archived in [`docs/pmi/releases/`](docs/pmi/releases/). Italian readers: see `README.it.md` (in progress).
 
 ## Roadmap
 
@@ -67,4 +67,6 @@ This project is released under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Contributing
 
-The project is in early development and not yet open to external contributions. The repository is currently private and will become public at the completion of milestone M1. Contribution guidelines will be published alongside the first public release.
+The project is in early development. The repository is public but external contributions are not yet accepted: specifications, scope and architecture are still being consolidated. Contribution guidelines will be published alongside the first public release (v1.0.0).
+
+If you spot an obvious bug or a documentation error, feel free to open an issue so it can be tracked.
