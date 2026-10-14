@@ -48,7 +48,11 @@ The command line interface is not implemented yet.
 
 ## Project documentation
 
-Project management documents (Charter, Stakeholder Register, Risk Register, Roles Register, Change Log) are in [`docs/pmi/`](docs/pmi/). They are written in Italian. PDF releases are built at each milestone and archived in [`docs/pmi/releases/`](docs/pmi/releases/). Italian readers: see `README.it.md` (in progress).
+Project management documents (Charter, Stakeholder Register, Risk Register, Roles Register, BigBand AI Reuse Assessment, Spike M2 Plan, Change Log) are in [`docs/pmi/`](docs/pmi/). They are written in Italian. PDF releases are built at each milestone and archived in [`docs/pmi/releases/`](docs/pmi/releases/). Italian readers: see `README.it.md` (in progress).
+
+## Test samples
+
+Big band MusicXML files used as test cases live in [`samples/`](samples/). All samples are either composed by the project Sponsor or in genuine public domain. Each sample carries its own license declaration (currently CC-BY 4.0). See [`samples/README.md`](samples/README.md) for the contribution policy.
 
 ## Roadmap
 
@@ -64,6 +68,8 @@ Possible later phases: web interface, OMR integration, automatic analysis, autom
 ## License
 
 This project is released under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+Test samples under `samples/` may have different licenses (currently CC-BY 4.0); see each sample's `.LICENSE` file for details.
 
 ## Contributing
 
