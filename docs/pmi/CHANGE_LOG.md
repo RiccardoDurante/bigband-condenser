@@ -2,11 +2,12 @@
 document: Change Log
 document_id: CL-BBC-001
 project: Big Band Condenser v1
-version: 0.5
+version: 0.6
 status: Active
 last_updated: 2026-10-14
 language: it
 changelog:
+  - v0.6 (2026-10-14): aggiunta D-019 (piano operativo spike M2 con test case Kronos kai Kairos dello Sponsor, licenza CC-BY 4.0, timebox 12h, 6 Q)
   - v0.5 (2026-10-14): aggiunte D-017 (verifica assunzioni A2/A3/A4 Charter su BigBand AI, nota tecnica BIGBAND_AI_REUSE_ASSESSMENT.md) e D-018 (bump Risk Register v0.3 con R04/R05 non materializzati, R06 non applicabile v1, R24 nuovo bug music21 noti)
   - v0.4 (2026-10-13): aggiunta D-016 (passaggio repo a visibilita pubblica, chiude D-014 in modalita completamento)
   - v0.3 (2026-10-13): aggiunta D-015 (creazione Roles Register come placeholder minimalista, bump a v0.2 completo dopo WBS)
@@ -42,6 +43,7 @@ Registro delle decisioni di alto livello e delle Change Request. Non sostituisce
 | D-016 | 2026-10-13 | Passaggio repository da privato a pubblico (chiude D-014 come completata). URL pubblica: https://github.com/RiccardoDurante/bigband-condenser | M1 Baseline completato (Charter, Stakeholder Register, Risk Register, ROLES, Change Log, README, 6 PDF di release); scoping summary sezione 2 e 9 prevedevano repo pubblico come deliverable; coerenza con triplice obiettivo del progetto (esercitazione CAPM, utilita personale, contributo open source) | README.md, Change Log |
 | D-017 | 2026-10-14 | Completata verifica delle assunzioni A2/A3/A4 del Charter sul riuso del codice BigBand AI. Prodotta nota tecnica ``docs/pmi/BIGBAND_AI_REUSE_ASSESSMENT.md`` v0.1 con verdetti: A2=B copia selettiva, A3=B copia integrale uso parziale, A4 scissa (bridge WebSocket=D fuori scope, musicxml_writer orfano=A riuso diretto). Saving totale confermato: 12.5-19h | Prerequisito per pianificazione spike M2: senza verifica assunzioni il piano 60h e costruito su ipotesi non validate. Scoperta inaspettata: ``musicxml_writer.py`` orfano in ``dorico_bridge/`` vale 8-12h di saving non previste dal Charter | BIGBAND_AI_REUSE_ASSESSMENT.md v0.1 |
 | D-018 | 2026-10-14 | Bump Risk Register v0.3: R04 e R05 passati a "Non materializzato" post-verifica assunzioni, R06 passato a "Non applicabile v1" (bridge fuori scope), aggiunto R24 (bug music21 noti su transpose tag parti multiple stessa classe strumento) con mitigazione gia ereditata da ``musicxml_writer`` | Il Risk Register vive per definizione: i rischi vanno aggiornati quando emergono dati nuovi. La verifica assunzioni di oggi ha prodotto evidenze per 4 rischi (3 declassati, 1 nuovo). Scala stato estesa con "Non materializzato" e "Non applicabile v1" | Risk Register v0.3 |
+| D-019 | 2026-10-14 | Produrre piano operativo per spike M2: ``docs/pmi/SPIKE_M2_PLAN.md`` v0.1. Test case: brano "Kronos kai Kairos" composto da Riccardo Durante (17 strumenti organico non canonico con soprano sax e 2 corni in F), durata 6 min, licenza CC-BY 4.0, esportato da Dorico in due versioni (estratto 32 battute per iterazione dev + brano intero per validazione finale). Scope spike Lettura B+: 6 Q (Q1-Q5 tecniche + Q6-minimale struttura output). Timebox 12h totali. Deliverable: SPIKE_M2_REPORT, codice in ``src/bigband_condenser/_spike/``, decisione formale D-A/D-B/D-C in sessione M2 chiusura. R25 candidato (classificazione fallisce su organici non canonici) registrato come osservazione nel piano, bump Risk Register rimandato a sessione M2 | Charter sezione 6 target M2 fine ottobre 2026 (14 giorni calendario da oggi). Spike definito con disciplina PMI per prevenire scope creep (R15): timebox hard, criteri di stop forzato, scope esplicitamente escluso. Scelta Kronos kai Kairos come test case e emersa dopo discussione sul copyright: alternative scartate (reference Schneider sotto copyright, repertorio standard quasi tutto protetto). Kronos risolve pulito legalmente, testa organico non canonico (valore aggiunto come stress test del tool) | SPIKE_M2_PLAN.md v0.1 |
 
 ## Change Request
 

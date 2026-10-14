@@ -1,75 +1,96 @@
 ---
 document: Project Status
 project: Big Band Condenser v1
-updated: 2026-10-13 22:00 (CEST)
-session: 2026-10-13 (M1 release + PDF pipeline)
+updated: 2026-10-14 16:30 (CEST)
+session: 2026-10-14 (Fase A verifica assunzioni + Fase B pianificazione spike)
 ---
 
 # Project Status
 
 ## Milestone corrente
 
-**M1 - Project Initiation Baseline**: COMPLETATO + RILASCIATO IN PDF
+**M1 - Project Initiation Baseline**: COMPLETATO E RILASCIATO
+**M2 - Spike di fattibilita**: IN PIANIFICAZIONE
 Tag git: ``M1-initiation`` su commit ``2abfee7``.
-Release PDF: ``docs/pmi/releases/2026-10-12_M1/`` (6 PDF, 971 KB totali).
+Piano operativo: ``docs/pmi/SPIKE_M2_PLAN.md`` v0.1.
 
-## Task completati nella sessione del 13 ottobre 2026
+## Task completati nella sessione del 14 ottobre 2026
 
-- Rimosso file untracked spurio (``h origin M1-initiation``, dump accidentale di git show)
-- Aggiornato MiKTeX package database (``mpm --update-db``)
-- Creato Roles Register minimalista ``docs/pmi/ROLES.md`` v0.1 (8 ruoli, "cosa fa / cosa non fa"), scheletro per bump v0.2 post-WBS
-- Bumpato CHANGE_LOG.md a v0.3 con D-015 (creazione Roles Register)
-- Creato script ``scripts/build_pdfs.ps1`` (PowerShell, Pandoc + MiKTeX wrapper, parametri Milestone/Date/Files/DryRun)
-- Creato ``templates/pmi_template.tex`` (LaTeX template, Pandoc 3.x compatibile, identita visuale Big Band Condenser)
-- Debug template: patch 1 per contatore ``none`` (Pandoc 3.x table helpers); patch 2 per numerazione sezioni duplicata (secnumdepth = -1)
-- Generata prima release PDF di M1 in ``docs/pmi/releases/2026-10-12_M1/`` con 6 PDF
+### Fase A - Verifica assunzioni Charter (cappello Researcher)
+
+- Lettura read-only di 3 target in BigBand AI (``shared/models.py``, ``knowledge/chord_scales.py``, ``dorico_bridge/``)
+- Verdetti:
+  - A2 (``shared/models.py``): B - copia selettiva NoteData e MelodyData
+  - A3 (``chord_scales.py``): B - copia integrale, uso parziale v1 (parser come validator)
+  - A4 scissa:
+    - A4.1 Bridge WebSocket: D - fuori scope v1
+    - A4.2 ``musicxml_writer.py`` orfano: **A - riuso diretto** (scoperta inattesa, saving 8-12h)
+- Totale saving confermato: 12.5-19 ore rispetto a scrittura da zero
+- Nessuna modifica al progetto donatore (vincolo Charter rispettato)
+- Prodotto ``docs/pmi/BIGBAND_AI_REUSE_ASSESSMENT.md`` v0.1
+- Bump Risk Register v0.3: R04/R05 Non materializzato, R06 Non applicabile v1, nuovo R24 (bug music21 transpose tag)
+- Bump CHANGE_LOG v0.5 con D-017 e D-018
+- Commit e push su GitHub
+
+### Fase B - Pianificazione spike M2 (cappello Business Analyst)
+
+- Discussione estesa su test case: scartato uso di reference sotto copyright (vincolo legale), scartato pubblico dominio reale (quasi inesistente per big band), scelto brano proprio dello Sponsor
+- Test case definito: "Kronos kai Kairos" composto da Riccardo Durante, 6 min, 17 strumenti organico non canonico, licenza CC-BY 4.0
+- Scope spike Lettura B+: 6 Q (Q1-Q5 tecniche + Q6-minimale struttura output)
+- Timebox 12h totali (10h spike + 2h overhead) in 2 settimane calendario
+- Deliverable: SPIKE_M2_REPORT + codice spike in ``src/bigband_condenser/_spike/`` + decisione formale finale
+- Criteri successo: S1 copertura + S2 delta <= 25% + S3 nessuna assunzione residua
+- R25 candidato registrato come osservazione nel piano (bump Risk Register rimandato a sessione M2)
+- Prodotto ``docs/pmi/SPIKE_M2_PLAN.md`` v0.1
+- Bump CHANGE_LOG v0.6 con D-019
 
 ## Task pendenti - priorita per prossima sessione
 
-1. Verifica assunzione A2 Charter: ``shared/models.py`` di BigBand AI riusabile (ispezione lettura)
-2. Verifica assunzione A3 Charter: ``knowledge/chord_scales.py`` riuso standalone
-3. Verifica assunzione A4 Charter: ``dorico_bridge/`` compatibilita Dorico installato
-4. Pianificazione feasibility spike M2 con un MusicXML dello Sponsor
-5. Avvio spike M2 (prototipo minimale su MusicXML tuo, target fine ottobre)
+1. **Setup samples/**: README, file LICENSE CC-BY 4.0 per Kronos, placeholder per i due MusicXML
+2. **Export brano da Dorico** (azione Sponsor fuori sessione): estratto 32 battute + brano intero, salvare in ``samples/``
+3. Primo commit samples (il brano entra nel repo pubblico)
+4. Scrittura stub code dello spike in ``src/bigband_condenser/_spike/`` con README esplicativo
+5. Esecuzione Q1 (parse integrity) su estratto 32 battute
+6. Procedere Q2-Q6 secondo timebox
 
 ## Decisioni importanti registrate oggi
 
-- D-015: Creazione Roles Register minimalista v0.1, bump v0.2 completo rimandato post-WBS (CHANGE_LOG v0.3)
-- NOTA su D-014 (passaggio repo privato -> pubblico): valutata in sessione, scelta posticipare fino a dopo che la prima release PDF sia stabile e verificata. Possibile passaggio pubblico in prossima sessione dopo verifica assunzioni Charter.
-
-## Debito tipografico PDF (rinviato a fase stampa tesi)
-
-Durante il refresh pre-tesi CAPM, applicare al template ``templates/pmi_template.tex`` queste tre correzioni rinviate (non critiche per leggibilita, utili per eleganza tipografica):
-
-1. **Correzione B - Font ridotto in longtable**: la tabella Risk Register (23 rischi x 8 colonne) occupa 12 pagine. Aggiungere ``\AtBeginEnvironment{longtable}{\footnotesize}`` dopo il blocco calc. Risultato atteso: Risk Register in 5-6 pagine, altre tabelle (Charter milestone, budget, Change Log) piu compatte.
-
-2. **Correzione C - Spazio tra titolo sezione e paragrafo**: titoli attualmente stretti al paragrafo che segue. Aggiungere:
-
-3. **Charter tabella Budget sezione 7**: la riga "Python, music21, Pydantic, VS Code, Git/GitHub, Pandoc, MiKTeX" va a capo male. Valutare se forzare larghezza colonne con ``tabularx`` esplicito o se spezzare la riga nel sorgente Markdown.
-
-Rimandate perche prive di impatto su contenuto o accessibilita; valore solo di eleganza. Costo stimato: 15-30 minuti di patch + 2-3 iterazioni di rebuild per fine-tuning.
+- D-017: Verifica assunzioni Charter completata, nota tecnica BIGBAND_AI_REUSE_ASSESSMENT.md
+- D-018: Risk Register v0.3 con R04/R05 Non materializzato, R06 Non applicabile v1, nuovo R24
+- D-019: Piano operativo spike M2 con test case Kronos kai Kairos CC-BY 4.0
 
 ## Rischi emersi in sessione
 
-Nessuno nuovo. R23 (qualita MusicXML in input) gia aggiunto in sessione del 12/10.
-Nota operativa su R22 (overhead documentale): tempo oggi usato per PDF pipeline (~90 min) e investimento one-off, non ricorrente. Rebuild PDF di sessioni successive sara di 30-60 secondi.
+- **R04, R05 declassati** a "Non materializzato" (verifica assunzioni positiva)
+- **R06 declassato** a "Non applicabile v1" (bridge WebSocket fuori scope v1)
+- **R24 aggiunto**: bug music21 noti su transpose tag parti multiple stessa classe strumento (mitigato da workaround ereditato)
+- **R25 candidato**: classificazione fallisce su organici non canonici (es. corni F in Kronos). Osservazione nel SPIKE_M2_PLAN. Bump Risk Register rimandato a sessione M2.
+
+## Debito tipografico PDF (gia tracciato nelle sessioni precedenti)
+
+Rinviato a refresh pre-tesi CAPM: correzioni B (``\footnotesize`` in longtable), C (``\titlespacing``), tabella Budget Charter sezione 7. Nessun impatto operativo per adesso.
 
 ## Prossimo passo consigliato (dalla prossima sessione)
 
-**Primo passo**: cappello Researcher (o Tech Lead), verifica delle 3 assunzioni Charter su codice BigBand AI (A2, A3, A4). Durata stimata: 30-45 min di lettura codice.
+**Cappello Doc Writer** per setup ``samples/`` (README + LICENSE CC-BY 4.0 per Kronos).
 
-**Secondo passo**: pianificazione spike M2 (feasibility su un MusicXML tuo). Richiede che tu identifichi un brano big band tuo esportato in MusicXML, che useremo come primo test case.
+Poi, in parallelo o successivamente: **Sponsor fuori sessione** esporta i due MusicXML da Dorico (estratto + intero).
 
-**Terzo passo** (opzionale, se tempo): avvio spike M2 con parser MusicXML + classificazione strumenti.
+Quando entrambi disponibili: **cappello Developer** per primo commit samples + scrittura stub codice spike.
+
+Durata stimata prossima sessione: 1h-1h30 (setup repo + commit samples, non ancora codice spike).
 
 ## Monte ore consumato in sessione
 
-Sessione del 13 ottobre 2026, circa 1h30min (21:20 - 22:00 CEST ca.).
-Monte ore totale consumato (cumulato 12-13 ottobre): circa 4.0-4.5h su budget 60h (circa 7-7.5% del totale).
-Monte ore residuo: circa 55-56h in 14-15 settimane.
+Sessione del 14 ottobre 2026, circa 2h00min (15:30 - 17:30 CEST ca.).
 
-Analisi onesta: la sessione di oggi ha speso quasi un'ora in debug template LaTeX (contatore ``none`` + numerazione sezioni). Nessun grosso rework, nessuna perdita di tempo evitabile, pero evidenzia che il piano "PDF pipeline in 30 min" era ottimistico. Nessun impatto strutturale sul budget 60h.
+Monte ore cumulato (12-13-14 ottobre): ~6.5h su budget 60h (11% del totale).
+Monte ore residuo: ~53.5h in ~14 settimane (~3.8h/settimana medie, sotto baseline 5h/settimana).
+
+Osservazione: sessione lunga ma produttiva. Fase A ha consolidato le fondamenta del piano (saving 12.5-19h confermati). Fase B ha pianificato M2 con disciplina PMI (timebox hard, criteri binari, scope esplicitamente escluso), riducendo rischio R15 scope creep.
 
 ## Nota di sessione
 
-Produttivita buona, nessun blocco serio. Debug LaTeX tipico del primo build con template custom: il blocco di debug delle tabelle Pandoc 3.x (contatore ``none``) e un gotcha noto. Documentato in CHANGE_LOG se mai dovessimo ricostruire da zero.
+Discussione estesa su copyright (reference artifact Schneider, standard jazz, pubblico dominio) prima di arrivare alla soluzione pulita "composizione dello Sponsor". Discussione preziosa dal punto di vista PMI/Risk, perche ha chiarito definitivamente i vincoli legali del test corpus (coerenza Charter §12.1 e §12.2, R17).
+
+Approccio role-switching single-chat ha funzionato bene con cambio esplicito da Researcher a Business Analyst a meta sessione. Entrambi i cappelli hanno prodotto deliverable coerenti con la definizione minimalista di ROLES.md.
