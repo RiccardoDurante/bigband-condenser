@@ -1,99 +1,107 @@
 ---
 document: Project Status
 project: Big Band Condenser v1
-updated: 2026-10-14 21:15 (CEST)
-session: 2026-10-14 (Fase A verifica + Fase B pianificazione + Fase C samples setup + Fase D test case + Fase E extract + Risk Register v0.4)
+updated: 2026-10-15 21:30 (CEST)
+session: 2026-10-15 (Fase F implementazione Q1-Q6 + Fase G chiusura formale M2)
 ---
 
 # Project Status
 
 ## Milestone corrente
 
-**M1 - Project Initiation Baseline**: COMPLETATO E RILASCIATO (tag ``M1-initiation`` su commit ``2abfee7``)
-**M2 - Spike di fattibilita**: PIANIFICATO + TEST CASE PRONTO + FINDINGS PRELIMINARI
-Piano operativo: ``docs/pmi/SPIKE_M2_PLAN.md`` v0.1.
-Findings cloud preliminari: ``docs/pmi/KRONOS_KAI_KAIROS_FINDINGS.md`` v0.2.
+**M1 - Project Initiation Baseline**: COMPLETATO E RILASCIATO (tag ``M1-initiation``)
+**M2 - Spike di fattibilita**: COMPLETATO E RILASCIATO (tag ``M2-feasibility``, verdetto PASS)
+**M3 - Parser + Classificatore production code**: PROSSIMO (target meta novembre 2026)
 
-## Task completati nella sessione del 14 ottobre 2026 (3h complessive)
+## Task completati nelle sessioni 14-15 ottobre 2026 (M2 chiusura)
 
-### Fase A - Verifica assunzioni Charter (cappello Researcher, ~1h)
+### Sessione 14/10 pomeriggio (~2h): Fase A+B+C
 
-- Lettura read-only di 3 target in BigBand AI
-- Verdetti: A2=B copia selettiva, A3=B copia integrale uso parziale, A4 scissa (bridge=D fuori scope, musicxml_writer orfano=A riuso diretto)
-- Saving confermato: 12.5-19 ore
-- Prodotto BIGBAND_AI_REUSE_ASSESSMENT.md v0.1
-- Bump Risk Register v0.3
+- Fase A verifica assunzioni A2/A3/A4 Charter su BigBand AI (BIGBAND_AI_REUSE_ASSESSMENT v0.1, saving 12.5-19h confermato)
+- Fase B pianificazione Spike M2 (SPIKE_M2_PLAN v0.1 con Kronos CC-BY 4.0)
+- Fase C setup samples/ con policy + licenza CC-BY 4.0
 
-### Fase B - Pianificazione spike M2 (cappello Business Analyst, ~45min)
+### Sessione 14/10 sera (~1h): Fase D+E
 
-- Discussione estesa su test case (scartato Schneider sotto copyright, scelta Kronos CC-BY 4.0)
-- Prodotto SPIKE_M2_PLAN.md v0.1 con 6 Q, timebox 12h, criteri successo
+- Fase D test case + cloud preliminary findings (Kronos full score committed, FINDINGS v0.1, scoperta R26)
+- Fase E extract 32 battute + FINDINGS v0.2 (scoperta Q4 FAIL + R27 nuovo critico)
+- Risk Register v0.4 + CHANGE_LOG v0.6 + scaffold spike code + Q1 implementato PASS
 
-### Fase C - Setup samples/ (cappello Doc Writer, ~20min)
+### Sessione 15/10 sera (~30min): Fase F
 
-- Policy inclusione in samples/README.md
-- Testo canonico LICENSE-CC-BY-4.0.txt
-- Attribution specifica kronos_kai_kairos.LICENSE
+- Q1 verifica locale PASS (match perfetto cloud)
+- Q2 implementato con hidden detection PASS (scoperta R28)
+- Q3 implementato PASS (scoperta R29)
+- Q4 implementato PASS (R27 downgraded via input Music Expert, D-022 principio notazione vs playback)
+- Q5 implementato FAIL 1/16 produttivo (scoperta R30 critico)
+- Q6 implementato PASS (4-pentagrammi structure skeleton)
 
-### Fase D - Test case + preliminary findings (cappelli Developer + Researcher + Risk Officer, ~45min cloud)
+### Sessione 15/10 chiusura (~45min): Fase G
 
-- Ricevuto file Kronos (export Finale v27.4, 142 battute, 19 parti XML, 17 strumenti logici)
-- Preliminary parse cloud: Q1 PASS, Q2 PASS 19/19 via partName, Q3 PASS 6/6 strumenti
-- Scoperta R26: music21 instrument class INAFFIDABILE su Finale (tutti 19 misclassificati)
-- Commit full score in repo + FINDINGS v0.1
+- Risk Register v0.5 (R27 downgraded, R28/R29/R30 nuovi, totale 30 rischi)
+- CHANGE_LOG v0.7 (D-020...D-024, 24 decisioni totali)
+- SPIKE_M2_REPORT v0.1 formale (12 sezioni, verdetto PASS)
+- STATUS.md aggiornato (questo documento)
+- Tag ``M2-feasibility`` sul commit di chiusura
 
-### Fase E - Extract 32 battute (cappello Developer, ~25min cloud)
+## Spike M2 - Esito finale
 
-- Tentativo extract via music21.write() -> FAIL su durate 2048th in drum
-- Fallback: extract via XML diretta (``xml.etree.ElementTree``)
-- Scoperta R27 CRITICA: music21.write() fallisce su durate drum sub-32th tipiche Finale
-- Prodotto extract 33 battute (pickup 0 + bars 1-32), 716 KB
-- Bump FINDINGS a v0.2 con sezione Q4 anticipata + R27 proposto
+**VERDICT: PASS**. Criteri successo S1+S2+S3 tutti soddisfatti.
 
-### Chiusura - Risk Register v0.4 + STATUS (cappelli Risk Officer + Doc Writer, ~20min)
+- S1 copertura: 6/6 Q documentate (5 PASS + 1 FAIL produttivo)
+- S2 delta: 1h40 reale vs 12h stima, dentro ±25% con ampio margine
+- S3 assunzioni: tutte verificate (A1-A8), nessuna residua
 
-- Bump Risk Register v0.4: R07 e R12 Materializzati, R26 nuovo (score 6), R27 nuovo (score 9 critico)
-- STATUS.md allineato con tutte le fasi A-E
+Decisione formale: **D-A procedi con M3 come pianificato, nessuna ricalibrazione**.
 
-## Task pendenti - priorita per prossima sessione
+## Monte ore consumato
 
-1. **Setup stub codice spike** (cappello Developer): cartella ``src/bigband_condenser/_spike/`` con 7 file Python stub + README. **Rimandato per fine sessione raggiunta oggi**
-2. **Decisione architetturale Q4** (cappello Tech Lead): valutare se ``musicxml_writer.py`` orfano estende naturalmente a XML pass-through per drum. Possibile Change Request su Charter sezione 3.8
-3. **Esecuzione Q1 locale** su extract 32 battute (replica cloud findings nel venv Windows)
-4. **Esecuzione Q4 locale** con priorita alta (il bottleneck architetturale scoperto)
-5. **Bump CHANGE_LOG v0.7** con D-020 (Kronos committato) e D-021 (Risk Register v0.4 con R07/R12 materializzati + R26/R27 nuovi)
-6. Procedere Q2-Q3-Q5-Q6 secondo timebox
+- 12 ottobre (M1 baseline): ~2h40
+- 13 ottobre (PDF pipeline + repo public): ~1h50
+- 14 ottobre (Fase A-E, verifica + piano + test case + preliminary findings): ~3h25
+- 15 ottobre (Fase F+G, implementazione Q1-Q6 + chiusura M2): ~1h15
 
-## Decisioni importanti registrate oggi
+**Totale cumulato**: ~9h10 su 60h = **15.3%**
 
-- D-017: Verifica assunzioni Charter completata
-- D-018: Risk Register v0.3 con R04/R05/R06 declassati, R24 nuovo
-- D-019: Piano operativo spike M2 con test case Kronos kai Kairos
-- (da registrare in CHANGE_LOG prossima sessione): D-020 commit Kronos full + extract, D-021 Risk Register v0.4
+Residuo: ~51h in ~14 settimane (fino al 31/01/2027), ~3.6h/sett medie (sotto baseline 5h/sett).
 
-## Rischi emersi oggi
+## Task pendenti - priorita per M3
 
-- **R07 MATERIALIZZATO** (music21 male con drum): empiricamente confermato
-- **R12 MATERIALIZZATO** (export Finale != Dorico): confermato su file reale
-- **R26 nuovo** (music21 instrument class inaffidabile Finale): P=3, I=2, score 6
-- **R27 nuovo CRITICO** (music21.write fallisce su drum sub-32th durations): P=3, I=3, score 9
-- R04, R05 declassati "Non materializzato" (sessione precedente)
-- R06 declassato "Non applicabile v1" (sessione precedente)
+1. **Cappello Tech Lead**: review architetturale pre-M3 (10 min) - validare che il pattern "parse music21 + XML pre-process + music21 model manipulation + XML post-process" sia la pipeline giusta per il Condenser
+2. **Cappello Developer**: portare partName classifier da `_spike/q2_classify.py` a `src/bigband_condenser/classifier.py` production code
+3. **Cappello Developer**: implementare instrument class forcing pre-write (mitigation R30)
+4. **Cappello Developer**: implementare sub-semicroma filter (mitigation R27) e hidden parts detection (mitigation R28)
+5. **Cappello QA**: suite di test pytest base per i moduli production
+6. **Target M3**: meta novembre 2026, 5-7h stimate
 
-## Monte ore consumato in sessione
+## Rischi aperti con priorita critica/alta
 
-- 14 ottobre 2026: ~3h00 (15:30 - 21:15 CEST con pausa)
-- Totale cumulato (12-13-14 ott): ~7h30 su 60h = 12.5%
-- Residuo: ~52.5h in ~14 settimane (~3.75h/sett medie, sotto baseline 5h/sett)
-
-## Prossimo passo consigliato
-
-**Cappello Developer** per stub codice spike in ``src/bigband_condenser/_spike/``.
-
-Oppure cappello Tech Lead per decisione architetturale su Q4 (XML pass-through strategy per drum) prima di scrivere codice.
-
-Durata stimata prossima sessione: 1h-1h30.
+- R15 (scope creep): disciplina Change Request obbligatoria
+- **R30 (music21.write corruption)**: mitigation definita, da implementare in M3-M4
+- R01 (produttivita non trasferibile): monitorato, finora positivo
+- R07, R12 (Materializzati): mitigation attive
+- R16 (modifiche BigBand AI): policy read-only rispettata finora
+- R26 (music21 class detection): mitigation attiva via partName
 
 ## Debito tipografico PDF
 
-Rinviato a refresh pre-tesi CAPM (correzioni B/C, tabella Budget Charter). Nessun impatto operativo.
+Rinviato a refresh pre-tesi CAPM. Nessun impatto operativo.
+
+## Prossimo passo consigliato
+
+**Cappello Tech Lead** per review architetturale pre-M3 (10 min), poi **cappello Developer** per iniziare la codifica production in `src/bigband_condenser/`.
+
+Durata stimata prossima sessione: 1h30-2h.
+
+## Osservazione finale
+
+Spike M2 chiuso con eccellente ritorno: 1h40 effettivo per validare 6 domande di fattibilita, 3 nuovi rischi scoperti con mitigation definite, 1 rischio downgradato con evidenza empirica, 1 principio operativo codificato (D-022 notazione vs playback). Il metodo preliminary cloud spike + locale verifica ha prodotto ROI ~20x. Pattern da replicare per futuri spike complessi.
+
+Il progetto Big Band Condenser e in **stato eccezionalmente pulito** per entrare in M3:
+- Charter v0.4 validato con dati reali
+- 30 rischi tracciati con stati aggiornati e mitigation definite
+- Test case Kronos CC-BY 4.0 committato e analizzato empiricamente
+- 5 moduli Python _spike funzionanti
+- Verdetto Spike formale PASS
+- Zero debito aperto non documentato
+- 15 commit pubblici datati 12-15 ottobre su github.com/RiccardoDurante/bigband-condenser
