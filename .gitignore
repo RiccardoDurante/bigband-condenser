@@ -54,3 +54,6 @@ tmp/
 
 # OS
 .DS_Store
+
+# Spike temporary outputs
+src/bigband_condenser/_spike/_tmp/
