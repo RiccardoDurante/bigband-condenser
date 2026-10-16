@@ -2,11 +2,12 @@
 document: Spike M2 Report
 document_id: SR-BBC-M2-001
 project: Big Band Condenser v1
-version: 0.1
+version: 0.2
 status: Final
-last_updated: 2026-10-15
+last_updated: 2026-10-16
 language: it
 changelog:
+  - v0.2 (2026-10-16): aggiunta sezione 13 Errata (count parti 18 XML vs 19 music21 iter, dovuto a split grand-staff Piano)
   - v0.1 (2026-10-15): emissione finale a chiusura Spike M2
 ---
 
@@ -264,3 +265,20 @@ Scope M3:
 - Suite di test pytest base (10-20 test iniziali)
 
 Stima M3: 5-7h (una settimana a 5h/settimana).
+
+
+## 13. Errata (v0.2, 2026-10-16)
+
+Durante M3 Fase 1 (porting classifier a production code, 2026-10-16), scoperta precisazione sul count parti XML:
+
+- Il SPIKE_M2_REPORT v0.1 riportava "19 parts XML" basato sull'iterazione di `music21.score.parts`.
+- Il **count effettivo da `<part-list>` nel source XML** e **18 parts**.
+- La discrepanza e dovuta a music21: quando itera `.parts`, esplode il **Piano grand-staff** (un unico `<part id="P15">` con `<staves>2</staves>`) in **2 PartStaff objects separati**.
+- Risultato logico identico: **17 strumenti logici visible** (invariato).
+- Il classifier production (`src/bigband_condenser/classifier.py`) usa `<score-part>` count dal source XML e riporta 18 (comportamento corretto).
+
+Nessun impatto su verdetto Spike M2 PASS. Nota per futuri test:
+- `len(classify_score(path)) == 18` (XML-based)
+- `len(list(score.parts)) == 19` (music21-based, splits grand-staff Piano)
+
+Entrambi coerenti con il totale logico di 17 strumenti visible (Drum Set 2 hidden escluso, Piano x2 collassa in 1 logico).

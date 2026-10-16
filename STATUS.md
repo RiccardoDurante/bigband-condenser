@@ -1,107 +1,96 @@
 ---
 document: Project Status
 project: Big Band Condenser v1
-updated: 2026-10-15 21:30 (CEST)
-session: 2026-10-15 (Fase F implementazione Q1-Q6 + Fase G chiusura formale M2)
+updated: 2026-10-16 11:35 (CEST)
+session: 2026-10-16 (M3 Fase 1+2 production code + pytest baseline + writer + docs + tag M3-production)
 ---
 
 # Project Status
 
 ## Milestone corrente
 
-**M1 - Project Initiation Baseline**: COMPLETATO E RILASCIATO (tag ``M1-initiation``)
-**M2 - Spike di fattibilita**: COMPLETATO E RILASCIATO (tag ``M2-feasibility``, verdetto PASS)
-**M3 - Parser + Classificatore production code**: PROSSIMO (target meta novembre 2026)
+**M1 - Project Initiation Baseline**: COMPLETATO (tag ``M1-initiation``)
+**M2 - Spike di fattibilita**: COMPLETATO (tag ``M2-feasibility``, verdetto PASS)
+**M3 - Parser + Classificatore production code**: **COMPLETATO** (tag ``M3-production``)
+**M4 - Condensatore di sezione funzionante**: PROSSIMO (target fine novembre 2026)
 
-## Task completati nelle sessioni 14-15 ottobre 2026 (M2 chiusura)
+## Task completati nelle sessioni 12-16 ottobre
 
-### Sessione 14/10 pomeriggio (~2h): Fase A+B+C
+Vedi sessioni precedenti per M1 e M2. Sessione 2026-10-16 (M3 chiusura, circa 2h):
 
-- Fase A verifica assunzioni A2/A3/A4 Charter su BigBand AI (BIGBAND_AI_REUSE_ASSESSMENT v0.1, saving 12.5-19h confermato)
-- Fase B pianificazione Spike M2 (SPIKE_M2_PLAN v0.1 con Kronos CC-BY 4.0)
-- Fase C setup samples/ con policy + licenza CC-BY 4.0
+### M3 Fase 1 - Core production code (circa 1h)
 
-### Sessione 14/10 sera (~1h): Fase D+E
+- ``src/bigband_condenser/models.py``: NoteData, MelodyData (copia selettiva BigBand AI)
+- ``src/bigband_condenser/instrument_mapping.py``: 40+ partName -> (semitones, music21 class) con lookup exact-match + substring fallback
+- ``src/bigband_condenser/classifier.py``: classify_section + detect_hidden_part_names + classify_score + summarize
+- ``src/bigband_condenser/preprocessor.py``: orchestra strip hidden + force class + filter drums (3 mitigation Spike M2)
+- End-to-end validation su Kronos extract: music21.write() SUCCESS 565 KB
+- Scoperta: classifier production conta 18 XML parts (vs 19 music21 iter per split Piano grand-staff)
 
-- Fase D test case + cloud preliminary findings (Kronos full score committed, FINDINGS v0.1, scoperta R26)
-- Fase E extract 32 battute + FINDINGS v0.2 (scoperta Q4 FAIL + R27 nuovo critico)
-- Risk Register v0.4 + CHANGE_LOG v0.6 + scaffold spike code + Q1 implementato PASS
+### M3 Fase 2 - QA + Writer (circa 50 min)
 
-### Sessione 15/10 sera (~30min): Fase F
+- ``tests/conftest.py`` + ``tests/test_classifier.py`` + ``tests/test_instrument_mapping.py`` + ``tests/test_preprocessor.py`` + ``tests/test_writer.py``
+- 35 test totali, tutti GREEN in 4.3 secondi
+- ``src/bigband_condenser/writer.py``: wrapper music21.write() con diagnostic R27 (hint preprocess) + verify re-parse
 
-- Q1 verifica locale PASS (match perfetto cloud)
-- Q2 implementato con hidden detection PASS (scoperta R28)
-- Q3 implementato PASS (scoperta R29)
-- Q4 implementato PASS (R27 downgraded via input Music Expert, D-022 principio notazione vs playback)
-- Q5 implementato FAIL 1/16 produttivo (scoperta R30 critico)
-- Q6 implementato PASS (4-pentagrammi structure skeleton)
+### M3 Fase 3 - Docs (circa 20 min)
 
-### Sessione 15/10 chiusura (~45min): Fase G
+- SPIKE_M2_REPORT v0.2 con sezione 13 Errata (18 vs 19 parts)
+- CHANGE_LOG v0.8 con D-025, D-026, D-027
+- STATUS.md aggiornato
 
-- Risk Register v0.5 (R27 downgraded, R28/R29/R30 nuovi, totale 30 rischi)
-- CHANGE_LOG v0.7 (D-020...D-024, 24 decisioni totali)
-- SPIKE_M2_REPORT v0.1 formale (12 sezioni, verdetto PASS)
-- STATUS.md aggiornato (questo documento)
-- Tag ``M2-feasibility`` sul commit di chiusura
+### M3 Fase 4 - Chiusura
 
-## Spike M2 - Esito finale
+- Tag ``M3-production`` sul commit finale
+- Monte ore cumulato: circa 12h su 60h totali
 
-**VERDICT: PASS**. Criteri successo S1+S2+S3 tutti soddisfatti.
+## Spike M2 - Esito finale (archivio)
 
-- S1 copertura: 6/6 Q documentate (5 PASS + 1 FAIL produttivo)
-- S2 delta: 1h40 reale vs 12h stima, dentro ±25% con ampio margine
-- S3 assunzioni: tutte verificate (A1-A8), nessuna residua
-
-Decisione formale: **D-A procedi con M3 come pianificato, nessuna ricalibrazione**.
+**PASS**. S1+S2+S3 soddisfatti. Decisione D-A procedi M3 come pianificato (ora completato).
 
 ## Monte ore consumato
 
-- 12 ottobre (M1 baseline): ~2h40
-- 13 ottobre (PDF pipeline + repo public): ~1h50
-- 14 ottobre (Fase A-E, verifica + piano + test case + preliminary findings): ~3h25
-- 15 ottobre (Fase F+G, implementazione Q1-Q6 + chiusura M2): ~1h15
+- 12 ottobre (M1 baseline): circa 2h40
+- 13 ottobre (PDF pipeline + repo public): circa 1h50
+- 14 ottobre (M2 fase A-E): circa 3h25
+- 15 ottobre (M2 fase F+G chiusura): circa 1h15
+- 16 ottobre (M3 completo): circa 2h
 
-**Totale cumulato**: ~9h10 su 60h = **15.3%**
+**Totale cumulato**: circa 11h10 su 60h = **18.6%**
+Residuo: circa 48.9h in circa 13 settimane (3.7h/sett sotto baseline).
 
-Residuo: ~51h in ~14 settimane (fino al 31/01/2027), ~3.6h/sett medie (sotto baseline 5h/sett).
+**Anticipo sulla roadmap**: M3 era target meta novembre, chiuso il 16 ottobre. Circa 4 settimane di buffer accumulato.
 
-## Task pendenti - priorita per M3
+## Task pendenti - priorita per M4
 
-1. **Cappello Tech Lead**: review architetturale pre-M3 (10 min) - validare che il pattern "parse music21 + XML pre-process + music21 model manipulation + XML post-process" sia la pipeline giusta per il Condenser
-2. **Cappello Developer**: portare partName classifier da `_spike/q2_classify.py` a `src/bigband_condenser/classifier.py` production code
-3. **Cappello Developer**: implementare instrument class forcing pre-write (mitigation R30)
-4. **Cappello Developer**: implementare sub-semicroma filter (mitigation R27) e hidden parts detection (mitigation R28)
-5. **Cappello QA**: suite di test pytest base per i moduli production
-6. **Target M3**: meta novembre 2026, 5-7h stimate
+1. **Cappello Tech Lead**: review architetturale di M4 - come implementare condensation logic di 1 sezione
+2. **Cappello Developer**: ``src/bigband_condenser/condenser/`` package con un modulo per sezione (reeds_condenser, brass_condenser, rhythm_condenser, drums_condenser)
+3. **Cappello Developer**: iniziare da Reeds (sezione piu simmetrica, 5 strumenti stesso famiglia)
+4. **Cappello QA**: pytest expansion per i nuovi moduli condensation
+5. **Target M4**: fine novembre 2026, 6-8h stimate
 
-## Rischi aperti con priorita critica/alta
+Attenzione: **il buffer accumulato non va bruciato in scope creep (R15)**. Va preservato per M5-M6 (condensation logic ha iterazioni musicologiche imprevedibili).
+
+## Rischi aperti - priorita
 
 - R15 (scope creep): disciplina Change Request obbligatoria
-- **R30 (music21.write corruption)**: mitigation definita, da implementare in M3-M4
-- R01 (produttivita non trasferibile): monitorato, finora positivo
-- R07, R12 (Materializzati): mitigation attive
-- R16 (modifiche BigBand AI): policy read-only rispettata finora
-- R26 (music21 class detection): mitigation attiva via partName
+- **R30 (music21.write corruption)**: **MITIGATO** via force_instrument_classes in preprocessor.py, validato in pytest (test_bass_class_corrected)
+- R27, R28: mitigati via preprocessor
+- R01 (produttivita): monitoraggio positivo (anticipo roadmap)
+- R07, R12, R16, R26: mitigation attive
 
-## Debito tipografico PDF
+## Repository stato
 
-Rinviato a refresh pre-tesi CAPM. Nessun impatto operativo.
+- 17 commit pubblici (12-16 ottobre)
+- 3 tag milestone: M1-initiation, M2-feasibility, M3-production
+- 4 moduli production + 5 moduli test
+- 35 test automatici GREEN
+- Documentazione PMI completa e allineata
 
 ## Prossimo passo consigliato
 
-**Cappello Tech Lead** per review architetturale pre-M3 (10 min), poi **cappello Developer** per iniziare la codifica production in `src/bigband_condenser/`.
+**Cappello Tech Lead** per M4 architettura condenser di sezione. Durata stimata prossima sessione: 1h30-2h.
 
-Durata stimata prossima sessione: 1h30-2h.
+## Debito tipografico PDF
 
-## Osservazione finale
-
-Spike M2 chiuso con eccellente ritorno: 1h40 effettivo per validare 6 domande di fattibilita, 3 nuovi rischi scoperti con mitigation definite, 1 rischio downgradato con evidenza empirica, 1 principio operativo codificato (D-022 notazione vs playback). Il metodo preliminary cloud spike + locale verifica ha prodotto ROI ~20x. Pattern da replicare per futuri spike complessi.
-
-Il progetto Big Band Condenser e in **stato eccezionalmente pulito** per entrare in M3:
-- Charter v0.4 validato con dati reali
-- 30 rischi tracciati con stati aggiornati e mitigation definite
-- Test case Kronos CC-BY 4.0 committato e analizzato empiricamente
-- 5 moduli Python _spike funzionanti
-- Verdetto Spike formale PASS
-- Zero debito aperto non documentato
-- 15 commit pubblici datati 12-15 ottobre su github.com/RiccardoDurante/bigband-condenser
+Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
