@@ -8,7 +8,7 @@ last_updated: 2026-10-18
 language: it
 changelog:
   - v0.1 (2026-10-16): prima emissione dopo retrospettiva M4-R1 fallito su visual validation (metadata/measure structure mancanti). WBS granulare con 8 sotto-step M4.1-M4.8, ciascuno validato visualmente in Dorico prima del successivo.
-  
+
   - v0.2 (2026-10-18): M4.2 chiuso dopo fix visual-gate (sanitizer per R32). R31 promosso da candidato a formale e mitigato nel Risk Register.
 ---
 
@@ -119,6 +119,14 @@ numericamente (0 misure visivamente corte) e visivamente in Dorico.
 - Metadata preservati (M4.1)
 - Struttura di misure corretta (M4.2)
 - Se musicologicamente leggibile come "parte di Soprano", M4.3 PASS
+
+**Esito (18/10/2026)**: dual-gate completo. Script
+scripts/preview_single_voice.py isola la pipeline di scrittura dallo
+split 2+3 (nessuna modifica a reeds.py). Su Soprano Sax (55 note,
+33 misure): upper = 55/55 note, lower = 0 (atteso), 0 misure
+numericamente errate, 0 visivamente corte, validazione Dorico
+confermata. Test pytest: TestReedsCondenserM43Passthrough (2 test).
+**M4.3 CHIUSO** (tag M4.3-passthrough).
 
 ### M4.4 - Dynamic 2+3 split by pitch
 
