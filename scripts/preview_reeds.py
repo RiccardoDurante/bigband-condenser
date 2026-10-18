@@ -69,6 +69,16 @@ def main() -> int:
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         out.write("musicxml", fp=str(OUT_PATH))
+
+    # Post-process: music21 10.5 writer emits print-object="no" on rests
+    # inserted directly into Measure (not into a Voice). This produces
+    # visually-short measures in Dorico even though XML total duration
+    # is correct. See src/bigband_condenser/musicxml_sanitizer.py.
+    from bigband_condenser.musicxml_sanitizer import unhide_rests
+    fixed = unhide_rests(OUT_PATH)
+    if fixed:
+        print(f"  sanitizer: unhid {fixed} rest(s)")
+
     print(f"OK ({OUT_PATH.stat().st_size:,} bytes)")
     print()
     print(f"Open in Dorico/Finale: {OUT_PATH}")
