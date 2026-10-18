@@ -2,11 +2,12 @@
 document: Change Log
 document_id: CL-BBC-001
 project: Big Band Condenser v1
-version: 0.8
+version: 0.9
 status: Active
-last_updated: 2026-10-16
+last_updated: 2026-10-18
 language: it
 changelog:
+  - v0.9 (2026-10-18): aggiunte D-028 (M4.1-M4.3 chiusi, R31 formalizzato, R32 scoperto e mitigato via sanitizer), D-029 (decisione scope M4.4: segmento denso dedicato per split 2+3 su 5 voci reeds)
   - v0.8 (2026-10-16): aggiunte D-025 (M3 production code Fase 1 shipped - 4 moduli production + pytest baseline 35 test green), D-026 (errata SPIKE_M2_REPORT v0.2 count parti), D-027 (M3 chiuso con tag M3-production)
   - v0.7 (2026-10-15): D-020 Kronos committato, D-021 Risk Register v0.4, D-022 principio notazione vs playback, D-023 Spike M2 implementato, D-024 Spike M2 chiuso PASS
   - v0.6 (2026-10-14): D-019 piano operativo Spike M2
@@ -52,6 +53,9 @@ changelog:
 | D-025 | 2026-10-16 | M3 Fase 1 shipped: 4 moduli production (models.py, instrument_mapping.py, classifier.py, preprocessor.py) + writer.py + pytest baseline 35 test green. Preprocessor orchestra 3 mitigation Spike M2 (R27 filter sub-semicroma, R28 strip hidden, R30 force instrument class). End-to-end validated su Kronos extract: 1 hidden stripped, 18 classes forced, 157 sub-semicroma filtered, music21.write SUCCESS 565 KB | Charter sezione 6 M3 target meta novembre: anticipo di 1 mese sulla roadmap. Pattern pipeline singola (no dual) confermato come architettura v1. Writer con diagnostica R27 (hint "chiamare preprocess") per DX | src/bigband_condenser/*.py, tests/*.py |
 | D-026 | 2026-10-16 | Errata SPIKE_M2_REPORT v0.2: count parti 18 XML vs 19 music21 iter (Piano grand-staff). Risultato logico 17 strumenti visible invariato | Scoperta durante porting Q2 a classifier production (ElementTree vs music21.score.parts) | SPIKE_M2_REPORT v0.2 sezione 13 |
 | D-027 | 2026-10-16 | M3 CHIUSO con tag M3-production. Monte ore M3 effettivo: circa 2h. Scope M4 (condensation logic di 1 sezione) target fine novembre, 6-8h stimate | Deliverable M3: 4 moduli production + writer + pytest 35 test. Tutte mitigation Spike M2 attive. Deadline 31/01/2027 con buffer accumulato di circa 2 settimane | tag M3-production, STATUS.md |
+
+| D-028 | 2026-10-18 | M4.1 (metadata), M4.2 (measure structure) e M4.3 (single-voice passthrough) completati. Durante gate visivo M4.2 scoperto bug critico: 32/66 misure visivamente corte nonostante durata XML totale corretta (causa music21 v10.5 writer, print-object="no" spurio su Rest in Measure). Fix: musicxml_sanitizer.py post-write. R31 formalizzato (dual-gate numerico totale+visibile obbligatorio prima del gate Dorico), R32 nuovo (music21 writer quirk, mitigato). Risk Register v0.6 | Gate numerico da solo non basta a validare notazione; lezione di metodo per tutti i sotto-step M4 restanti | Risk Register v0.6, WBS_M4.md, tag M4.2-measures/M4.2-visual-fix/M4.3-passthrough |
+| D-029 | 2026-10-18 | M4.4 scope: split 2+3 su 5 voci reeds, da validare su nuovo segmento denso (tutti i 5 reeds attivi simultaneamente, es. shout chorus/tutti) invece di riuso diretto di kronos_kai_kairos_extract.musicxml | extract esistente non garantisce onset complessi/incroci di voce necessari a stressare la logica di split; segmento dedicato isola meglio eventuali bug dallo split stesso | WBS_M4.md (M4.4 scope, pending estrazione) |
 
 ## Change Request
 
