@@ -173,3 +173,54 @@ class TestReedsCondenserMeasureStructureM42:
             if any(True for _ in m.recurse().notes)
         )
         assert upper_measures_with_notes > 0, "no measure in upper contains notes"
+
+class TestReedsCondenserM43Passthrough:
+    """M4.3 - Single-voice passthrough.
+
+    Con un solo part reeds in input, l'intero contenuto deve finire
+    nello staff upper, lo staff lower deve restare vuoto, e la struttura
+    delle misure (M4.1+M4.2) deve restare intatta.
+    """
+
+    SOURCE_PATH = Path("samples/kronos_kai_kairos_extract.musicxml")
+    TARGET_PART_NAME = "Soprano Sax"
+
+    def _load_single_part(self):
+        import music21
+
+        score = music21.converter.parse(str(self.SOURCE_PATH))
+        for part in score.parts:
+            if self.TARGET_PART_NAME.lower() in (part.partName or "").lower():
+                return score, part
+        raise AssertionError(
+            f"Part '{self.TARGET_PART_NAME}' non trovato in {self.SOURCE_PATH}"
+        )
+
+    def test_single_voice_all_notes_land_in_upper(self):
+        score, single_part = self._load_single_part()
+        source_note_count = len(list(single_part.flatten().notes))
+
+        condenser = ReedsCondenser()
+        upper, lower = condenser.condense([single_part], source_score=score)
+
+        upper_notes = len(list(upper.flatten().notes))
+        lower_notes = len(list(lower.flatten().notes))
+
+        assert upper_notes == source_note_count
+        assert lower_notes == 0
+
+    def test_single_voice_measure_structure_preserved(self):
+        import music21
+
+        score, single_part = self._load_single_part()
+        condenser = ReedsCondenser()
+        upper, _lower = condenser.condense([single_part], source_score=score)
+
+        source_measures = list(
+            single_part.getElementsByClass(music21.stream.Measure)
+        )
+        upper_measures = list(
+            upper.getElementsByClass(music21.stream.Measure)
+        )
+
+        assert len(upper_measures) == len(source_measures)
