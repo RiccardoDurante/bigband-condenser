@@ -2,11 +2,12 @@
 document: Risk Register
 document_id: RR-BBC-001
 project: Big Band Condenser v1
-version: 0.5
+version: 0.6
 status: Draft
-last_updated: 2026-10-15
+last_updated: 2026-10-18
 language: it
 changelog:
+  - v0.6 (2026-10-18): R31 promosso da candidato (WBS_M4.md) a formale e Mitigato dopo il fix M4.2 visual-gate. Aggiunto R32 (music21 writer print-object quirk), Mitigato. Totale rischi: 32.
   - v0.5 (2026-10-15): post-Spike M2 implementation. R27 DOWNGRADED da score 9 (critico) a score 4 (medio) con evidenza empirica. Aggiunti R28 (hidden parts detection, mitigation validata), R29 (octave-transposing conventions, lezione di dominio), R30 (music21.write output corruption da wrong class, nuovo CRITICO con mitigation definita). Totale rischi: 30.
   - v0.4 (2026-10-14): R07 e R12 passati a "Materializzato"; aggiunti R26 (music21 class detection unreliable Finale) e R27 (music21.write drum fail, critico)
   - v0.3 (2026-10-14): R04/R05 "Non materializzato", R06 "Non applicabile v1", aggiunto R24
@@ -51,16 +52,18 @@ changelog:
 | R28 | Tecnico | Parti MusicXML marcate hidden dal software source (es. Finale <staff-details print-object=no/>) sono playback-only e non devono entrare nella condensed. Esempio Kronos: Drum Set 2 e parte MIDI playback hidden, Drum Set 1 e parte visibile notazionale | 2 | 2 | 4 | Detect hidden parts pre-classify via XML parsing del tag <staff-details print-object=no/> senza attributo number. Validato empiricamente in Spike M2 Q2 | Aperto - mitigation validata |
 | R29 | Processo | Convenzioni trasposizione di ottava (guitar/bass notati 1 ottava sopra sounding; piccolo trombone; piccolo in Db a 1 ottava sopra; ecc.) possono generare falsi positivi di errore nei test se le tabelle expected non le includono | 1 | 1 | 1 | Documentare convenzioni notazione nelle tabelle expected del test suite. Lezione di dominio emersa in Spike M2 Q3 | Aperto - lezione documentata |
 | R30 | Tecnico | music21.write() RIGENERA il tag <transpose> dalla instrument class interna invece di preservare il tag source XML. Combined con R26 (wrong class detection), causa SILENT CORRUPTION dell'output per parti mis-classificate: Acoustic Bass Kronos scritto come SopranoSaxophone (tag -2 st) invece del corretto -12 st octave. Guitar non impattato (music21 lo vede come Instrument generica, no default transposition, preserva tag source) | 3 | 3 | 9 | **PRIORITA CRITICA**. Mitigazione: forzare instrument class corretta pre-write via partName -> music21.instrument class mapping (tabella basata su _INSTRUMENT_TRANSPOSITIONS ereditata da BigBand AI musicxml_writer orfano). Alternativa: post-process XML output per overwrite <transpose> da source. Scoperto empiricamente in Spike M2 Q5. Da implementare in M3/M4 | Aperto - mitigation definita |
+| R31 | Processo | Visual validation Dorico da sola non e sufficiente: una misura puo avere durata XML totale corretta (quadra con la TimeSignature) ma apparire visivamente incompleta se la libreria di scrittura introduce elementi non-stampabili (print-object="no"). Un gate numerico ingenuo che misura solo la durata totale non rileva il problema. Scoperto nel fix M4.2 visual-gate (18/10): 32/66 misure del preview reeds erano visivamente corte nonostante durata totale corretta | 2 | 3 | 6 | Invariante numerico a doppio livello: durata totale E durata visibile (print-object) per misura/voce, verificato automaticamente prima del gate visivo Dorico. Script scripts/diagnose_measure_durations.py (totale) + scripts/diagnose_visible_durations.py (visibile). Una divergenza tra i due blocca il gate finche non e spiegata | Mitigato (18/10, M4.2 visual-gate fix, tag M4.2-visual-fix) |
+| R32 | Tecnico | music21 v10.5 MusicXML writer emette print-object="no" spurio su oggetti Rest inseriti direttamente in Measure (non in Voice), anche quando nessun oggetto Python ha hideObjectOnPrint=True. Causa misure visivamente incomplete in Dorico nonostante XML numericamente corretto. Confermato empiricamente (scripts/probe_pipeline.py): 0 hidden in-memory prima della scrittura, 34 hidden nel file XML scritto | 2 | 2 | 4 | Post-write XML sanitizer (src/bigband_condenser/musicxml_sanitizer.py, funzione unhide_rests) rimuove print-object="no" da ogni elemento <note> contenente <rest>. Chiamato da scripts/preview_reeds.py dopo la scrittura. ATTENZIONE: potrebbe rimuovere hidden rest future legittimamente intenzionali (es. simboli multi-measure rest) — raffinare il filtro se necessario quando quel caso si presenta | Mitigato (18/10) |
 
 ## Sintesi
 
-- **Priorita critica (9):** R15 (scope creep), **R30 (music21.write corruption) NUOVO**
-- **Alta priorita (6):** R01, R07 (Materializzato), R12 (Materializzato), R16, R26
-- **Media priorita (3-4):** R02, R03, R08, R10, R11, R13, R14, R17, R18, R19, R22, R23, R24, R25, **R27 (downgradato), R28 NUOVO**
-- **Bassa priorita (1-2):** R20, R21, **R29 NUOVO**
+- **Priorita critica (9):** R15 (scope creep), R30 (music21.write corruption)
+- **Alta priorita (6):** R01, R07 (Materializzato), R12 (Materializzato), R16, R26, **R31 (nuovo, Mitigato)**
+- **Media priorita (3-4):** R02, R03, R08, R10, R11, R13, R14, R17, R18, R19, R22, R23, R24, R25, R27 (downgradato), R28, **R32 (nuovo, Mitigato)**
+- **Bassa priorita (1-2):** R20, R21, R29
 - **Non materializzato:** R04, R05
 - **Non applicabile v1:** R06
 
-**Totale rischi tracciati:** 30 (27 aperti + 2 non materializzati + 1 non applicabile v1).
+**Totale rischi tracciati:** 32 (27 aperti + 2 non materializzati + 1 non applicabile v1 + 2 nuovi mitigati [R31, R32]).
 
 Il registro viene rivisto a ogni milestone e dopo ogni Change Request.

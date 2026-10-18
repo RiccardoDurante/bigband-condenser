@@ -2,12 +2,14 @@
 document: WBS M4 - Reeds Condenser Breakdown
 document_id: WBS-BBC-M4-001
 project: Big Band Condenser v1
-version: 0.1
+version: 0.2
 status: Active (post retrospective 2026-10-16)
-last_updated: 2026-10-16
+last_updated: 2026-10-18
 language: it
 changelog:
   - v0.1 (2026-10-16): prima emissione dopo retrospettiva M4-R1 fallito su visual validation (metadata/measure structure mancanti). WBS granulare con 8 sotto-step M4.1-M4.8, ciascuno validato visualmente in Dorico prima del successivo.
+  
+  - v0.2 (2026-10-18): M4.2 chiuso dopo fix visual-gate (sanitizer per R32). R31 promosso da candidato a formale e mitigato nel Risk Register.
 ---
 
 # WBS M4 - Reeds Condenser Breakdown
@@ -90,6 +92,14 @@ Il **primo tentativo M4-R1** (2026-10-16) e fallito su visual validation in Dori
 - Dorico mostra 33 misure contate correttamente
 - Pickup measure visibile come battuta 0 (anacrusi)
 - Nessun errore "measure incomplete" o "overfilled measure"
+
+**Nota post-gate (18/10/2026)**: la validazione visiva iniziale aveva rivelato
+32/66 misure visivamente incomplete nel preview reeds, nonostante durata XML
+totale corretta per ogni misura. Causa: music21 v10.5 writer introduce
+print-object="no" spurio su Rest inseriti in Measure (R32). Fix: post-write
+XML sanitizer (src/bigband_condenser/musicxml_sanitizer.py). Rivalidato
+numericamente (0 misure visivamente corte) e visivamente in Dorico.
+**M4.2 CHIUSO** (tag M4.2-visual-fix).
 
 ### M4.3 - Single-voice passthrough
 
@@ -213,7 +223,11 @@ Il **primo tentativo M4-R1** (2026-10-16) e fallito su visual validation in Dori
 **Rischi coperti**:
 - R15 scope creep: WBS granulare prevede confini espliciti per ogni sotto-step
 - R30 music21.write corruption: gia mitigato in M3 preprocessor
-- R31 candidato (sottostima M4): mitigation = WBS corrente + visual validation
+- R31 (formale, Mitigato 18/10): visual validation Dorico + invariante
+  numerico a doppio livello (durata totale + durata visibile) come
+  cross-check obbligatorio prima del gate
+- R32 (nuovo, Mitigato 18/10): music21 writer print-object quirk su Rest in
+  Measure, mitigato via post-write sanitizer
 
 **Backlog items** (NON scope M4):
 - FR-M4-A: Adaptive clef (bass clef quando sezione troppo grave, treble quando troppo acuta)
