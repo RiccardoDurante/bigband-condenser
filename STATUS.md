@@ -111,3 +111,10 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Decisioni**: posizionamento label sopra violino + sotto basso, split a meta', font 4pt via MusicXML. Dorico applica le proprie font/position: il Music Expert accetta di aggiustare in Engraving Options.
 - **Backlog**: FR-M4-F (cambio rigo senza legatura), FR-M4-G (rendering font/position editor-dependent).
 - **Prossimo passo**: decidere se chiudere M4.8 (voice crossing markers) o rinviarlo al backlog e passare a M5 (Brass). Voice crossing e' edge case raro per dichiarazione del Music Expert ('casi rari, in orchestra si tende a mantenere i ruoli').
+
+## Sessione 2026-11-01 (M4 CHIUSO)
+
+- **Completato**: M4.6 ASSORBITO (D-033), M4.7 IMPLEMENTATO (D-034), M4.8 IMPLEMENTATO (D-035). **MILESTONE M4 CHIUSA**: Reeds condenser production-ready con struttura battute, split 2+3 per sounding set, chord simultanei, cast labels, voice crossing markers.
+- **Decisioni**: posizionamento label sopra violino + sotto basso con split a meta', font 4pt via MusicXML (rendering editor-dependent), marker crossing '[abbr]>' / '[abbr]<' solo per cast >= 2.
+- **Backlog M4**: FR-M4-F (cambio rigo senza legatura), FR-M4-G (rendering font editor-dependent).
+- **Prossimo passo**: M5 (Brass condenser). Convenzioni gia' note: trombe in chiave di violino, tromboni in chiave di basso. Riuso previsto di tutta l'infrastruttura M4 (skeleton, split, cast labels, crossings).

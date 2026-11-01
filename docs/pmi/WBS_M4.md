@@ -3,13 +3,14 @@ document: WBS M4 - Reeds Condenser Breakdown
 document_id: WBS-BBC-M4-001
 project: Big Band Condenser v1
 version: 0.4
-status: Active (post retrospective 2026-10-16)
+status: CLOSED (M4 complete)
 last_updated: 2026-11-01
 language: it
 changelog:
   - v0.1 (2026-10-16): prima emissione dopo retrospettiva M4-R1 fallito su visual validation (metadata/measure structure mancanti). WBS granulare con 8 sotto-step M4.1-M4.8, ciascuno validato visualmente in Dorico prima del successivo.
 
   - v0.4 (2026-11-01): M4.6 chiuso come assorbito (D-033), M4.7 chiuso (D-034). FR-M4-F e FR-M4-G aggiunti al backlog.
+  - v0.5 (2026-11-01): M4.6 chiuso come assorbito (D-033), M4.7 chiuso (D-034), M4.8 chiuso (D-035). M4 COMPLETAMENTE CHIUSO. FR-M4-F e FR-M4-G al backlog.
   - v0.3 (2026-11-01): M4.4 e M4.5 chiusi (D-032). Scope M4.4 esteso: segmentazione per sounding set.
   - v0.2 (2026-10-18): M4.2 chiuso dopo fix visual-gate (sanitizer per R32). R31 promosso da candidato a formale e mitigato nel Risk Register.
 ---
@@ -193,6 +194,9 @@ confermata. Test pytest: TestReedsCondenserM43Passthrough (2 test).
 
 **Esito (2026-11-01)**: ASSORBITO in M4.4 (D-033). La segmentazione per sounding set produce naturalmente Chord simultanei upper+lower nei block chord. Nessun codice dedicato necessario. **M4.6 CHIUSO** (closure logica dentro M4.4).
 
+
+**Esito (2026-11-01)**: ASSORBITO in M4.4 (D-033). La segmentazione per sounding set produce naturalmente Chord simultanei upper+lower nei block chord. **M4.6 CHIUSO** (closure logica).
+
 ### M4.7 - Text directions per soli / unisono / cast change
 
 **Scope**: quando cambia il set di strumenti attivi (soli, unisono, rientro sezione), inserire text direction esplicita all'inizio del nuovo evento. Format: nome strumento o lista strumenti.
@@ -215,6 +219,9 @@ confermata. Test pytest: TestReedsCondenserM43Passthrough (2 test).
 
 **Esito (2026-11-01)**: IMPLEMENTATO (D-034). Cast tracking frame-by-frame; label split sopra-upper + sotto-lower; abbreviazioni fisse per i 5 reeds; 'Tutti' per cast completo non-unisono; soglia 1 misura con bypass unisono. Font 4pt e position scritte nel MusicXML. Dorico applica paragraph style propri (FR-M4-G a backlog). **M4.7 CHIUSO** (tag M4.7-cast-changes).
 
+
+**Esito (2026-11-01)**: IMPLEMENTATO (D-034). Cast tracking frame-by-frame; label split sopra-upper + sotto-lower; abbreviazioni fisse; 'Tutti' per cast completo non-unisono; soglia 1 misura con bypass unisono. Font/position via MusicXML, rendering editor-dependent (FR-M4-G). **M4.7 CHIUSO** (tag M4.7-cast-changes).
+
 ### M4.8 - Voice crossing markers
 
 **Scope**: quando l'algoritmo di split pone una voce in posizione "non standard" (es. Baritone finisce nel pentagramma superiore perche suona piu acuto del Soprano), aggiungere marker testuale che dichiara il crossing.
@@ -229,6 +236,11 @@ confermata. Test pytest: TestReedsCondenserM43Passthrough (2 test).
 **Validation visiva**:
 - Nei (rari) crossing, il marker e leggibile
 - Nei passaggi normali (nessun crossing), nessun marker rumoroso
+
+
+**Esito (2026-11-01)**: IMPLEMENTATO (D-035). Default rank 1-5 per i 5 reeds; marker '[abbr]>' / '[abbr]<' inserito quando il ranking per pitch mette un instrument fuori dal suo rigo di default. Solo per cast >= 2. **M4.8 CHIUSO** (tag M4.8-voice-crossing).
+
+**M4 COMPLETAMENTE CHIUSO** (M4.0-M4.8).
 
 ## 4. Totali e integration
 
