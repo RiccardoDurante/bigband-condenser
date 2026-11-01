@@ -252,3 +252,94 @@ class TestReedsCondenserNoLostPlacement:
                 assert abs(total - expected) < 1e-6, (
                     f"{part.partName} measure {m.number}: content {total} != source {expected}"
                 )
+
+
+from bigband_condenser.condenser.reeds import _Ev, _build_voice_elements  # noqa: E402
+
+
+class TestReedsSoundingSetSegmentation:
+    """Pure-python tests of the M4.4 segmentation (no music21 needed)."""
+
+    def test_sustained_chord_not_truncated_by_moving_bass(self):
+        evs = [
+            _Ev(0, "Soprano Sax", 67, "G4", 0.0, 4.0),
+            _Ev(1, "Alto Sax", 64, "E4", 0.0, 4.0),
+            _Ev(2, "Tenor Sax 1", 62, "D4", 0.0, 4.0),
+            _Ev(3, "Tenor Sax 2", 57, "A3", 0.0, 4.0),
+            _Ev(4, "Baritone Sax", 53, "F3", 0.0, 0.5),
+            _Ev(5, "Baritone Sax", 48, "C3", 0.5, 1.0),
+        ]
+        upper, lower = _build_voice_elements(evs, 2, 3)
+
+        # upper: one whole-measure chord, no ties, never truncated
+        assert len(upper) == 1
+        onset, dur, slots = upper[0]
+        assert (onset, dur) == (0.0, 4.0)
+        assert [s.pitch_name for s in slots] == ["G4", "E4"]
+        assert not any(s.cont_prev or s.cont_next for s in slots)
+
+        # lower: bass line changes underneath, D4/A3 stay tied
+        assert [(o, d) for o, d, _ in lower] == [(0.0, 0.5), (0.5, 0.5), (1.0, 3.0)]
+        names = [[s.pitch_name for s in sl] for _, _, sl in lower]
+        assert names == [["D4", "A3", "F3"], ["D4", "A3", "C3"], ["D4", "A3"]]
+        first = {s.pitch_name: s for s in lower[0][2]}
+        assert first["D4"].cont_next and first["A3"].cont_next and not first["F3"].cont_next
+        second = {s.pitch_name: s for s in lower[1][2]}
+        assert second["D4"].cont_prev and second["D4"].cont_next
+        assert not second["C3"].cont_prev and not second["C3"].cont_next
+
+    def test_short_note_not_held_to_chord_length(self):
+        # regression for FR-M4-D: F3 lasts 0.5, must not be held 4.0
+        evs = [
+            _Ev(0, "Tenor Sax 1", 62, "D4", 0.0, 4.0),
+            _Ev(1, "Tenor Sax 2", 57, "A3", 0.0, 4.0),
+            _Ev(2, "Baritone Sax", 53, "F3", 0.0, 0.5),
+        ]
+        _, lower = _build_voice_elements(evs, 2, 3)
+        first_onset, first_dur, first_slots = lower[0]
+        assert first_dur == 0.5
+        assert "F3" in [s.pitch_name for s in first_slots]
+        # only 3 notes sound: D4 and A3 take the upper staff, F3 is alone below
+        assert len(lower) == 1
+        assert [s.pitch_name for s in first_slots] == ["F3"]
+
+    def test_unison_collapses_to_one_note(self):
+        evs = [
+            _Ev(0, "Alto Sax", 67, "G4", 0.0, 2.0),
+            _Ev(1, "Soprano Sax", 67, "G4", 0.0, 2.0),
+            _Ev(2, "Tenor Sax 1", 62, "D4", 0.0, 2.0),
+        ]
+        upper, lower = _build_voice_elements(evs, 2, 3)
+        assert len(upper) == 1
+        assert [s.pitch_name for s in upper[0][2]] == ["G4"]
+        assert [s.pitch_name for s in lower[0][2]] == ["D4"]
+
+    def test_reattack_of_same_pitch_is_not_tied(self):
+        evs = [
+            _Ev(0, "Soprano Sax", 67, "G4", 0.0, 1.0),
+            _Ev(1, "Soprano Sax", 67, "G4", 1.0, 2.0),
+        ]
+        upper, _ = _build_voice_elements(evs, 2, 3)
+        assert len(upper) == 2
+        assert not any(s.cont_prev or s.cont_next for _, _, sl in upper for s in sl)
+
+    def test_output_independent_of_input_order(self):
+        evs = [
+            _Ev(0, "Soprano Sax", 67, "G4", 0.0, 4.0),
+            _Ev(1, "Baritone Sax", 53, "F3", 0.0, 0.5),
+            _Ev(2, "Baritone Sax", 48, "C3", 0.5, 1.0),
+            _Ev(3, "Alto Sax", 64, "E4", 0.0, 4.0),
+        ]
+        a = _build_voice_elements(evs, 2, 3)
+        b = _build_voice_elements(list(reversed(evs)), 2, 3)
+        assert a == b
+
+    def test_same_part_overlap_is_clipped(self):
+        import music21
+        from bigband_condenser.condenser.reeds import _collect_events
+        p = music21.stream.Part()
+        p.partName = "Soprano Sax"
+        p.insert(0.0, music21.note.Note("G4", quarterLength=1.125))
+        p.insert(1.0, music21.note.Note("A4", quarterLength=1.0))
+        events = sorted(_collect_events([p]), key=lambda e: e.start)
+        assert [(e.start, e.end) for e in events] == [(0.0, 1.0), (1.0, 2.0)]

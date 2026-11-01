@@ -97,3 +97,10 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Backlog**: FR-M4-A (clef adattiva), FR-M4-B (enarmonia Ab/G#), FR-M4-C (composer non renderizzato), FR-M4-E (re-voicing con legatura, M4.6/M4.7), consolidamento pause.
 - **Pending**: individuare il segmento denso (scripts/find_dense_segment.py), emettere WBS_M4 v0.3 registrando FR-M4-B/C/E, chiudere i gate M4.4/M4.5.
 - **Prossimo passo**: eseguire scripts/find_dense_segment.py e scegliere il segmento per validare lo split 2+3.
+
+## Sessione 2026-11-01 (M4.4 chiuso)
+
+- **Completato**: M4.4 chiuso con gate pytest + fidelity (0/33 misure fuori tolleranza, da 5/33 pre-fix) + visuale Dorico su m0-m7. M4.5 assorbito.
+- **Decisioni**: D-032 (segmentazione per sounding set, supera D-030 lossy e FR-M4-D). Legato intra-parte clippato all'onset successivo della stessa parte (D-022).
+- **Backlog**: FR-M4-F nuovo (nota che cambia rigo tra segmenti: re-attack senza legatura). FR-M4-A/B/C/E invariati.
+- **Prossimo passo**: valutare se M4.6 (omoritmia detection) resta necessario post D-032 - la segmentazione produce gia' chord verticali simultanei upper+lower nei block chord. Candidato primo step: M4.7 (text directions per soli / unisono / cast change).

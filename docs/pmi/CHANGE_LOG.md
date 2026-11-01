@@ -2,11 +2,12 @@
 document: Change Log
 document_id: CL-BBC-001
 project: Big Band Condenser v1
-version: 0.10
+version: 0.11
 status: Active
 last_updated: 2026-11-01
 language: it
 changelog:
+  - v0.11 (2026-11-01): aggiunta D-032 (M4.4 sounding-set segmentation, supera D-030 e FR-M4-D). Terzo gate (fedelta' output vs sorgente) formalizzato.
   - v0.10 (2026-11-01): aggiunte D-030 (collisioni cross-onset, troncamento Opzione A, bugfix M4.2a-e) e D-031 (re-baseline M4.4/M4.5). Corretta collisione di ID con D-029 gia' esistente.
   - v0.9 (2026-10-18): aggiunte D-028 (M4.1-M4.3 chiusi, R31 formalizzato, R32 scoperto e mitigato via sanitizer), D-029 (decisione scope M4.4: segmento denso dedicato per split 2+3 su 5 voci reeds)
   - v0.8 (2026-10-16): aggiunte D-025 (M3 production code Fase 1 shipped - 4 moduli production + pytest baseline 35 test green), D-026 (errata SPIKE_M2_REPORT v0.2 count parti), D-027 (M3 chiuso con tag M3-production)
@@ -59,6 +60,7 @@ changelog:
 | D-029 | 2026-10-18 | M4.4 scope: split 2+3 su 5 voci reeds, da validare su nuovo segmento denso (tutti i 5 reeds attivi simultaneamente, es. shout chorus/tutti) invece di riuso diretto di kronos_kai_kairos_extract.musicxml | extract esistente non garantisce onset complessi/incroci di voce necessari a stressare la logica di split; segmento dedicato isola meglio eventuali bug dallo split stesso | WBS_M4.md (M4.4 scope, pending estrazione) |
 | D-030 | 2026-11-01 | Collisioni cross-onset su stessa voce (nota sostenuta ancora attiva all'ingresso di un altro strumento): troncamento deterministico della nota precedente al nuovo onset (Opzione A). Bugfix M4.2a-e in reeds.py: ripristino durata misure dopo purga, split su barra con legatura, riempimento pause per misura, collapse unisono/accordo, clipping sovrapposizioni | Cambio di cast a meta' battuta (Charter P2) non ancora gestito da logica dedicata; Opzione B (segmentazione completa per cast-change) anticipa scope M4.6/M4.7; il troncamento e' pratica standard di re-voicing nelle condensed score | reeds.py, backlog FR-M4-E (re-voicing con legatura in M4.6/M4.7) |
 | D-031 | 2026-11-01 | Re-baseline M4.4/M4.5: split 2+3 per altezza e chord/unisono sono gia' implementati in reeds.py (anticipati durante il debug di M4.2); restano da chiudere i gate formali (test dedicati e validazione visiva su segmento denso come da D-029) | Senza chord collapse la struttura delle battute non era validabile: sequenziamento WBS errato. Evita di rifare lavoro gia' fatto senza rinunciare ai gate obbligatori | WBS_M4.md (v0.3 da emettere), STATUS.md |
+| D-032 | 2026-11-01 | M4.4 split 2+3 riprogettato: segmentazione per sounding set invece di ranking solo-sugli-attacchi. Ad ogni cambio del set attivo le note sonanti sono riordinate per altezza; le voci che continuano sono legate nota per nota. Supera D-030 (troncamento lossy) e FR-M4-D (durate falsate da onset-merge). Legato intra-parte clippato all'onset successivo della stessa parte (D-022) | Gate fedelta' (scripts/check_fidelity.py): 5/33 misure fuori tolleranza, 7.2% missing / 1.8% extra -> 0/33 misure, 0.1% missing / 0.4% extra. Visual gate Dorico su m0-m7 OK | reeds.py riscritto, TestReedsSoundingSetSegmentation, scripts/check_fidelity.py come 3o gate |
 
 ## Change Request
 

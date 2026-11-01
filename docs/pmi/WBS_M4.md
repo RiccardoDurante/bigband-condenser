@@ -2,13 +2,14 @@
 document: WBS M4 - Reeds Condenser Breakdown
 document_id: WBS-BBC-M4-001
 project: Big Band Condenser v1
-version: 0.2
+version: 0.3
 status: Active (post retrospective 2026-10-16)
-last_updated: 2026-10-18
+last_updated: 2026-11-01
 language: it
 changelog:
   - v0.1 (2026-10-16): prima emissione dopo retrospettiva M4-R1 fallito su visual validation (metadata/measure structure mancanti). WBS granulare con 8 sotto-step M4.1-M4.8, ciascuno validato visualmente in Dorico prima del successivo.
 
+  - v0.3 (2026-11-01): M4.4 e M4.5 chiusi (D-032). Scope M4.4 esteso: segmentazione per sounding set.
   - v0.2 (2026-10-18): M4.2 chiuso dopo fix visual-gate (sanitizer per R32). R31 promosso da candidato a formale e mitigato nel Risk Register.
 ---
 
@@ -147,6 +148,9 @@ confermata. Test pytest: TestReedsCondenserM43Passthrough (2 test).
 - Riconoscibile come "sezione Reeds a 5 voci condensata"
 - Range delle note bass clef appropriato (non troppo basso, non troppo alto)
 
+
+**Esito (2026-11-01)**: scope ESTESO durante implementazione. L'approccio onset-only del WBS v0.2 era incompatibile con la correttezza musicale (vedi D-032): ridisegnato come segmentazione per sounding set. Fidelity gate 0/33 misure fuori tolleranza su kronos extract. Visual gate Dorico su m0-m7 superato. M4.5 (chord notation) assorbita come effetto diretto. **M4.4 CHIUSO** (tag M4.4-sounding-set).
+
 ### M4.5 - Chord notation for simultaneous notes
 
 **Scope**: quando 2+ note hanno lo stesso onset nello stesso pentagramma, aggregare come music21.chord.Chord object (unica entita verticale), non come note separate impilate.
@@ -164,6 +168,9 @@ confermata. Test pytest: TestReedsCondenserM43Passthrough (2 test).
 - Chord verticali ben formati in Dorico (teste di nota allineate)
 - Nessun "note cluster illeggibile"
 - Durate dei chord coerenti con le note originali
+
+
+**Esito (2026-11-01)**: assorbito in M4.4 (D-032). La segmentazione produce naturalmente Chord objects per ogni voce. **M4.5 CHIUSO**.
 
 ### M4.6 - Omoritmia detection
 
