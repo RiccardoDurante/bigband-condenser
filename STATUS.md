@@ -118,3 +118,11 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Decisioni**: posizionamento label sopra violino + sotto basso con split a meta', font 4pt via MusicXML (rendering editor-dependent), marker crossing '[abbr]>' / '[abbr]<' solo per cast >= 2.
 - **Backlog M4**: FR-M4-F (cambio rigo senza legatura), FR-M4-G (rendering font editor-dependent).
 - **Prossimo passo**: M5 (Brass condenser). Convenzioni gia' note: trombe in chiave di violino, tromboni in chiave di basso. Riuso previsto di tutta l'infrastruttura M4 (skeleton, split, cast labels, crossings).
+
+## Sessione 2026-11-01 (serale) - M5 Brass scaffold + requirement layout
+
+- **Completato**: Refactor _common.py (D-036), BrassCondenser scaffold (D-037). 79 test verdi. Fidelity brass PASS. Visual gate Dorico PASS su Kronos extract. Commit 7270d9e, tag M5-brass-scaffold.
+- **Decisioni**: family-based routing per brass (trumpets+horns treble, trombones bass); flugelhorn resta tra le trombe anche se scende grave.
+- **Nuovo requirement (D-038)**: PDF finale in landscape, max 8 battute per pagina, max 3 sistemi (doppi righi) per pagina. Implementazione separata.
+- **Backlog**: FR-M5-A (cross-staff pitch inversion marker); aggiornare Charter con D-038.
+- **Prossimo passo**: scelta tra M6 (Rhythm: piano+basso+chitarra con chord symbols e comping/shout), M7 (Drum preserver), oppure anticipare D-038 (page layout) per vedere subito risultati stampabili.

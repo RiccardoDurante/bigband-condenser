@@ -2,11 +2,12 @@
 document: Change Log
 document_id: CL-BBC-001
 project: Big Band Condenser v1
-version: 0.12
+version: 0.13
 status: Active
 last_updated: 2026-11-01
 language: it
 changelog:
+  - v0.13 (2026-11-01): aggiunte D-036 (refactor _common.py), D-037 (M5 BrassCondenser scaffold) e D-038 (requirement page layout landscape 8bars/page).
   - v0.12 (2026-11-01): aggiunte D-033 (M4.6 assorbita in M4.4) e D-034 (M4.7 implementato). FR-M4-F (nota cambia-rigo senza legatura) e FR-M4-G (rendering font/posizione editor-dependent) a backlog.
   - v0.12 (2026-11-01): aggiunte D-033 (M4.6 assorbita in M4.4), D-034 (M4.7 cast labels) e D-035 (M4.8 voice crossing markers). M4 CHIUSO. FR-M4-F (cambio rigo senza legatura), FR-M4-G (rendering editor-dependent) a backlog.
   - v0.11 (2026-11-01): aggiunta D-032 (M4.4 sounding-set segmentation, supera D-030 e FR-M4-D). Terzo gate (fedelta' output vs sorgente) formalizzato.
@@ -66,6 +67,9 @@ changelog:
 | D-033 | 2026-11-01 | M4.6 (omoritmia detection) chiuso come ASSORBITO in M4.4. La segmentazione per sounding set produce naturalmente Chord simultanei upper+lower nei block chord | Verifica dump_measure m5/m7: upper e lower con stessa offset e durata | WBS_M4 esito M4.6 |
 | D-034 | 2026-11-01 | M4.7 (text directions per cast change) implementato: label sopra violino + sotto basso, split 2+3, abbreviazioni S.Sx/A.Sx/T.Sx 1/T.Sx 2/Bar.Sx, 'Tutti' per 5 strumenti non-unisono, font-size=4pt, soglia 1 misura (bypass unisono) | Rendering font/posizione editor-dependent (Dorico applica proprio Technique Text style); Music Expert accetta e sistema una tantum in Engraving Options. FR-M4-G a backlog | reeds.py cast module, TestReedsCastChange (10 test) |
 | D-035 | 2026-11-01 | M4.8 (voice crossing markers) implementato: marker breve '[abbr]>' per strumento in rigo sopra il default, '[abbr]<' per sotto. Default rank 1-5 (Soprano, Alto, T1, T2, Bari). Inserito solo per cast >= 2 strumenti | Edge case raro ('in orchestra si tende a mantenere i ruoli'); su extract Kronos probabilmente zero crossing attivi | reeds.py: _detect_crossings, _format_crossing_marker, _insert_text_direction (helper comune M4.7+M4.8), TestReedsVoiceCrossing (5 test) |
+| D-036 | 2026-11-01 | Refactor: estratta infrastruttura generica in condenser/_common.py (380 righe); reeds.py ridotto a costanti section-specific + class (90 righe) | Backward compat preservato via import re-export; 74 test reeds continuano a passare. Preparazione per M6/M7 | condenser/_common.py (nuovo), condenser/reeds.py riscritto |
+| D-037 | 2026-11-01 | M5 BrassCondenser scaffold IMPLEMENTATO: family-based routing (Trumpets 1-4 + Horns 1-2 -> treble; Trombone + Bass Trombone -> bass). Pitch ordering dentro famiglia, voice counts dinamici (99 max), no crossing marker (family rigido) | Fidelity gate PASS (0/33 misure fuori tolleranza, 0.1% missing/extra). Visual gate Dorico OK. Scaffold completato in <30 min grazie al refactor D-036 | brass.py, test_condenser_brass.py (5 test), preview_brass.py, check_fidelity_brass.py, tag M5-brass-scaffold |
+| D-038 | 2026-11-01 | REQUIREMENT futuro (page layout PDF): formato landscape, max 8 battute per pagina, max 3 sistemi (doppi righi) per pagina | Scope separato dalle condensation sections (ambito page/print layout). Implementazione pianificata come step dedicato, verosimilmente in M8 (CLI + documentazione finale) o milestone nuova M6b | TBD: aggiornare Charter |
 | D-033 | 2026-11-01 | M4.6 (omoritmia detection) chiuso come ASSORBITO in M4.4. La segmentazione per sounding set produce naturalmente Chord simultanei upper+lower quando il sorgente ha onset coincidenti - nessun codice dedicato necessario | Verifica su dump_measure m5 e m7 (block chord): upper e lower hanno Chord con stessa offset e stessa durata | WBS_M4 esito M4.6 |
 | D-034 | 2026-11-01 | M4.7 (text directions per cast change) implementato: label sopra rigo violino + sotto rigo basso, split 2+3, abbreviazioni S.Sx/A.Sx/T.Sx 1/T.Sx 2/Bar.Sx, 'Tutti' per 5 strumenti non-unisono, font-size=4pt, soglia 1 misura (bypass per unisono) | Rendering effettivo di font e posizione dipende dall'editor target (Dorico ignora font-size e default-y da MusicXML, applica Technique Text paragraph style). Music Expert accetta e sistema una tantum in Engraving Options. FR-M4-G a backlog | reeds.py cast module (10 funzioni), TestReedsCastChange (10 test) |
 
