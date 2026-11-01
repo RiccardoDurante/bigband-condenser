@@ -8,3 +8,4 @@ from bigband_condenser.condenser.base import SectionCondenser
 from bigband_condenser.condenser.reeds import ReedsCondenser
 
 __all__ = ["SectionCondenser", "ReedsCondenser"]
+from bigband_condenser.condenser.brass import BrassCondenser  # noqa: F401
