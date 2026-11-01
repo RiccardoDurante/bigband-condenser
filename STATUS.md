@@ -128,3 +128,11 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Prossimo passo**: scelta tra M6 (Rhythm: piano+basso+chitarra con chord symbols e comping/shout), M7 (Drum preserver), oppure anticipare D-038 (page layout) per vedere subito risultati stampabili.
 
 - **Fase B pianificata (D-039)**: dopo release v1.0.0, primo deliverable sara' una web app semplice (Gradio + HuggingFace Spaces) per upload MusicXML -> download PDF landscape condensed, senza GUI Dorico/Finale. Scope ridotto, zero auth. PDF-in rimane Fase C.
+
+## Sessione 2026-11-01 (tardo serale) - M7 Drums parziale
+
+- **Completato (parziale)**: DrumsCondenser preserver + Z translator Opzione 1 (euristica semplificata). Fidelity PASS (0 note perse). 91/91 test verdi.
+- **NON passato**: visual gate in Dorico. Z Opzione 1 non remappa posizioni basse (D3/E3/F3 restano graficamente sotto il rigo come kick drum anche quando il compositore intendeva cymbals/snare). Decisione Music Expert di accettare l'imperfezione e procedere.
+- **Decisioni**: D-040 (M7 + Z Opzione 1 come v1 parziale).
+- **Backlog (FR-M7-D, PRIORITARIO per ripresa)**: implementare mappatura puntuale composer -> Weinberg basata su tabella Music Expert. Il compositore dovra' fornire tabella display -> strumento target per i 12-14 display usati (D3, E3, F3, G3, A3, B1, D2, B2, F5, G5, A5, B5 con casi speciali size='full'). Riferimento: Weinberg / PAS Guide to Standardized Drumset Notation.
+- **Prossimo passo (next session)**: ripresa M7 con tabella puntuale + eventualmente M6 Rhythm (il piu' complesso rimasto). Monte ore consumato stima ~22h totali (su 60 budget), 38h residue per M6 + CLI + validator + docs + release.

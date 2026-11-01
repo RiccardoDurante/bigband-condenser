@@ -2,11 +2,12 @@
 document: Change Log
 document_id: CL-BBC-001
 project: Big Band Condenser v1
-version: 0.14
+version: 0.15
 status: Active
 last_updated: 2026-11-01
 language: it
 changelog:
+  - v0.15 (2026-11-01): aggiunta D-040 (M7 drums preserver + Z Opzione 1 euristica, PARZIALE: visual gate posizioni basse non passato, FR-M7-D in backlog per mappatura precisa post-v1).
   - v0.14 (2026-11-01): aggiunta D-039 (web app prototipo come primo deliverable Fase B, stack Gradio + HuggingFace Spaces).
   - v0.13 (2026-11-01): aggiunte D-036 (refactor _common.py), D-037 (M5 BrassCondenser scaffold) e D-038 (requirement page layout landscape 8bars/page).
   - v0.12 (2026-11-01): aggiunte D-033 (M4.6 assorbita in M4.4) e D-034 (M4.7 implementato). FR-M4-F (nota cambia-rigo senza legatura) e FR-M4-G (rendering font/posizione editor-dependent) a backlog.
@@ -72,6 +73,7 @@ changelog:
 | D-037 | 2026-11-01 | M5 BrassCondenser scaffold IMPLEMENTATO: family-based routing (Trumpets 1-4 + Horns 1-2 -> treble; Trombone + Bass Trombone -> bass). Pitch ordering dentro famiglia, voice counts dinamici (99 max), no crossing marker (family rigido) | Fidelity gate PASS (0/33 misure fuori tolleranza, 0.1% missing/extra). Visual gate Dorico OK. Scaffold completato in <30 min grazie al refactor D-036 | brass.py, test_condenser_brass.py (5 test), preview_brass.py, check_fidelity_brass.py, tag M5-brass-scaffold |
 | D-038 | 2026-11-01 | REQUIREMENT futuro (page layout PDF): formato landscape, max 8 battute per pagina, max 3 sistemi (doppi righi) per pagina | Scope separato dalle condensation sections (ambito page/print layout). Implementazione pianificata come step dedicato, verosimilmente in M8 (CLI + documentazione finale) o milestone nuova M6b | TBD: aggiornare Charter |
 | D-039 | 2026-11-01 | Web app semplice (upload MusicXML, download PDF landscape condensed score) confermata come PRIMO DELIVERABLE DI FASE B (post v1.0.0, gennaio-febbraio 2027). Stack previsto: Gradio su HuggingFace Spaces (deploy gratuito, LilyPond disponibile via packages.txt). Scope ridotto: solo upload+download, no auth, no cronologia, no multi-user. PDF-in resta fuori scope (OMR = Fase C) | Scope v1 Charter preservato (web interface era gia' Fase B in roadmap). Monte ore v1 protetto: M6 Rhythm resta priorita'. Prototipo web diventa demo per release v1.1 pochi mesi dopo v1.0 | TBD Fase B |
+| D-040 | 2026-11-01 | M7 DrumsCondenser (preserver) + Z translator Opzione 1 (euristica semplificata, NON mappatura puntuale). Z: display ottava>=5 -> notehead=x stem=up (cymbal zone); size='full' -> notehead=slash stem=up (ensemble cue, override octave); altre -> notehead=normal preservato. Non remappa posizioni (preserva display come scritto nel sorgente) | PARZIALE: visual gate NON passato per le posizioni basse (D3/E3/F3 restano visualizzate basse con tagli addizionali, Dorico le mostra come kick quando il compositore voleva cymbals sostenuti in m3-m6, snare in m110-m112). Fidelity gate PASS (43 note sorgente = 43 output, zero perdite). 91/91 test verdi. Decisione Music Expert: accettare Opzione 1 come v1, mappatura puntuale rinviata a backlog FR-M7-D | drums.py, drum_normalizer.py, test_condenser_drums.py (4 test), test_drum_normalizer.py (8 test), preview_drums.py, check_fidelity_drums.py, tag M7-drums-partial-z1 |
 | D-033 | 2026-11-01 | M4.6 (omoritmia detection) chiuso come ASSORBITO in M4.4. La segmentazione per sounding set produce naturalmente Chord simultanei upper+lower quando il sorgente ha onset coincidenti - nessun codice dedicato necessario | Verifica su dump_measure m5 e m7 (block chord): upper e lower hanno Chord con stessa offset e stessa durata | WBS_M4 esito M4.6 |
 | D-034 | 2026-11-01 | M4.7 (text directions per cast change) implementato: label sopra rigo violino + sotto rigo basso, split 2+3, abbreviazioni S.Sx/A.Sx/T.Sx 1/T.Sx 2/Bar.Sx, 'Tutti' per 5 strumenti non-unisono, font-size=4pt, soglia 1 misura (bypass per unisono) | Rendering effettivo di font e posizione dipende dall'editor target (Dorico ignora font-size e default-y da MusicXML, applica Technique Text paragraph style). Music Expert accetta e sistema una tantum in Engraving Options. FR-M4-G a backlog | reeds.py cast module (10 funzioni), TestReedsCastChange (10 test) |
 

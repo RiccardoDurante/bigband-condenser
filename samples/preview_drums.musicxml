@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE score-partwise  PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="4.0">
+  <work>
+    <work-title>Drums</work-title>
+  </work>
+  <movement-title>Kronos kai Kairos (extract: bars 1-32) - Drums Preserved (M7)</movement-title>
+  <identification>
+    <creator type="composer">Composed. By R. Durante</creator>
+    <encoding>
+      <encoding-date>2026-11-01</encoding-date>
+      <software>music21 v.10.5.0</software>
+      <supports element="beam" type="yes" />
+      <supports element="stem" type="yes" />
+      <supports element="accidental" type="yes" />
+    </encoding>
+  </identification>
+  <defaults>
+    <scaling>
+      <millimeters>7</millimeters>
+      <tenths>40</tenths>
+    </scaling>
+  </defaults>
+  <part-list>
+    <score-part id="P9129cb0f7c3328893fc35697b251c801">
+      <part-name>Drums</part-name>
+      <part-abbreviation>D. S. 1</part-abbreviation>
+      <score-instrument id="I195bf1f940f20086e5fcd0c4624d327c">
+        <instrument-name>Percussion</instrument-name>
+        <instrument-abbreviation>Perc</instrument-abbreviation>
+      </score-instrument>
+    </score-part>
+  </part-list>
+  <!--=========================== Part 1 ===========================-->
+  <part id="P9129cb0f7c3328893fc35697b251c801">
+    <!--========================= Measure 0 ==========================-->
+    <measure implicit="yes" number="0" width="263">
+      <print new-page="yes">
+        <measure-numbering>measure</measure-numbering>
+      </print>
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>0</fifths>
+          <mode>major</mode>
+        </key>
+        <time>
+          <beats>4</beats>
+          <beat-type>4</beat-type>
+        </time>
+        <clef>
+          <sign>percussion</sign>
+        </clef>
+      </attributes>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+    </measure>
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1" width="345">
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2" width="345">
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 3 ==========================-->
+    <measure implicit="no" number="3" width="345">
+      <direction placement="above">
+        <direction-type>
+          <words default-y="59" font-family="Finale Copyist Text" relative-x="5">Conducted</words>
+        </direction-type>
+      </direction>
+      <note default-x="13">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>20160</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <stem default-y="-25">up</stem>
+        <notehead parentheses="no">slash</notehead>
+        <notations>
+          <ornaments>
+            <wavy-line number="1" type="start" />
+          </ornaments>
+          <ornaments>
+            <trill-mark default-y="38" placement="above" />
+          </ornaments>
+        </notations>
+      </note>
+      <note default-x="178">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>20160</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <stem default-y="-20">down</stem>
+        <notations>
+          <fermata type="upright" />
+          <ornaments>
+            <wavy-line number="1" type="stop" />
+          </ornaments>
+        </notations>
+      </note>
+      <backup>
+        <duration>40320</duration>
+      </backup>
+      <note print-object="no" print-spacing="yes">
+        <rest measure="yes" />
+        <duration>40320</duration>
+        <voice>3</voice>
+      </note>
+    </measure>
+    <!--========================= Measure 4 ==========================-->
+    <measure implicit="no" number="4" width="345">
+      <note default-x="13">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>40320</duration>
+        <type>whole</type>
+        <notations>
+          <fermata type="upright" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 5 ==========================-->
+    <measure implicit="no" number="5" width="345">
+      <note default-x="14">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>40320</duration>
+        <type>whole</type>
+        <notations>
+          <fermata type="upright" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 6 ==========================-->
+    <measure implicit="no" number="6" width="345">
+      <note default-x="14">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>40320</duration>
+        <type>whole</type>
+        <notations>
+          <fermata type="upright" />
+        </notations>
+      </note>
+    </measure>
+    <!--========================= Measure 7 ==========================-->
+    <measure implicit="no" number="7" width="351">
+      <note>
+        <rest measure="yes" />
+        <duration>40320</duration>
+      </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+      </barline>
+    </measure>
+    <!--========================= Measure 8 ==========================-->
+    <measure implicit="no" number="8" width="381">
+      <attributes>
+        <time>
+          <beats>5</beats>
+          <beat-type>4</beat-type>
+        </time>
+      </attributes>
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 9 ==========================-->
+    <measure implicit="no" number="9" width="345">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 10 =========================-->
+    <measure implicit="no" number="10" width="345">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 11 =========================-->
+    <measure implicit="no" number="11" width="348">
+      <note default-x="14">
+        <rest />
+        <duration>10080</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+      </note>
+      <note default-x="80">
+        <rest />
+        <duration>5040</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+      </note>
+      <note default-x="112">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-25">up</stem>
+        <notehead parentheses="no">slash</notehead>
+      </note>
+      <note default-x="213">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>20160</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <stem default-y="-25">up</stem>
+        <notehead parentheses="no">slash</notehead>
+      </note>
+      <backup>
+        <duration>50400</duration>
+      </backup>
+      <note print-object="no" print-spacing="yes">
+        <rest measure="yes" />
+        <duration>50400</duration>
+        <voice>3</voice>
+      </note>
+    </measure>
+    <!--========================= Measure 12 =========================-->
+    <measure implicit="no" number="12" width="590">
+      <print new-page="yes" />
+      <note default-x="102">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-25">down</stem>
+        <notations>
+          <ornaments>
+            <wavy-line number="2" type="stop" />
+          </ornaments>
+          <articulations>
+            <accent default-x="-1" default-y="19" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="248">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-34.5">down</stem>
+      </note>
+      <note default-x="295">
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note default-x="344">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <stem default-y="-34.5">down</stem>
+        <notations>
+          <tied type="start" />
+          <articulations>
+            <accent default-x="0" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="393">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <stem default-y="-34.5">down</stem>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="491">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-34.5">down</stem>
+      </note>
+    </measure>
+    <!--========================= Measure 13 =========================-->
+    <measure implicit="no" number="13" width="501">
+      <note default-x="14">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-34.5">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="159">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-34.5">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="0" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="208">
+        <rest />
+        <duration>10080</duration>
+        <type>quarter</type>
+      </note>
+      <note default-x="305">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-34.5">down</stem>
+      </note>
+      <note default-x="402">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>2520</duration>
+        <type>16th</type>
+        <stem default-y="-34.5">down</stem>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        <notations>
+          <articulations>
+            <accent default-x="0" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="426">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>2520</duration>
+        <type>16th</type>
+        <stem default-y="-34.5">down</stem>
+        <beam number="1">continue</beam>
+        <beam number="2">end</beam>
+      </note>
+      <note default-x="451">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-34.5">down</stem>
+        <beam number="1">end</beam>
+      </note>
+    </measure>
+    <!--========================= Measure 14 =========================-->
+    <measure implicit="no" number="14" width="501">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 15 =========================-->
+    <measure implicit="no" number="15" width="501">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 16 =========================-->
+    <measure implicit="no" number="16" width="501">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 17 =========================-->
+    <measure implicit="no" number="17" width="501">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 18 =========================-->
+    <measure implicit="no" number="18" width="501">
+      <direction placement="below">
+        <direction-type>
+          <wedge number="1" spread="0" type="crescendo" />
+        </direction-type>
+      </direction>
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 19 =========================-->
+    <measure implicit="no" number="19" width="507">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <wedge number="1" spread="15" type="stop" />
+        </direction-type>
+      </direction>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+      </barline>
+    </measure>
+    <!--========================= Measure 20 =========================-->
+    <measure implicit="no" number="20" width="590">
+      <print new-page="yes" />
+      <direction placement="below">
+        <direction-type>
+          <wedge number="2" spread="15" type="diminuendo" />
+        </direction-type>
+      </direction>
+      <note default-x="102">
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-20">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="24" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="248">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+      </note>
+      <note default-x="296">
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note default-x="345">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+        <notations>
+          <tied type="start" />
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="393">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <stem default-y="-35">down</stem>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="491">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-35">down</stem>
+      </note>
+      <direction placement="below">
+        <direction-type>
+          <wedge number="2" spread="0" type="stop" />
+        </direction-type>
+      </direction>
+    </measure>
+    <!--========================= Measure 21 =========================-->
+    <measure implicit="no" number="21" width="502">
+      <note default-x="13">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-35">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="0" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="159">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="208">
+        <rest />
+        <duration>10080</duration>
+        <type>quarter</type>
+      </note>
+      <note default-x="305">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-35">down</stem>
+      </note>
+      <note default-x="402">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>2520</duration>
+        <type>16th</type>
+        <stem default-y="-35">down</stem>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="427">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>2520</duration>
+        <type>16th</type>
+        <stem default-y="-35">down</stem>
+        <beam number="1">continue</beam>
+        <beam number="2">end</beam>
+      </note>
+      <note default-x="451">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+        <beam number="1">end</beam>
+      </note>
+    </measure>
+    <!--========================= Measure 22 =========================-->
+    <measure implicit="no" number="22" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 23 =========================-->
+    <measure implicit="no" number="23" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 24 =========================-->
+    <measure implicit="no" number="24" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 25 =========================-->
+    <measure implicit="no" number="25" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 26 =========================-->
+    <measure implicit="no" number="26" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 27 =========================-->
+    <measure implicit="no" number="27" width="509">
+      <note default-x="13">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-65">up</stem>
+        <notehead parentheses="no">x</notehead>
+      </note>
+      <note default-x="160">
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <stem default-y="-65">up</stem>
+        <notehead parentheses="no">x</notehead>
+        <notations>
+          <tied type="start" />
+        </notations>
+      </note>
+      <note default-x="208">
+        <unpitched>
+          <display-step>G</display-step>
+          <display-octave>5</display-octave>
+        </unpitched>
+        <duration>30240</duration>
+        <tie type="stop" />
+        <type>half</type>
+        <dot />
+        <stem default-y="-65">up</stem>
+        <notehead parentheses="no">x</notehead>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+      </barline>
+    </measure>
+    <!--========================= Measure 28 =========================-->
+    <measure implicit="no" number="28" width="590">
+      <print new-page="yes" />
+      <note default-x="102">
+        <unpitched>
+          <display-step>D</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-24.5">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="19" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="248">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+      </note>
+      <note default-x="296">
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note default-x="345">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <tie type="start" />
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+        <notations>
+          <tied type="start" />
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="393">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <tie type="stop" />
+        <type>quarter</type>
+        <stem default-y="-35">down</stem>
+        <notations>
+          <tied type="stop" />
+        </notations>
+      </note>
+      <note default-x="491">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-35">down</stem>
+      </note>
+    </measure>
+    <!--========================= Measure 29 =========================-->
+    <measure implicit="no" number="29" width="502">
+      <note default-x="13">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>15120</duration>
+        <type>quarter</type>
+        <dot />
+        <stem default-y="-35">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="0" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="159">
+        <unpitched>
+          <display-step>E</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="208">
+        <rest />
+        <duration>10080</duration>
+        <type>quarter</type>
+      </note>
+      <note default-x="305">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>10080</duration>
+        <type>quarter</type>
+        <stem default-y="-35">down</stem>
+      </note>
+      <note default-x="402">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>2520</duration>
+        <type>16th</type>
+        <stem default-y="-35">down</stem>
+        <beam number="1">begin</beam>
+        <beam number="2">begin</beam>
+        <notations>
+          <articulations>
+            <accent default-x="-1" default-y="9" placement="above" />
+          </articulations>
+        </notations>
+      </note>
+      <note default-x="427">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>2520</duration>
+        <type>16th</type>
+        <stem default-y="-35">down</stem>
+        <beam number="1">continue</beam>
+        <beam number="2">end</beam>
+      </note>
+      <note default-x="451">
+        <unpitched>
+          <display-step>F</display-step>
+          <display-octave>3</display-octave>
+        </unpitched>
+        <duration>5040</duration>
+        <type>eighth</type>
+        <stem default-y="-35">down</stem>
+        <beam number="1">end</beam>
+      </note>
+    </measure>
+    <!--========================= Measure 30 =========================-->
+    <measure implicit="no" number="30" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 31 =========================-->
+    <measure implicit="no" number="31" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+    <!--========================= Measure 32 =========================-->
+    <measure implicit="no" number="32" width="502">
+      <note>
+        <rest measure="yes" />
+        <duration>50400</duration>
+      </note>
+    </measure>
+  </part>
+</score-partwise>
