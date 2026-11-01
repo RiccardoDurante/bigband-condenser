@@ -126,3 +126,5 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Nuovo requirement (D-038)**: PDF finale in landscape, max 8 battute per pagina, max 3 sistemi (doppi righi) per pagina. Implementazione separata.
 - **Backlog**: FR-M5-A (cross-staff pitch inversion marker); aggiornare Charter con D-038.
 - **Prossimo passo**: scelta tra M6 (Rhythm: piano+basso+chitarra con chord symbols e comping/shout), M7 (Drum preserver), oppure anticipare D-038 (page layout) per vedere subito risultati stampabili.
+
+- **Fase B pianificata (D-039)**: dopo release v1.0.0, primo deliverable sara' una web app semplice (Gradio + HuggingFace Spaces) per upload MusicXML -> download PDF landscape condensed, senza GUI Dorico/Finale. Scope ridotto, zero auth. PDF-in rimane Fase C.
