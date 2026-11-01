@@ -88,11 +88,12 @@ Il gate numerico "durata totale" da solo NON basta a validare la notazione. Da M
 
 Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 
-## Sessione 2026-11-01 (aggiornamento M4.2)
+## Sessione 2026-11-01 (ripresa M4)
 
-- **Completato**: M4.2 chiuso. Gate visivo Dorico superato: battute corrette, pickup ok, nessun overflow. Tag `M4.2-measures`, 52/52 test, 0 overlap / 0 mismatch.
-- **Decisioni**: troncamento deterministico delle note sostenute alla comparsa di un nuovo onset sulla stessa voce (Opzione A, Music Expert).
-- **Rischi emersi**: R31 (sottostima scope M4) confermato nei fatti. M4.2 ha assorbito parte di M4.4 (split 2+3) e M4.5 (chord/unisono): sequenziamento WBS errato.
+- **Completato**: Music Expert conferma visivamente corrette le battute del preview Reeds. Sotto-step M4.0-M4.3 chiusi (vedi WBS_M4 v0.2).
+- **Decisioni**: D-030 (collisioni cross-onset: troncamento deterministico, Opzione A), D-031 (re-baseline M4.4/M4.5). Numerazione corretta: la prima versione di queste entry collideva con D-029 gia' esistente.
+- **Stato codice**: reeds.py contiene gia' split 2+3, collapse unisono/accordo (Chord) e clipping delle sovrapposizioni, anticipati durante il debug di M4.2. Mancano i gate formali di M4.4/M4.5: test dedicati e validazione visiva su segmento denso (D-029).
+- **Rischi**: nessun rischio nuovo. R31/R32 gia' formali e mitigati nel Risk Register.
 - **Backlog**: FR-M4-A (clef adattiva), FR-M4-B (enarmonia Ab/G#), FR-M4-C (composer non renderizzato), FR-M4-E (re-voicing con legatura, M4.6/M4.7), consolidamento pause.
-- **Pending**: scegliere segmento di test denso (5 reeds insieme) per M4.4+; ri-baseline WBS_M4.md.
-- **Prossimo passo**: ridefinire lo scope di M4.3 alla luce di cio' che e' gia' implementato.
+- **Pending**: individuare il segmento denso (scripts/find_dense_segment.py), emettere WBS_M4 v0.3 registrando FR-M4-B/C/E, chiudere i gate M4.4/M4.5.
+- **Prossimo passo**: eseguire scripts/find_dense_segment.py e scegliere il segmento per validare lo split 2+3.

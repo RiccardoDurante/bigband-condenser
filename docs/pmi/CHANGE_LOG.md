@@ -2,11 +2,12 @@
 document: Change Log
 document_id: CL-BBC-001
 project: Big Band Condenser v1
-version: 0.9
+version: 0.10
 status: Active
-last_updated: 2026-10-18
+last_updated: 2026-11-01
 language: it
 changelog:
+  - v0.10 (2026-11-01): aggiunte D-030 (collisioni cross-onset, troncamento Opzione A, bugfix M4.2a-e) e D-031 (re-baseline M4.4/M4.5). Corretta collisione di ID con D-029 gia' esistente.
   - v0.9 (2026-10-18): aggiunte D-028 (M4.1-M4.3 chiusi, R31 formalizzato, R32 scoperto e mitigato via sanitizer), D-029 (decisione scope M4.4: segmento denso dedicato per split 2+3 su 5 voci reeds)
   - v0.8 (2026-10-16): aggiunte D-025 (M3 production code Fase 1 shipped - 4 moduli production + pytest baseline 35 test green), D-026 (errata SPIKE_M2_REPORT v0.2 count parti), D-027 (M3 chiuso con tag M3-production)
   - v0.7 (2026-10-15): D-020 Kronos committato, D-021 Risk Register v0.4, D-022 principio notazione vs playback, D-023 Spike M2 implementato, D-024 Spike M2 chiuso PASS
@@ -56,17 +57,9 @@ changelog:
 
 | D-028 | 2026-10-18 | M4.1 (metadata), M4.2 (measure structure) e M4.3 (single-voice passthrough) completati. Durante gate visivo M4.2 scoperto bug critico: 32/66 misure visivamente corte nonostante durata XML totale corretta (causa music21 v10.5 writer, print-object="no" spurio su Rest in Measure). Fix: musicxml_sanitizer.py post-write. R31 formalizzato (dual-gate numerico totale+visibile obbligatorio prima del gate Dorico), R32 nuovo (music21 writer quirk, mitigato). Risk Register v0.6 | Gate numerico da solo non basta a validare notazione; lezione di metodo per tutti i sotto-step M4 restanti | Risk Register v0.6, WBS_M4.md, tag M4.2-measures/M4.2-visual-fix/M4.3-passthrough |
 | D-029 | 2026-10-18 | M4.4 scope: split 2+3 su 5 voci reeds, da validare su nuovo segmento denso (tutti i 5 reeds attivi simultaneamente, es. shout chorus/tutti) invece di riuso diretto di kronos_kai_kairos_extract.musicxml | extract esistente non garantisce onset complessi/incroci di voce necessari a stressare la logica di split; segmento dedicato isola meglio eventuali bug dallo split stesso | WBS_M4.md (M4.4 scope, pending estrazione) |
+| D-030 | 2026-11-01 | Collisioni cross-onset su stessa voce (nota sostenuta ancora attiva all'ingresso di un altro strumento): troncamento deterministico della nota precedente al nuovo onset (Opzione A). Bugfix M4.2a-e in reeds.py: ripristino durata misure dopo purga, split su barra con legatura, riempimento pause per misura, collapse unisono/accordo, clipping sovrapposizioni | Cambio di cast a meta' battuta (Charter P2) non ancora gestito da logica dedicata; Opzione B (segmentazione completa per cast-change) anticipa scope M4.6/M4.7; il troncamento e' pratica standard di re-voicing nelle condensed score | reeds.py, backlog FR-M4-E (re-voicing con legatura in M4.6/M4.7) |
+| D-031 | 2026-11-01 | Re-baseline M4.4/M4.5: split 2+3 per altezza e chord/unisono sono gia' implementati in reeds.py (anticipati durante il debug di M4.2); restano da chiudere i gate formali (test dedicati e validazione visiva su segmento denso come da D-029) | Senza chord collapse la struttura delle battute non era validabile: sequenziamento WBS errato. Evita di rifare lavoro gia' fatto senza rinunciare ai gate obbligatori | WBS_M4.md (v0.3 da emettere), STATUS.md |
 
 ## Change Request
 
 _Nessuna al momento._
-
-## 2026-11-01 - D-029: Opzione A per collisioni cross-onset (M4.2e)
-- **Contesto**: nota sostenuta ancora attiva quando un altro strumento entra sulla stessa voce (cambio di cast a meta' battuta, Charter P2).
-- **Decisione**: troncare la nota precedente al nuovo onset (deterministico, pratica standard di re-voicing nelle condensed score).
-- **Alternativa scartata**: segmentazione completa per cast-change (Opzione B), anticipa scope M4.6/M4.7.
-- **Impatto**: FR-M4-E a backlog per re-voicing con legatura.
-
-## 2026-11-01 - D-030: Re-baseline WBS M4
-- **Motivo**: chord/unisono (previsto M4.5) e split 2+3 (previsto M4.4) sono stati implementati in M4.2 perche' senza di essi la struttura delle battute non era validabile.
-- **Azione**: aggiornare WBS_M4.md con gli step realmente rimanenti.
