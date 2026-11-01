@@ -22,17 +22,17 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P0a4e7ed1befdcd6f0047cb9ed5d7696d">
+    <score-part id="P099df796ad43f1a83216a8e843c44dc6">
       <part-name>Reeds (upper)</part-name>
       <part-abbreviation>S. Sx.</part-abbreviation>
     </score-part>
-    <score-part id="Pca5a5faf4472fca4eb894e80391a6ec8">
+    <score-part id="P6bfc9cc37d893e580a5c14ac10900523">
       <part-name>Reeds (lower)</part-name>
       <part-abbreviation>S. Sx.</part-abbreviation>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="P0a4e7ed1befdcd6f0047cb9ed5d7696d">
+  <part id="P099df796ad43f1a83216a8e843c44dc6">
     <!--========================= Measure 0 ==========================-->
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -85,6 +85,11 @@
         <type>quarter</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">Tutti</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -234,6 +239,11 @@
     </measure>
     <!--========================= Measure 3 ==========================-->
     <measure implicit="no" number="3" width="345">
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">Tutti</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -508,6 +518,11 @@
     </measure>
     <!--========================= Measure 14 =========================-->
     <measure implicit="no" number="14" width="501">
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -563,6 +578,12 @@
     </measure>
     <!--========================= Measure 15 =========================-->
     <measure implicit="no" number="15" width="501">
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx
+A.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -711,6 +732,12 @@
         <type>quarter</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx
+A.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -810,6 +837,12 @@
         <type>quarter</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx
+A.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -948,6 +981,11 @@
     </measure>
     <!--========================= Measure 21 =========================-->
     <measure implicit="no" number="21" width="502">
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">Bar.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>A</step>
@@ -1003,6 +1041,11 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">Bar.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1036,6 +1079,11 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">Bar.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -1157,6 +1205,11 @@
         <duration>5040</duration>
         <type>eighth</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">Bar.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1219,6 +1272,12 @@
         <type>half</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx
+A.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -1324,6 +1383,12 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx
+A.Sx</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>
@@ -1362,6 +1427,12 @@
         <type>quarter</type>
         <dot />
       </note>
+      <direction placement="above">
+        <direction-type>
+          <words font-size="4">S.Sx
+T.Sx 1</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>F</step>
@@ -1482,7 +1553,7 @@
     </measure>
   </part>
   <!--=========================== Part 2 ===========================-->
-  <part id="Pca5a5faf4472fca4eb894e80391a6ec8">
+  <part id="P6bfc9cc37d893e580a5c14ac10900523">
     <!--========================= Measure 0 ==========================-->
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -2372,6 +2443,12 @@
           <tied type="start" />
         </notations>
       </note>
+      <direction placement="below">
+        <direction-type>
+          <words font-size="4">T.Sx 1
+T.Sx 2</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>G</step>
@@ -2716,6 +2793,12 @@
         <type>half</type>
         <dot />
       </note>
+      <direction placement="below">
+        <direction-type>
+          <words font-size="4">T.Sx 1
+T.Sx 2</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>C</step>
@@ -2821,6 +2904,12 @@
         <duration>10080</duration>
         <type>quarter</type>
       </note>
+      <direction placement="below">
+        <direction-type>
+          <words font-size="4">T.Sx 1
+T.Sx 2</words>
+        </direction-type>
+      </direction>
       <note>
         <pitch>
           <step>E</step>

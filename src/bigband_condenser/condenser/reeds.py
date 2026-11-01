@@ -389,6 +389,15 @@ class ReedsCondenser(SectionCondenser):
         for onset, duration, slots in lower_elems:
             _place_event(lower, lower_bounds, onset, duration, slots)
 
+        # Step 4.5 (M4.7): cast-change text directions on both staves
+        if use_skeleton:
+            parts_order = [p.partName or "<unnamed>" for p in parts]
+            _annotate_cast_changes(
+                upper, upper_bounds, lower, lower_bounds,
+                events, parts_order,
+                self.upper_voice_count, self.lower_voice_count,
+            )
+
         # Step 5: finalize notation
         if use_skeleton:
             for part_obj, bounds in ((upper, upper_bounds), (lower, lower_bounds)):
@@ -413,3 +422,119 @@ class ReedsCondenser(SectionCondenser):
                     pass
 
         return (upper, lower)
+# ========== M4.7: cast-change text directions ==========
+
+_ABBR_REEDS = {
+    "Soprano Sax": "S.Sx",
+    "Alto Sax": "A.Sx",
+    "Tenor Sax 1": "T.Sx 1",
+    "Tenor Sax 2": "T.Sx 2",
+    "Baritone Sax": "Bar.Sx",
+}
+_MIN_CAST_DURATION_QL = 4.0  # one bar in 4/4; shorter segments annotated only when unison
+_LABEL_FONT_SIZE = 4  # Music Expert: at least half the editor default (~10-12 pt)
+
+
+def _cast_at(events, t):
+    cast = set()
+    midis = {}
+    for e in events:
+        if e.start <= t + _GAP_EPS and e.end > t + _GAP_EPS:
+            cast.add(e.part_name)
+            if e.part_name not in midis:
+                midis[e.part_name] = e.midi
+    return frozenset(cast), midis
+
+
+def _build_cast_segments(events):
+    if not events:
+        return []
+    points = sorted({e.start for e in events} | {e.end for e in events})
+    raw = []
+    for a, b in zip(points, points[1:]):
+        if b - a <= _GAP_EPS:
+            continue
+        cast, midis = _cast_at(events, a + _GAP_EPS)
+        if not cast:
+            continue
+        is_unison = len(midis) >= 2 and len(set(midis.values())) == 1
+        raw.append((a, b, cast, is_unison, midis))
+    merged = []
+    for s in raw:
+        if merged and abs(merged[-1][1] - s[0]) <= _GAP_EPS and merged[-1][2] == s[2]:
+            pa, _pb, pc, pu, pm = merged[-1]
+            merged[-1] = (pa, s[1], pc, pu, pm)
+        else:
+            merged.append(s)
+    return merged
+
+
+def _filter_cast_segments(segments, min_duration=_MIN_CAST_DURATION_QL):
+    return [s for s in segments if (s[1] - s[0]) >= min_duration - _GAP_EPS or s[3]]
+
+
+def _split_for_label(cast, midis, upper_count, lower_count):
+    """Rank parts in cast by MIDI descending (ties by name) and partition
+    them with the condenser 2+3 sizes. Returns (upper_tuple, lower_tuple)."""
+    ranked = sorted(cast, key=lambda p: (-midis.get(p, 0), p))
+    return tuple(ranked[:upper_count]), tuple(ranked[upper_count:upper_count + lower_count])
+
+
+def _format_cast_annotations(cast, parts_order, is_unison, abbr,
+                              upper_split, lower_split):
+    """Return list of (staff, placement, label):
+      - 1 part        -> [(upper, above, name)]
+      - 5 parts, not unison -> [(upper, above, 'Tutti')]
+      - else          -> column split BELOW upper + ABOVE lower.
+    Within each half, names follow the Score part order."""
+    ordered = [p for p in parts_order if p in cast]
+    if len(ordered) == 1:
+        return [("upper", "above", abbr.get(ordered[0], ordered[0]))]
+    if len(ordered) == 5 and not is_unison:
+        return [("upper", "above", "Tutti")]
+    out = []
+    upper_in_order = [p for p in parts_order if p in upper_split]
+    lower_in_order = [p for p in parts_order if p in lower_split]
+    if upper_in_order:
+        out.append(("upper", "above", "\n".join(abbr.get(n, n) for n in upper_in_order)))
+    if lower_in_order:
+        out.append(("lower", "below", "\n".join(abbr.get(n, n) for n in lower_in_order)))
+    return out
+
+
+def _annotate_cast_changes(upper_part, upper_bounds, lower_part, lower_bounds,
+                           events, parts_order, upper_count, lower_count,
+                           abbr=None, min_duration=_MIN_CAST_DURATION_QL,
+                           font_size=_LABEL_FONT_SIZE):
+    """Insert cast-change TextExpressions on both staves. Column halves are
+    placed below the upper staff and above the lower staff so the full
+    column reads vertically between the two staves. Dorico should render
+    newline-separated names as a column; if it does not, swap the join
+    separator for ' / ' and the layout becomes inline."""
+    import music21
+    if abbr is None:
+        abbr = _ABBR_REEDS
+    segments = _filter_cast_segments(_build_cast_segments(events), min_duration)
+    for a, _b, cast, is_unison, midis in segments:
+        upper_split, lower_split = _split_for_label(cast, midis, upper_count, lower_count)
+        annotations = _format_cast_annotations(
+            cast, parts_order, is_unison, abbr, upper_split, lower_split
+        )
+        for staff, placement, label in annotations:
+            if not label:
+                continue
+            target_part = upper_part if staff == "upper" else lower_part
+            target_bounds = upper_bounds if staff == "upper" else lower_bounds
+            for measure, m_start, m_len in target_bounds:
+                if m_start - _GAP_EPS <= a < m_start + m_len - _GAP_EPS:
+                    te = music21.expressions.TextExpression(label)
+                    te.placement = placement
+                    try:
+                        te.style.fontSize = font_size
+                    except Exception:
+                        pass
+                    try:
+                        measure.insert(a - m_start, te)
+                    except Exception:
+                        pass
+                    break

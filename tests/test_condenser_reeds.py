@@ -343,3 +343,118 @@ class TestReedsSoundingSetSegmentation:
         p.insert(1.0, music21.note.Note("A4", quarterLength=1.0))
         events = sorted(_collect_events([p]), key=lambda e: e.start)
         assert [(e.start, e.end) for e in events] == [(0.0, 1.0), (1.0, 2.0)]
+
+
+from bigband_condenser.condenser.reeds import (
+    _ABBR_REEDS,
+    _build_cast_segments,
+    _filter_cast_segments,
+    _format_cast_annotations,
+    _split_for_label,
+)
+
+
+class TestReedsCastChange:
+    # --- segmentation ---
+    def test_single_voice_segment(self):
+        evs = [_Ev(0, "Alto Sax", 64, "E4", 0.0, 4.0)]
+        segs = _build_cast_segments(evs)
+        assert len(segs) == 1
+        a, b, cast, is_uni, _ = segs[0]
+        assert (a, b) == (0.0, 4.0) and cast == frozenset({"Alto Sax"}) and not is_uni
+
+    def test_cast_change_point(self):
+        evs = [
+            _Ev(0, "Alto Sax", 64, "E4", 0.0, 4.0),
+            _Ev(1, "Soprano Sax", 67, "G4", 2.0, 4.0),
+        ]
+        segs = _build_cast_segments(evs)
+        assert [s[2] for s in segs] == [
+            frozenset({"Alto Sax"}),
+            frozenset({"Alto Sax", "Soprano Sax"}),
+        ]
+
+    def test_contiguous_same_cast_merges(self):
+        evs = [
+            _Ev(0, "Alto Sax", 64, "E4", 0.0, 2.0),
+            _Ev(1, "Alto Sax", 65, "F4", 2.0, 4.0),
+        ]
+        segs = _build_cast_segments(evs)
+        assert len(segs) == 1 and (segs[0][0], segs[0][1]) == (0.0, 4.0)
+
+    def test_unison_detected(self):
+        evs = [
+            _Ev(0, "Alto Sax", 64, "E4", 0.0, 2.0),
+            _Ev(1, "Tenor Sax 1", 64, "E4", 0.0, 2.0),
+        ]
+        segs = _build_cast_segments(evs)
+        assert segs[0][3] is True
+
+    def test_min_duration_filters_short_non_unison(self):
+        evs = [
+            _Ev(0, "Alto Sax", 64, "E4", 0.0, 2.0),
+            _Ev(1, "Soprano Sax", 67, "G4", 0.0, 2.0),
+        ]
+        segs = _build_cast_segments(evs)
+        assert _filter_cast_segments(segs, min_duration=4.0) == []
+
+    def test_unison_bypasses_min_duration(self):
+        evs = [
+            _Ev(0, "Alto Sax", 64, "E4", 0.0, 1.0),
+            _Ev(1, "Tenor Sax 1", 64, "E4", 0.0, 1.0),
+        ]
+        segs = _build_cast_segments(evs)
+        kept = _filter_cast_segments(segs, min_duration=4.0)
+        assert len(kept) == 1
+
+    # --- split for label ---
+    def test_split_by_midi_descending(self):
+        upper, lower = _split_for_label(
+            frozenset({"S", "A", "T", "B"}),
+            {"S": 72, "A": 65, "T": 55, "B": 45}, 2, 3,
+        )
+        assert upper == ("S", "A") and lower == ("T", "B")
+
+    def test_split_truncates_at_sizes(self):
+        upper, lower = _split_for_label(
+            frozenset({"A", "B"}), {"A": 60, "B": 50}, 2, 3,
+        )
+        assert upper == ("A", "B") and lower == ()
+
+    # --- annotation formatting ---
+    def test_annotation_single_voice_above_upper(self):
+        order = ["Soprano Sax", "Alto Sax", "Tenor Sax 1", "Tenor Sax 2", "Baritone Sax"]
+        ann = _format_cast_annotations(
+            frozenset({"Alto Sax"}), order, False, _ABBR_REEDS,
+            ("Alto Sax",), (),
+        )
+        assert ann == [("upper", "above", "A.Sx")]
+
+    def test_annotation_tutti_above_upper(self):
+        order = ["Soprano Sax", "Alto Sax", "Tenor Sax 1", "Tenor Sax 2", "Baritone Sax"]
+        ann = _format_cast_annotations(
+            frozenset(order), order, False, _ABBR_REEDS,
+            ("Soprano Sax", "Alto Sax"),
+            ("Tenor Sax 1", "Tenor Sax 2", "Baritone Sax"),
+        )
+        assert ann == [("upper", "above", "Tutti")]
+
+    def test_annotation_column_split_two_staves(self):
+        order = ["Soprano Sax", "Alto Sax", "Tenor Sax 1", "Tenor Sax 2", "Baritone Sax"]
+        ann = _format_cast_annotations(
+            frozenset({"Soprano Sax", "Tenor Sax 1", "Baritone Sax"}),
+            order, False, _ABBR_REEDS,
+            ("Soprano Sax", "Tenor Sax 1"), ("Baritone Sax",),
+        )
+        assert len(ann) == 2
+        assert ann[0] == ("upper", "above", "S.Sx\nT.Sx 1")
+        assert ann[1] == ("lower", "below", "Bar.Sx")
+
+    def test_annotation_full_cast_unison_both_staves(self):
+        order = ["Soprano Sax", "Alto Sax", "Tenor Sax 1", "Tenor Sax 2", "Baritone Sax"]
+        upper = ("Soprano Sax", "Alto Sax")
+        lower = ("Tenor Sax 1", "Tenor Sax 2", "Baritone Sax")
+        ann = _format_cast_annotations(frozenset(order), order, True, _ABBR_REEDS, upper, lower)
+        # unison -> column form (NOT 'Tutti')
+        assert [staff for staff, _, _ in ann] == ["upper", "lower"]
+        assert "Bar.Sx" in ann[1][2]

@@ -104,3 +104,10 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Decisioni**: D-032 (segmentazione per sounding set, supera D-030 lossy e FR-M4-D). Legato intra-parte clippato all'onset successivo della stessa parte (D-022).
 - **Backlog**: FR-M4-F nuovo (nota che cambia rigo tra segmenti: re-attack senza legatura). FR-M4-A/B/C/E invariati.
 - **Prossimo passo**: valutare se M4.6 (omoritmia detection) resta necessario post D-032 - la segmentazione produce gia' chord verticali simultanei upper+lower nei block chord. Candidato primo step: M4.7 (text directions per soli / unisono / cast change).
+
+## Sessione 2026-11-01 (M4.6 assorbita, M4.7 implementato)
+
+- **Completato**: M4.6 ASSORBITO (D-033), M4.7 IMPLEMENTATO (D-034). Pipeline Reeds produce: struttura battute (M4.2), split 2+3 per sounding set con legature (M4.4), chord simultanei nei block chord (assorbito M4.6), text direction cast-change (M4.7).
+- **Decisioni**: posizionamento label sopra violino + sotto basso, split a meta', font 4pt via MusicXML. Dorico applica le proprie font/position: il Music Expert accetta di aggiustare in Engraving Options.
+- **Backlog**: FR-M4-F (cambio rigo senza legatura), FR-M4-G (rendering font/position editor-dependent).
+- **Prossimo passo**: decidere se chiudere M4.8 (voice crossing markers) o rinviarlo al backlog e passare a M5 (Brass). Voice crossing e' edge case raro per dichiarazione del Music Expert ('casi rari, in orchestra si tende a mantenere i ruoli').
