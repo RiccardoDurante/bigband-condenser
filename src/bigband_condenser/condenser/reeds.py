@@ -1,4 +1,4 @@
-"""Reeds section condenser (M4-R1 + M4.1 metadata + M4.2 measure structure).
+﻿"""Reeds section condenser (M4-R1 + M4.1 metadata + M4.2 measure structure).
 
 Scope cumulative:
 - M4.0: scaffold condenser/
@@ -8,48 +8,34 @@ Scope cumulative:
   source_score by deepcopy of first Part + content purge. Metadata (M4.1)
   come with the skeleton for free.
 
-  BUGFIX M4.2a: music21 Measure.duration.quarterLength is derived from the
-  rhythmic content of the Measure (notes/rests), NOT a fixed property of the
-  Measure itself. Purging all Note/Rest/Chord objects collapses every
-  Measure's duration to 0.0. Fix: snapshot each Measure's quarterLength
-  BEFORE purging, then explicitly restore it AFTER purging.
+  M4.2b: notes crossing a barline are split into tied fragments, one per
+  Measure (_insert_into_measure).
+  M4.2c: gaps are filled per Measure with explicit Rests (_fill_measure_rests)
+  instead of part.makeRests(fillGaps=True), which uses the TimeSignature bar
+  length and ignores partial/pickup bars.
+  M4.2d: simultaneous events in one voice at the same onset collapse into one
+  Note (unison) or one Chord (_collapse_onset_group).
+  M4.2e (D-030): a later onset in the same voice truncates the previous event
+  (_clip_overlaps). Known lossy simplification, backlog FR-M4-E.
 
-  BUGFIX M4.2b: notes/rests were being inserted whole into whichever Measure
-  contained their START offset, with no check for whether their duration
-  crossed the following barline. Fix: _insert_into_measure splits a note's
-  (or chord's) span across every Measure it overlaps, inserting one
-  fragment per Measure tied together (Tie start/continue/stop).
+  BUGFIX M4.2f: Measure.duration is DERIVED from content by music21 and is
+  recomputed after every insert(), so a duration restored with
+  `m.duration.quarterLength = x` does not survive. Symptom: the first (short)
+  event inserted into a Measure made it "short", every later event in that
+  Measure was rejected and silently fell back to a Part-level insert (notes
+  invisible inside the measure, no rests added). Fix: record
+  (measure, start, length) ONCE from the source before purging and use that
+  table as the single source of truth for placement and rest filling. A
+  failed placement now raises RuntimeError instead of silently losing a note.
 
-  BUGFIX M4.2c: generic part.makeRests(fillGaps=True) computes each
-  Measure's "bar duration" from the active TimeSignature context, NOT from
-  the real (possibly partial/pickup) duration restored in M4.2a. Fix:
-  _fill_measure_rests fills gaps using each Measure's own restored
-  duration, measure by measure, instead of calling makeRests at Part level.
-
-  BUGFIX M4.2d (pulled forward from WBS M4.5 "chord notation"): when two or
-  more reed instruments land in the same output voice at the same onset --
-  the normal case for block chords and unisons -- each was being inserted
-  as its own separate Note object at the same offset. Fix:
-  _collapse_onset_group dedupes identical pitches (unison -> one Note) and
-  merges distinct pitches at the same onset into a single
-  music21.chord.Chord.
-
-  BUGFIX M4.2e (Music Expert decision 2026-10-16, Option A): a sustained
-  note/chord in one voice can still be running when a DIFFERENT instrument's
-  onset lands in the same voice (a real mid-bar cast change per Charter P2,
-  not yet handled by dedicated re-voicing logic -- that is WBS M4.6/M4.7
-  scope). Until then, _clip_overlaps deterministically truncates the
-  earlier event to end exactly where the later one starts, matching how a
-  professional condensed-score re-voicing looks on paper. Logged as backlog
-  item FR-M4-E: replace with tie-preserving re-voicing once cast-change
-  detection (M4.6/M4.7) exists.
-
-Pending WBS M4.3/M4.6/M4.7/M4.8: single-voice passthrough, omoritmia
-detection, text directions (incl. per-instrument unison/crossing labels,
-and FR-M4-E tie-preserving re-voicing), voice crossing markers.
+Known open issues (see WBS_M4 / CHANGE_LOG):
+- FR-M4-D: events at the same onset with different durations are merged into
+  one chord with the MAX duration, so shorter notes are held too long.
+- Ranking considers only notes that START at an onset (not notes still
+  sounding), so a lone low entry can land in the upper staff.
 
 Determinism: tie-breaking by partName order (Charter P1); within a merged
-chord, pitches are ordered by descending MIDI for deterministic output.
+chord, pitches are ordered by descending MIDI.
 """
 from __future__ import annotations
 
@@ -82,24 +68,29 @@ class _OnsetNote:
 def _build_skeleton_part(source_score, name: str, new_clef):
     """Deepcopy source_score.parts[0] with musical content purged.
 
+    Returns (skeleton, bounds). bounds is a list of
+    (measure, absolute_start, length) for every Measure, recorded BEFORE the
+    purge (BUGFIX M4.2f). It is the single source of truth for measure
+    boundaries: never read measure.duration after content has been inserted.
+
     Preserved: Measure objects (numbers, pickup, barlines, inner time
-    signatures), key signatures, tempo markings, and (via BUGFIX M4.2a)
-    each Measure's original quarterLength duration.
+    signatures), key signatures, tempo markings.
     Purged: Note, Rest, Chord, ChordSymbol, Dynamic, TextExpression,
     Instrument, Clef (we insert our own).
     """
     import music21
 
     if not source_score.parts:
-        return None
+        return None, []
 
     source_part = source_score.parts[0]
     skeleton = copy.deepcopy(source_part)
     skeleton.partName = name
 
-    measure_durations: dict[int, float] = {}
-    for m in skeleton.getElementsByClass(music21.stream.Measure):
-        measure_durations[id(m)] = float(m.duration.quarterLength)
+    bounds = [
+        (m, float(m.offset), float(m.duration.quarterLength))
+        for m in skeleton.getElementsByClass(music21.stream.Measure)
+    ]
 
     purge_classes = (
         music21.note.Note,
@@ -120,18 +111,14 @@ def _build_skeleton_part(source_score, name: str, new_clef):
             except Exception:
                 pass
 
-    for m in skeleton.getElementsByClass(music21.stream.Measure):
-        saved = measure_durations.get(id(m))
-        if saved:
-            m.duration.quarterLength = saved
-
     skeleton.insert(0, new_clef)
-    return skeleton
+    return skeleton, bounds
 
 
 def _collapse_onset_group(events: list[_OnsetNote]) -> tuple[list[str], float]:
     """Collapse simultaneous events destined for the same voice at the same
-    onset (BUGFIX M4.2d). See module docstring.
+    onset (M4.2d). Identical pitches collapse to one; distinct pitches become
+    one chord. Duration = max of the group (known limitation FR-M4-D).
     """
     by_pitch: dict[str, tuple[int, float]] = {}
     for e in events:
@@ -147,11 +134,9 @@ def _collapse_onset_group(events: list[_OnsetNote]) -> tuple[list[str], float]:
 def _clip_overlaps(
     events: list[tuple[float, list[str], float]]
 ) -> list[tuple[float, list[str], float]]:
-    """BUGFIX M4.2e: events is a time-ordered (ascending onset) list of
-    (onset, pitch_names, duration) for ONE voice. If a later onset starts
-    before the previous event's natural end, truncate the previous event
-    so it ends exactly at the later onset (Option A, Music Expert decision
-    2026-10-16). See module docstring for rationale and backlog FR-M4-E.
+    """M4.2e (D-030): events is a time-ordered list of (onset, pitch_names,
+    duration) for ONE voice. If a later onset starts before the previous
+    event ends, truncate the previous event at the later onset.
     """
     result: list[tuple[float, list[str], float]] = []
     for onset, pitches, duration in events:
@@ -165,8 +150,6 @@ def _clip_overlaps(
                 result[-1] = (prev_onset, prev_pitches, new_prev_duration)
                 break
             else:
-                # Previous event fully devoured by the new onset; drop it
-                # and re-check against what is now the last event.
                 result.pop()
         result.append((onset, pitches, duration))
     return result
@@ -180,23 +163,22 @@ def _make_element(pitch_names: list[str]):
     return music21.chord.Chord(pitch_names)
 
 
-def _insert_into_measure(part, offset: float, quarter_length: float, pitch_names: list[str]) -> bool:
-    """Insert a Note/Chord spanning [offset, offset + quarter_length) into
-    part's Measures, SPLITTING it across every Measure it overlaps
-    (BUGFIX M4.2b). offset is absolute in `part`.
+def _insert_into_measure(bounds, offset: float, quarter_length: float, pitch_names: list[str]) -> bool:
+    """Insert a Note/Chord spanning [offset, offset + quarter_length) into the
+    Measures listed in `bounds`, splitting it across every Measure it overlaps
+    with ties (M4.2b). offset is absolute in the Part.
+
+    Returns True if at least one fragment was inserted, False if the span
+    overlaps no Measure or an insert failed.
     """
     import music21
 
-    measures = sorted(
-        part.getElementsByClass(music21.stream.Measure), key=lambda m: float(m.offset)
-    )
     span_start = offset
     span_end = offset + quarter_length
 
-    fragments = []
-    for measure in measures:
-        m_start = float(measure.offset)
-        m_end = m_start + float(measure.duration.quarterLength)
+    fragments = []  # (measure, relative_offset, fragment_length)
+    for measure, m_start, m_len in bounds:
+        m_end = m_start + m_len
         if m_end <= span_start + _GAP_EPS:
             continue
         if m_start >= span_end - _GAP_EPS:
@@ -235,13 +217,26 @@ def _insert_part_level(part, offset: float, quarter_length: float, pitch_names: 
     part.insert(offset, el)
 
 
-def _fill_measure_rests(measure) -> None:
-    """Fill the gaps in `measure` with explicit Rest objects, using the
-    Measure's OWN restored duration as the bar length (BUGFIX M4.2c).
+def _place_event(part, bounds, onset: float, duration: float, pitch_names: list[str]) -> None:
+    """Place one event. With a skeleton (bounds is a list) a failed placement
+    is an error: silently dropping a note violates 'no note lost'.
+    """
+    if bounds is None:
+        _insert_part_level(part, onset, duration, pitch_names)
+        return
+    if not _insert_into_measure(bounds, onset, duration, pitch_names):
+        raise RuntimeError(
+            f"Cannot place {pitch_names} at offset {onset} (ql={duration}) in "
+            f"{part.partName}: no matching measure in the skeleton"
+        )
+
+
+def _fill_measure_rests(measure, bar_len: float) -> None:
+    """Fill the gaps in `measure` with explicit Rests up to bar_len (the length
+    recorded from the source, NOT measure.duration) (M4.2c, M4.2f).
     """
     import music21
 
-    bar_len = float(measure.duration.quarterLength)
     if bar_len <= _GAP_EPS:
         return
 
@@ -250,18 +245,16 @@ def _fill_measure_rests(measure) -> None:
     for n in notes:
         n_start = float(n.offset)
         if n_start > cursor + _GAP_EPS:
-            gap = n_start - cursor
             r = music21.note.Rest()
-            r.duration.quarterLength = gap
+            r.duration.quarterLength = n_start - cursor
             measure.insert(cursor, r)
         n_end = n_start + float(n.duration.quarterLength)
         if n_end > cursor:
             cursor = n_end
 
     if cursor < bar_len - _GAP_EPS:
-        gap = bar_len - cursor
         r = music21.note.Rest()
-        r.duration.quarterLength = gap
+        r.duration.quarterLength = bar_len - cursor
         measure.insert(cursor, r)
 
 
@@ -315,18 +308,24 @@ class ReedsCondenser(SectionCondenser):
         # Step 3: build output parts
         use_skeleton = source_score is not None and bool(source_score.parts)
         if use_skeleton:
-            upper = _build_skeleton_part(source_score, "Reeds (upper)", music21.clef.TrebleClef())
-            lower = _build_skeleton_part(source_score, "Reeds (lower)", music21.clef.BassClef())
+            upper, upper_bounds = _build_skeleton_part(
+                source_score, "Reeds (upper)", music21.clef.TrebleClef()
+            )
+            lower, lower_bounds = _build_skeleton_part(
+                source_score, "Reeds (lower)", music21.clef.BassClef()
+            )
         else:
             upper = music21.stream.Part()
             upper.partName = "Reeds (upper)"
             upper.insert(0, music21.clef.TrebleClef())
+            upper_bounds = None
             lower = music21.stream.Part()
             lower.partName = "Reeds (lower)"
             lower.insert(0, music21.clef.BassClef())
+            lower_bounds = None
 
-        # Step 4: distribute 2+3, collapse same-onset events per voice
-        # (M4.2d), clip cross-onset overlaps per voice (M4.2e), then insert.
+        # Step 4: distribute 2+3, collapse same-onset events per voice,
+        # clip cross-onset overlaps per voice, then place.
         upper_events: list[tuple[float, list[str], float]] = []
         lower_events: list[tuple[float, list[str], float]] = []
         for offset_key in sorted(onset_groups.keys()):
@@ -345,24 +344,15 @@ class ReedsCondenser(SectionCondenser):
         lower_events = _clip_overlaps(lower_events)
 
         for onset, pitch_names, duration in upper_events:
-            if use_skeleton:
-                if not _insert_into_measure(upper, onset, duration, pitch_names):
-                    _insert_part_level(upper, onset, duration, pitch_names)
-            else:
-                _insert_part_level(upper, onset, duration, pitch_names)
-
+            _place_event(upper, upper_bounds, onset, duration, pitch_names)
         for onset, pitch_names, duration in lower_events:
-            if use_skeleton:
-                if not _insert_into_measure(lower, onset, duration, pitch_names):
-                    _insert_part_level(lower, onset, duration, pitch_names)
-            else:
-                _insert_part_level(lower, onset, duration, pitch_names)
+            _place_event(lower, lower_bounds, onset, duration, pitch_names)
 
         # Step 5: finalize notation
         if use_skeleton:
-            for part_obj in (upper, lower):
-                for measure in part_obj.getElementsByClass(music21.stream.Measure):
-                    _fill_measure_rests(measure)
+            for part_obj, bounds in ((upper, upper_bounds), (lower, lower_bounds)):
+                for measure, _start, length in bounds:
+                    _fill_measure_rests(measure, length)
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore")
                     try:

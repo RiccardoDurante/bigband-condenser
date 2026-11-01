@@ -70,7 +70,7 @@ class TestReedsCondenserPitchSplit:
             m = {}
             for n in part.recurse().notes:
                 if hasattr(n, "pitch") and n.pitch is not None:
-                    m.setdefault(round(float(n.offset), 3), []).append(n.pitch.midi)
+                    m.setdefault(round(float(n.getOffsetInHierarchy(part)), 3), []).append(n.pitch.midi)
             return m
 
         upper_map = by_offset(upper)
@@ -224,3 +224,31 @@ class TestReedsCondenserM43Passthrough:
         )
 
         assert len(upper_measures) == len(source_measures)
+
+
+class TestReedsCondenserNoLostPlacement:
+    """Regression for BUGFIX M4.2f. music21 derives Measure.duration from
+    content, so checks must use the SOURCE bar lengths, not measure.duration."""
+
+    def test_no_notes_outside_measures(self, reed_parts, preprocessed_kronos):
+        import music21
+        upper, lower = ReedsCondenser().condense(reed_parts, source_score=preprocessed_kronos)
+        for part in (upper, lower):
+            loose = list(part.getElementsByClass([music21.note.Note, music21.chord.Chord]))
+            assert loose == [], f"{len(loose)} notes/chords outside Measures in {part.partName}"
+
+    def test_every_measure_filled_to_source_length(self, reed_parts, preprocessed_kronos):
+        import music21
+        source_lengths = [
+            float(m.duration.quarterLength)
+            for m in preprocessed_kronos.parts[0].getElementsByClass(music21.stream.Measure)
+        ]
+        upper, lower = ReedsCondenser().condense(reed_parts, source_score=preprocessed_kronos)
+        for part in (upper, lower):
+            measures = list(part.getElementsByClass(music21.stream.Measure))
+            assert len(measures) == len(source_lengths)
+            for m, expected in zip(measures, source_lengths):
+                total = sum(float(e.duration.quarterLength) for e in m.notesAndRests)
+                assert abs(total - expected) < 1e-6, (
+                    f"{part.partName} measure {m.number}: content {total} != source {expected}"
+                )
