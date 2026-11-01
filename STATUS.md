@@ -87,3 +87,12 @@ Il gate numerico "durata totale" da solo NON basta a validare la notazione. Da M
 ## Debito tipografico PDF
 
 Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
+
+## Sessione 2026-11-01 (aggiornamento M4.2)
+
+- **Completato**: M4.2 chiuso. Gate visivo Dorico superato: battute corrette, pickup ok, nessun overflow. Tag `M4.2-measures`, 52/52 test, 0 overlap / 0 mismatch.
+- **Decisioni**: troncamento deterministico delle note sostenute alla comparsa di un nuovo onset sulla stessa voce (Opzione A, Music Expert).
+- **Rischi emersi**: R31 (sottostima scope M4) confermato nei fatti. M4.2 ha assorbito parte di M4.4 (split 2+3) e M4.5 (chord/unisono): sequenziamento WBS errato.
+- **Backlog**: FR-M4-A (clef adattiva), FR-M4-B (enarmonia Ab/G#), FR-M4-C (composer non renderizzato), FR-M4-E (re-voicing con legatura, M4.6/M4.7), consolidamento pause.
+- **Pending**: scegliere segmento di test denso (5 reeds insieme) per M4.4+; ri-baseline WBS_M4.md.
+- **Prossimo passo**: ridefinire lo scope di M4.3 alla luce di cio' che e' gia' implementato.

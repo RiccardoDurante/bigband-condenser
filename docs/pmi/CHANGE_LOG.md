@@ -60,3 +60,13 @@ changelog:
 ## Change Request
 
 _Nessuna al momento._
+
+## 2026-11-01 - D-029: Opzione A per collisioni cross-onset (M4.2e)
+- **Contesto**: nota sostenuta ancora attiva quando un altro strumento entra sulla stessa voce (cambio di cast a meta' battuta, Charter P2).
+- **Decisione**: troncare la nota precedente al nuovo onset (deterministico, pratica standard di re-voicing nelle condensed score).
+- **Alternativa scartata**: segmentazione completa per cast-change (Opzione B), anticipa scope M4.6/M4.7.
+- **Impatto**: FR-M4-E a backlog per re-voicing con legatura.
+
+## 2026-11-01 - D-030: Re-baseline WBS M4
+- **Motivo**: chord/unisono (previsto M4.5) e split 2+3 (previsto M4.4) sono stati implementati in M4.2 perche' senza di essi la struttura delle battute non era validabile.
+- **Azione**: aggiornare WBS_M4.md con gli step realmente rimanenti.
