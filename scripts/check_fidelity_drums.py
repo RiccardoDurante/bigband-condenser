@@ -35,7 +35,7 @@ if not drum_parts:
     sys.exit(2)
 
 source_set = collect(drum_parts[0])
-output, _ = DrumsCondenser().condense(drum_parts, source_score=result.score)
+output, _ = DrumsCondenser(source_xml_path=path).condense(drum_parts, source_score=result.score)
 output_set = collect(output)
 
 print(f"file: {path.name} | section: DRUMS")

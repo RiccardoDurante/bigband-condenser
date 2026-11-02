@@ -39,7 +39,7 @@ def main() -> int:
         print("No drum parts found")
         return 2
     print("Running DrumsCondenser.condense()...")
-    output, _ = DrumsCondenser().condense(drum_parts, source_score=result.score)
+    output, _ = DrumsCondenser(source_xml_path=EXTRACT_PATH).condense(drum_parts, source_score=result.score)
     print(f"  output notes: {sum(1 for _ in output.recurse().notes)}")
 
     out = stream.Score()

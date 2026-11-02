@@ -1,105 +1,111 @@
-﻿"""Tests for drum_normalizer (Opzione 1 heuristic)."""
+﻿"""Tests for drum_normalizer (Opzione 3, by instrument name)."""
 
 
-class TestDrumNormalizer:
-    def _mk(self, step, octave, size=None):
+class TestDrumNormalizerByName:
+    def _make_part_with_instrument(self, inst_name, display_step="D", display_octave=3):
+        """Helper: create a Part containing one Unpitched note associated with
+        a music21.instrument.Instrument whose instrumentName is set."""
         import music21
+        part = music21.stream.Part()
+        inst = music21.instrument.UnpitchedPercussion()
+        inst.instrumentName = inst_name
+        part.insert(0, inst)
         n = music21.note.Unpitched()
-        n.displayStep = step
-        n.displayOctave = octave
-        if size:
-            n.style.noteSize = size
-        return n
+        n.displayStep = display_step
+        n.displayOctave = display_octave
+        part.insert(0, n)
+        return part
 
-    def test_high_octave_becomes_x_notehead(self):
-        import music21
+    def test_bass_drum_to_f4_down(self):
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        for s, o in (("A", 5), ("B", 5), ("F", 5), ("G", 5)):
-            part.insert(part.highestTime, self._mk(s, o))
+        part = self._make_part_with_instrument("Bass Drum")
         normalize_drum_notation(part)
-        for n in part.recurse().notes:
-            assert n.notehead == "x"
-            assert n.stemDirection == "up"
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("F", 4)
+        assert n.notehead == "normal"
+        assert n.stemDirection == "down"
 
-    def test_low_octave_keeps_normal(self):
-        import music21
+    def test_snare_to_c5_up(self):
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        for s, o in (("D", 3), ("E", 3), ("F", 3), ("A", 3), ("B", 1), ("D", 2)):
-            part.insert(part.highestTime, self._mk(s, o))
+        part = self._make_part_with_instrument("Snare Drum")
         normalize_drum_notation(part)
-        for n in part.recurse().notes:
-            assert n.notehead == "normal"
-
-    def test_cue_full_becomes_slash_stem_up(self):
         import music21
-        from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        part.insert(0, self._mk("B", 5, size="full"))
-        normalize_drum_notation(part)
-        n = list(part.recurse().notes)[0]
-        assert n.notehead == "slash"
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("C", 5)
+        assert n.notehead == "normal"
         assert n.stemDirection == "up"
-        assert n.style.noteSize is None  # marker cleared
 
-    def test_cue_overrides_octave_rule(self):
-        """size=full on a high-octave note yields slash, NOT x."""
-        import music21
+    def test_hihat_closed_to_g5_x(self):
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        part.insert(0, self._mk("A", 5, size="full"))
+        part = self._make_part_with_instrument("Hi-Hat Closed")
         normalize_drum_notation(part)
-        assert list(part.recurse().notes)[0].notehead == "slash"
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("G", 5)
+        assert n.notehead == "x"
 
-    def test_cue_on_low_octave_still_slash(self):
-        """size=full works regardless of octave."""
-        import music21
+    def test_ride_to_f5_x(self):
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        part.insert(0, self._mk("D", 3, size="full"))
+        part = self._make_part_with_instrument("Ride Cymbal")
         normalize_drum_notation(part)
-        assert list(part.recurse().notes)[0].notehead == "slash"
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("F", 5)
+        assert n.notehead == "x"
 
-    def test_display_position_preserved(self):
-        """Opzione 1: positions are NEVER remapped."""
-        import music21
+    def test_crash_to_a5_x(self):
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        samples = [("E", 3), ("B", 5), ("D", 3), ("A", 5), ("F", 3)]
-        for s, o in samples:
-            part.insert(part.highestTime, self._mk(s, o))
+        part = self._make_part_with_instrument("Crash Cymbal")
         normalize_drum_notation(part)
-        notes = list(part.recurse().notes)
-        got = [(n.displayStep, n.displayOctave) for n in notes]
-        assert got == samples
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("A", 5)
+        assert n.notehead == "x"
 
-    def test_timing_preserved(self):
-        import music21
+    def test_rhythm_cues_to_slash(self):
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        n1 = self._mk("E", 3)
-        n1.duration.quarterLength = 2.0
-        n2 = self._mk("B", 5)
-        n2.duration.quarterLength = 0.5
-        part.insert(0.0, n1)
-        part.insert(2.0, n2)
+        part = self._make_part_with_instrument("Rhythm Cues")
         normalize_drum_notation(part)
-        notes = list(part.recurse().notes)
-        assert float(notes[0].offset) == 0.0 and float(notes[0].duration.quarterLength) == 2.0
-        assert float(notes[1].offset) == 2.0 and float(notes[1].duration.quarterLength) == 0.5
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert n.notehead == "slash"
+        assert (n.displayStep, n.displayOctave) == ("A", 5)
+
+    def test_ride_bell_diamond(self):
+        from bigband_condenser.drum_normalizer import normalize_drum_notation
+        part = self._make_part_with_instrument("Ride Bell")
+        normalize_drum_notation(part)
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert n.notehead == "diamond"
+
+    def test_finale_percent_g_separator_handled(self):
+        """Finale uses '%g' as word separator in instrument names (e.g. 'Hi-Hat%g Closed')."""
+        from bigband_condenser.drum_normalizer import normalize_drum_notation
+        part = self._make_part_with_instrument("Hi-Hat%g Closed")
+        normalize_drum_notation(part)
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("G", 5)
+        assert n.notehead == "x"
+
+    def test_unknown_instrument_left_alone(self):
+        """Defensive: unknown names must NOT be rewritten."""
+        from bigband_condenser.drum_normalizer import normalize_drum_notation
+        part = self._make_part_with_instrument("Vibraphone", display_step="C", display_octave=5)
+        normalize_drum_notation(part)
+        import music21
+        n = next(x for x in part.recurse().notes if isinstance(x, music21.note.Unpitched))
+        assert (n.displayStep, n.displayOctave) == ("C", 5)  # unchanged
 
     def test_idempotent(self):
-        import music21
         from bigband_condenser.drum_normalizer import normalize_drum_notation
-        part = music21.stream.Part()
-        for s, o, sz in (("E", 3, None), ("F", 3, None), ("B", 5, "full"),
-                         ("B", 5, None), ("A", 5, None)):
-            part.insert(part.highestTime, self._mk(s, o, size=sz))
+        part = self._make_part_with_instrument("Snare Drum")
         normalize_drum_notation(part)
-        snap = [(n.displayStep, n.displayOctave, n.notehead, n.stemDirection)
-                for n in part.recurse().notes]
+        import music21
+        snap_notes = list(part.recurse().notes)
+        before = [(n.displayStep, n.displayOctave, n.notehead, n.stemDirection) for n in snap_notes]
         normalize_drum_notation(part)
-        again = [(n.displayStep, n.displayOctave, n.notehead, n.stemDirection)
-                 for n in part.recurse().notes]
-        assert snap == again
+        after = [(n.displayStep, n.displayOctave, n.notehead, n.stemDirection) for n in snap_notes]
+        assert before == after

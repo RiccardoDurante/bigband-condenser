@@ -136,3 +136,13 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Decisioni**: D-040 (M7 + Z Opzione 1 come v1 parziale).
 - **Backlog (FR-M7-D, PRIORITARIO per ripresa)**: implementare mappatura puntuale composer -> Weinberg basata su tabella Music Expert. Il compositore dovra' fornire tabella display -> strumento target per i 12-14 display usati (D3, E3, F3, G3, A3, B1, D2, B2, F5, G5, A5, B5 con casi speciali size='full'). Riferimento: Weinberg / PAS Guide to Standardized Drumset Notation.
 - **Prossimo passo (next session)**: ripresa M7 con tabella puntuale + eventualmente M6 Rhythm (il piu' complesso rimasto). Monte ore consumato stima ~22h totali (su 60 budget), 38h residue per M6 + CLI + validator + docs + release.
+
+## Sessione 2026-11-02 (mattina) - M7 Drums COMPLETE
+
+- **Completato**: M7 chiuso definitivamente. Z Opzione 3 (by instrument name con pre-parse MusicXML raw) applica mappatura Weinberg/PAS puntuale. Scoperta chiave: il file ha 2 drum part - 'Drum Set 1' (lead sheet visibile, muted) e 'Drum Set 2' (playback, hidden). Preprocessor correttamente seleziona P17 per il condenser.
+- **Decisioni**: D-041 (M7 COMPLETE).
+- **Fix bug**: collect_note_instrument_names_from_xml saltava note 'MIDI82' hidden a livello di singola nota, causando disallineamento indice XML<->music21. Risolto skip print-object=no nel collect.
+- **Visual gate**: PASSATO. Ride/crash/bell/splash/hi-hat tutti su posizioni Weinberg corrette.
+- **Progresso v1**: M3 ✓, M4 Reeds ✓, M5 Brass scaffold ✓, M7 Drums ✓. Rimangono: M6 Rhythm (il blocco grosso), CLI, validator, docs, D-038 PDF layout landscape, release v1.0.0, poi Fase B (web app Gradio).
+- **Monte ore stimato**: ~24h consumate, ~36h residue, 12 settimane alla deadline. M6 Rhythm e' il rischio principale.
+- **Prossimo passo**: M6 Rhythm condenser (piano+basso+chitarra con chord symbols + discriminazione comping/shout) oppure CLI/validator per avere pipeline end-to-end minima funzionante prima di affondare su M6.

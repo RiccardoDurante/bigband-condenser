@@ -8,7 +8,7 @@
   <identification>
     <creator type="composer">Composed. By R. Durante</creator>
     <encoding>
-      <encoding-date>2026-11-01</encoding-date>
+      <encoding-date>2026-11-02</encoding-date>
       <software>music21 v.10.5.0</software>
       <supports element="beam" type="yes" />
       <supports element="stem" type="yes" />
@@ -22,17 +22,17 @@
     </scaling>
   </defaults>
   <part-list>
-    <score-part id="P9129cb0f7c3328893fc35697b251c801">
+    <score-part id="Pc948bca95d32a262dbaf6325ceae4614">
       <part-name>Drums</part-name>
       <part-abbreviation>D. S. 1</part-abbreviation>
-      <score-instrument id="I195bf1f940f20086e5fcd0c4624d327c">
+      <score-instrument id="I152ab5609323f1bda19787965acf71ef">
         <instrument-name>Percussion</instrument-name>
         <instrument-abbreviation>Perc</instrument-abbreviation>
       </score-instrument>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="P9129cb0f7c3328893fc35697b251c801">
+  <part id="Pc948bca95d32a262dbaf6325ceae4614">
     <!--========================= Measure 0 ==========================-->
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -81,14 +81,14 @@
       </direction>
       <note default-x="13">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>20160</duration>
         <voice>1</voice>
         <type>half</type>
         <stem default-y="-25">up</stem>
-        <notehead parentheses="no">slash</notehead>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <ornaments>
             <wavy-line number="1" type="start" />
@@ -100,13 +100,14 @@
       </note>
       <note default-x="178">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>20160</duration>
         <voice>1</voice>
         <type>half</type>
-        <stem default-y="-20">down</stem>
+        <stem default-y="-20">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <fermata type="upright" />
           <ornaments>
@@ -127,11 +128,13 @@
     <measure implicit="no" number="4" width="345">
       <note default-x="13">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>40320</duration>
         <type>whole</type>
+        <stem>up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <fermata type="upright" />
         </notations>
@@ -141,11 +144,13 @@
     <measure implicit="no" number="5" width="345">
       <note default-x="14">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>40320</duration>
         <type>whole</type>
+        <stem>up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <fermata type="upright" />
         </notations>
@@ -155,11 +160,13 @@
     <measure implicit="no" number="6" width="345">
       <note default-x="14">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>40320</duration>
         <type>whole</type>
+        <stem>up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <fermata type="upright" />
         </notations>
@@ -218,26 +225,26 @@
       </note>
       <note default-x="112">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <voice>1</voice>
         <type>quarter</type>
         <dot />
         <stem default-y="-25">up</stem>
-        <notehead parentheses="no">slash</notehead>
+        <notehead parentheses="no">x</notehead>
       </note>
       <note default-x="213">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>20160</duration>
         <voice>1</voice>
         <type>half</type>
         <stem default-y="-25">up</stem>
-        <notehead parentheses="no">slash</notehead>
+        <notehead parentheses="no">x</notehead>
       </note>
       <backup>
         <duration>50400</duration>
@@ -253,13 +260,14 @@
       <print new-page="yes" />
       <note default-x="102">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <type>quarter</type>
         <dot />
-        <stem default-y="-25">down</stem>
+        <stem default-y="-25">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <ornaments>
             <wavy-line number="2" type="stop" />
@@ -271,12 +279,13 @@
       </note>
       <note default-x="248">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">x</notehead>
       </note>
       <note default-x="295">
         <rest />
@@ -285,13 +294,14 @@
       </note>
       <note default-x="344">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <tie type="start" />
         <type>eighth</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <tied type="start" />
           <articulations>
@@ -301,38 +311,41 @@
       </note>
       <note default-x="393">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <tie type="stop" />
         <type>quarter</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <tied type="stop" />
         </notations>
       </note>
       <note default-x="491">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">x</notehead>
       </note>
     </measure>
     <!--========================= Measure 13 =========================-->
     <measure implicit="no" number="13" width="501">
       <note default-x="14">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <type>quarter</type>
         <dot />
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="-1" default-y="9" placement="above" />
@@ -341,12 +354,13 @@
       </note>
       <note default-x="159">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="0" default-y="9" placement="above" />
@@ -361,20 +375,22 @@
       <note default-x="305">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">diamond</notehead>
       </note>
       <note default-x="402">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
@@ -386,22 +402,24 @@
       <note default-x="426">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">continue</beam>
         <beam number="2">end</beam>
       </note>
       <note default-x="451">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-34.5">down</stem>
+        <stem default-y="-34.5">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">end</beam>
       </note>
     </measure>
@@ -470,13 +488,14 @@
       </direction>
       <note default-x="102">
         <unpitched>
-          <display-step>G</display-step>
-          <display-octave>3</display-octave>
+          <display-step>B</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <type>quarter</type>
         <dot />
-        <stem default-y="-20">down</stem>
+        <stem default-y="-20">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="-1" default-y="24" placement="above" />
@@ -485,12 +504,13 @@
       </note>
       <note default-x="248">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
       </note>
       <note default-x="296">
         <rest />
@@ -499,13 +519,14 @@
       </note>
       <note default-x="345">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <tie type="start" />
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <tied type="start" />
           <articulations>
@@ -515,25 +536,27 @@
       </note>
       <note default-x="393">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <tie type="stop" />
         <type>quarter</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <tied type="stop" />
         </notations>
       </note>
       <note default-x="491">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
       </note>
       <direction placement="below">
         <direction-type>
@@ -545,13 +568,14 @@
     <measure implicit="no" number="21" width="502">
       <note default-x="13">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <type>quarter</type>
         <dot />
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="0" default-y="9" placement="above" />
@@ -560,12 +584,13 @@
       </note>
       <note default-x="159">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="-1" default-y="9" placement="above" />
@@ -580,20 +605,22 @@
       <note default-x="305">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
       </note>
       <note default-x="402">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
@@ -605,22 +632,24 @@
       <note default-x="427">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">continue</beam>
         <beam number="2">end</beam>
       </note>
       <note default-x="451">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">end</beam>
       </note>
     </measure>
@@ -710,13 +739,14 @@
       <print new-page="yes" />
       <note default-x="102">
         <unpitched>
-          <display-step>D</display-step>
-          <display-octave>3</display-octave>
+          <display-step>A</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <type>quarter</type>
         <dot />
-        <stem default-y="-24.5">down</stem>
+        <stem default-y="-24.5">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="-1" default-y="19" placement="above" />
@@ -725,12 +755,13 @@
       </note>
       <note default-x="248">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
       </note>
       <note default-x="296">
         <rest />
@@ -739,13 +770,14 @@
       </note>
       <note default-x="345">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <tie type="start" />
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <tied type="start" />
           <articulations>
@@ -755,38 +787,41 @@
       </note>
       <note default-x="393">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <tie type="stop" />
         <type>quarter</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <tied type="stop" />
         </notations>
       </note>
       <note default-x="491">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
       </note>
     </measure>
     <!--========================= Measure 29 =========================-->
     <measure implicit="no" number="29" width="502">
       <note default-x="13">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>15120</duration>
         <type>quarter</type>
         <dot />
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="0" default-y="9" placement="above" />
@@ -795,12 +830,13 @@
       </note>
       <note default-x="159">
         <unpitched>
-          <display-step>E</display-step>
-          <display-octave>3</display-octave>
+          <display-step>F</display-step>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">x</notehead>
         <notations>
           <articulations>
             <accent default-x="-1" default-y="9" placement="above" />
@@ -815,20 +851,22 @@
       <note default-x="305">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>10080</duration>
         <type>quarter</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
       </note>
       <note default-x="402">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
         <notations>
@@ -840,22 +878,24 @@
       <note default-x="427">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>2520</duration>
         <type>16th</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">continue</beam>
         <beam number="2">end</beam>
       </note>
       <note default-x="451">
         <unpitched>
           <display-step>F</display-step>
-          <display-octave>3</display-octave>
+          <display-octave>5</display-octave>
         </unpitched>
         <duration>5040</duration>
         <type>eighth</type>
-        <stem default-y="-35">down</stem>
+        <stem default-y="-35">up</stem>
+        <notehead parentheses="no">diamond</notehead>
         <beam number="1">end</beam>
       </note>
     </measure>

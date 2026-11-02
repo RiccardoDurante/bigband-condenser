@@ -29,11 +29,20 @@ import copy
 import warnings
 
 from bigband_condenser.condenser.base import SectionCondenser
-from bigband_condenser.drum_normalizer import normalize_drum_notation
+from bigband_condenser.drum_normalizer import (
+    collect_note_instrument_names_from_xml,
+    normalize_drum_notation,
+)
 
 
 class DrumsCondenser(SectionCondenser):
     section_name = "Drums"
+
+    def __init__(self, source_xml_path=None):
+        """source_xml_path: optional path to the original MusicXML file,
+        used to recover per-note instrument names (music21 collapses all
+        percussion score-instruments into a generic 'Percussion' object)."""
+        self.source_xml_path = source_xml_path
 
     def condense(self, parts: list, source_score=None):
         import music21
@@ -45,9 +54,18 @@ class DrumsCondenser(SectionCondenser):
         output = copy.deepcopy(drum_part)
         output.partName = "Drums"
 
-        # Z (M7): normalize composer-specific drum notation to Weinberg/PAS standard.
-        # Idempotent (post-conversion positions are not in the source map).
-        normalize_drum_notation(output)
+        inst_names = None
+        if self.source_xml_path is not None:
+            try:
+                inst_names = collect_note_instrument_names_from_xml(
+                    self.source_xml_path, drum_part.partName or "Drum Set 1"
+                )
+            except Exception:
+                inst_names = None
+
+        # Z (M7): normalize composer drum notation to Weinberg/PAS standard,
+        # using the raw-XML instrument-name list when available.
+        normalize_drum_notation(output, instrument_names_by_order=inst_names)
 
         # Swap all clefs for PercussionClef
         for element in list(output.recurse().getElementsByClass(music21.clef.Clef)):
