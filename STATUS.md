@@ -146,3 +146,18 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Progresso v1**: M3 ✓, M4 Reeds ✓, M5 Brass scaffold ✓, M7 Drums ✓. Rimangono: M6 Rhythm (il blocco grosso), CLI, validator, docs, D-038 PDF layout landscape, release v1.0.0, poi Fase B (web app Gradio).
 - **Monte ore stimato**: ~24h consumate, ~36h residue, 12 settimane alla deadline. M6 Rhythm e' il rischio principale.
 - **Prossimo passo**: M6 Rhythm condenser (piano+basso+chitarra con chord symbols + discriminazione comping/shout) oppure CLI/validator per avere pipeline end-to-end minima funzionante prima di affondare su M6.
+
+## Sessione 2026-11-02 (pomeriggio) - M6 Rhythm COMPLETE
+
+- **Completato**: RhythmCondenser (D-042). Scope v1 M6 Opzione D (staff-style awareness) implementato al primo turno grazie alla scoperta di <measure-style><slash/></measure-style> come marker deterministico esportato da Finale.
+- **Scoperte chiave**:
+  1. measure-style/slash: Finale esporta esplicitamente le slash region → nessuna euristica necessaria, mapping 1:1 deterministico
+  2. Piano hidden fornisce SOLO chord symbols (120 nel full Kronos), le sue note non vengono trascritte
+  3. Guitar + Bass visibili sono le lead sheet reali del condenser
+  4. Chord jazz-standard (Am9 vs Amin9, G7sus senza degree ridondanti)
+  5. Big-band hit pattern decomposition per cue ensemble: [quarter + quarter + dotted-quarter + eighth tied] con legatura cross-measure per l'anticipo dell'accordo
+- **Decisioni**: D-042 (M6 COMPLETE). FR-M6-A/B/C/D/E/F/G nel backlog come fine-tuning post-v1.
+- **Progresso v1**: M3 ✓, M4 Reeds ✓, M5 Brass ✓, M6 Rhythm ✓, M7 Drums ✓. **TUTTE LE SEZIONI CONDENSATE SONO IMPLEMENTATE**.
+- **Rimanenti per v1**: CLI (orchestrator), validator con report, docs utente, D-038 PDF layout landscape, release v1.0.0.
+- **Monte ore stimato**: ~30h consumate, ~30h residue, 12 settimane. Rischio deadline MOLTO basso ora che le sezioni sono tutte chiuse. CLI+validator+docs stimato 10-15h.
+- **Prossimo passo**: CLI orchestrator (chiama tutti i 4 condenser e produce un singolo MusicXML condensed a 4 sistemi) oppure D-038 PDF layout.

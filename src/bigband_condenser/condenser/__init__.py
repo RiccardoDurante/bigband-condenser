@@ -10,3 +10,4 @@ from bigband_condenser.condenser.reeds import ReedsCondenser
 __all__ = ["SectionCondenser", "ReedsCondenser"]
 from bigband_condenser.condenser.brass import BrassCondenser  # noqa: F401
 from bigband_condenser.condenser.drums import DrumsCondenser  # noqa: F401
+from bigband_condenser.condenser.rhythm import RhythmCondenser  # noqa: F401
