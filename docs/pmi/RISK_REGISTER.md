@@ -67,3 +67,29 @@ changelog:
 **Totale rischi tracciati:** 32 (27 aperti + 2 non materializzati + 1 non applicabile v1 + 2 nuovi mitigati [R31, R32]).
 
 Il registro viene rivisto a ogni milestone e dopo ogni Change Request.
+
+---
+
+## 2026-11-10 — Aggiornamento R-NEW-02
+
+**Rischio:** Reeds fidelity FAIL (known limitation D-042).
+
+**Probabilità v1.0:** certa (già verificato).
+**Impatto v1.0:** medio-basso. Output musicale è leggibile al podio ma il
+validator riporta FAIL. Non blocca uso del tool. Potenziale impatto sul PDF
+finale (M10): micro-note "schegge" di 32-esimo che apparirebbero come
+notazione ritmica strana.
+
+**Trigger per contingency:** Visual gate PDF M10 mostra `>5` battute reeds
+con micro-note illeggibili.
+
+**Piano B (se trigger si verifica):**
+1. (30 min) Investigare 1 bar illeggibile per capire pattern dominante
+2. (1-2h) Scegliere e applicare uno tra:
+   a. Snap durate a griglia 0.25q + 1/3q pre-write (invasivo)
+   b. Post-write XML cleanup rimuovendo `<note>` con `<duration>` sotto
+      soglia equivalente a semi-croma
+   c. Aumentare `min_duration` filter da 0.125q a 0.25q (meno invasivo)
+
+**Budget contingency:** 2-4h dalla riserva di 24h residue.
+

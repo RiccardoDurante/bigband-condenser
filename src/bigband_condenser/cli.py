@@ -104,15 +104,24 @@ def main(argv=None):
     from bigband_condenser.condenser import (
         ReedsCondenser, BrassCondenser, RhythmCondenser, DrumsCondenser,
     )
+    from bigband_condenser.coalesce import coalesce_tied_pitches, filter_micro_notes
     output_parts = []
 
     if reed_parts:
         upper, lower = ReedsCondenser().condense(reed_parts, source_score=result.score)
+        filter_micro_notes(upper)
+        filter_micro_notes(lower)
+        coalesce_tied_pitches(upper)
+        coalesce_tied_pitches(lower)
         output_parts.extend([upper, lower])
         _log(f"  Reeds: {_count_notes(upper)} + {_count_notes(lower)} notes")
 
     if brass_parts:
         upper, lower = BrassCondenser().condense(brass_parts, source_score=result.score)
+        filter_micro_notes(upper)
+        filter_micro_notes(lower)
+        coalesce_tied_pitches(upper)
+        coalesce_tied_pitches(lower)
         output_parts.extend([upper, lower])
         _log(f"  Brass: {_count_notes(upper)} + {_count_notes(lower)} notes")
 
@@ -120,6 +129,10 @@ def main(argv=None):
         upper, lower = RhythmCondenser(source_xml_path=args.input).condense(
             rhythm_parts, source_score=result.score
         )
+        filter_micro_notes(upper)
+        filter_micro_notes(lower)
+        coalesce_tied_pitches(upper)
+        coalesce_tied_pitches(lower)
         output_parts.extend([upper, lower])
         _log(f"  Rhythm: {_count_notes(upper)} + {_count_notes(lower)} notes")
 
@@ -127,6 +140,8 @@ def main(argv=None):
         upper, _ = DrumsCondenser(source_xml_path=args.input).condense(
             drum_parts, source_score=result.score
         )
+        filter_micro_notes(upper)
+        coalesce_tied_pitches(upper)
         output_parts.append(upper)
         _log(f"  Drums: {_count_notes(upper)} notes")
 

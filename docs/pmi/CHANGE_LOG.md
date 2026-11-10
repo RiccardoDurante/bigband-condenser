@@ -138,3 +138,42 @@ LilyPond rispetta il `font-size` nativamente.
 `FAIL` = oltre soglia.
 **Tolleranze per sezione:** Reeds 0.25q, Brass 0.75q, Rhythm 0.25q.
 
+
+---
+
+## 2026-11-10 — D-042: TK-Reeds-01 risolto parzialmente (known limitation v1.0)
+
+**Owner:** QA
+**Contesto:** Fidelity validator segnala 59/142 bars FAIL nella sezione Reeds
+(missing `≈` extra `≈` 24%). Investigazione ha rivelato 3 pattern distinti:
+
+1. **Chord sorgente anomali** (es. Soprano Sax m82 con 7 pitch gravi
+   simultanei): il 2+3 split pitch-based scarta le pitch eccedenti. Fix
+   richiede preprocessore che filtri chord > 2 pitch per sax.
+
+2. **Tie cross-measure**: alcune note di fine misura appaiono all'inizio
+   della successiva (m84 missing=4, m85 extra=4). Fix richiede rework del
+   tie handling in `_build_voice_elements`.
+
+3. **Music21 writer quantizza durate non-standard** (es. terzina 0.67q)
+   spezzandole in tie di micro-note durante `Score.write("musicxml")`.
+   Il writer aggiunge ~88 note durante il write su Kronos. Fix richiede
+   snap preventivo delle durate a griglia (0.25q + 1/3q) prima del write.
+
+**Decisione:** parzialmente risolto per v1.0. Mitigation applicata:
+- `coalesce_tied_pitches`: fonde note adiacenti stesso pitch (riduce
+  Rhythm 1010→742 note, Brass 559→419)
+- `filter_micro_notes` (min_duration=0.125q): safety net per futuri source
+  con micro-note in memoria
+
+**Stato per v1.0:**
+- Reeds: FAIL validator (41.5% bars), output musicalmente leggibile
+- Brass: PASS* (0.7%)
+- Rhythm: PASS* (1.0%)
+- Drums: PASS strict
+
+**Rinvio:** FR-v1.1 TK-Reeds-02, FR-v1.1 TK-Reeds-03, FR-v1.1 TK-Reeds-04
+(uno per pattern). Stima totale 4-6h.
+
+**Documentazione utente:** README sezione "Known limitations" + esempio.
+

@@ -6,12 +6,12 @@ Condensed: samples\preview_condensed_full.musicxml
 
 Section       Src    Out    Missing      Extra   Bars bad  Verdict
 ----------------------------------------------------------------------
-Reeds        1287    658 281.4 (24.7%) 273.3 (24.0%)    59/142      FAIL
-Brass        1548    587   5.0 (0.3%)   2.4 (0.1%)     1/142     PASS*
-Rhythm        816   1010   4.0 (0.4%)   0.0 (0.0%)     1/98      PASS*
+Reeds        1287    595 281.4 (24.7%) 273.3 (24.0%)    59/142      FAIL
+Brass        1548    507   5.0 (0.3%)   2.4 (0.1%)     1/142     PASS*
+Rhythm        816    742   4.0 (0.4%)   0.0 (0.0%)     1/98      PASS*
 Drums         394    394       0 ev       0 ev     0/1        PASS
 ----------------------------------------------------------------------
-OVERALL: FAIL  (total 4045 src -> 2649 out notes)
+OVERALL: FAIL  (total 4045 src -> 2238 out notes)
 
 [Reeds] out-of-tolerance details (first 59):
   m72: missing=0.25 extra=0.08

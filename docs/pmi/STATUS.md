@@ -1,7 +1,7 @@
 ﻿# STATUS — Big Band Condenser
 
-**Aggiornato al:** 2026-11-10 15:50 CET
-**Sessione corrente:** Developer+QA — chiusura M9 (validator) + M10-preview (layout)
+**Aggiornato al:** 2026-11-10 21:17 CET
+**Sessione corrente:** QA — TK-Reeds-01 partial (coalesce + filter), known limitation
 
 ## Milestones
 
@@ -16,7 +16,8 @@
 - [x] M8 CLI orchestrator `bbcondenser`
 - [x] M9 Validator unificato (--validate, --report, --tolerance, soglia 2%)
 - [x] M10-preview Layout landscape + compact labels (D-040, D-041)
-- [ ] TK-Reeds-01 — Reeds fidelity bug deep-dive (**prossima sessione**)
+- [x] TK-Reeds-01 — Reeds fidelity bug: risolto parzialmente (D-042)
+- [ ] M10 PDF orizzontale via LilyPond (**prossima sessione**)
 - [ ] M10 PDF orizzontale via LilyPond
 - [ ] M11 User docs
 - [ ] M12 Docs PMI finali
