@@ -230,3 +230,22 @@ backend LilyPond di music21 (fuori scope) o fix dei pattern D-042 (4-6h).
 
 **Alternativa:** restare su LilyPond, accettare quality gap, documentare.
 
+
+---
+
+## 2026-11-10 — TK-Reeds-02: terzine preservate nello snap (corregge D-042 punto 3)
+
+**Owner:** Developer
+**Causa radice:** `_snap` in `condenser/_common.py` usava una griglia solo
+binaria (1/8 di quarto). Le terzine venivano appiattite (8/3 -> 2.625) e
+music21 le scriveva come croma legata a biscroma. La voce D-042 attribuiva
+il difetto al writer di music21: attribuzione errata, il difetto era nostro.
+**Fix:** `_snap` restituisce `Fraction` esatte e sceglie la griglia di
+terzine (1/12) quando il valore cade su un punto di terzina (tolleranza 0.01).
+Comportamento invariato per valori binari e per il filtro artefatti D-022.
+**Risultato su Kronos:** Brass PASS pieno (0/142, scarto 0.0); terzine in
+output Reeds 91, Brass 81 (prima 0); biscrome spurie 0 (prima 65).
+**Residuo:** Reeds ancora FAIL (58/142). Brass a zero indica che la causa è
+specifica dei sax, non del motore comune. Limite: quintine/settimine non gestite.
+**Test:** `tests/test_snap_triplets.py` (4 test), suite a 97.
+**Nota:** numerazione D-042/D-043 da normalizzare (duplicati).

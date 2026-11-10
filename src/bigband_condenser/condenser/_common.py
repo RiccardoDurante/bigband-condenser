@@ -16,6 +16,7 @@ import copy
 import warnings
 from bisect import bisect_right
 from dataclasses import dataclass, replace
+from fractions import Fraction
 
 _GAP_EPS = 1e-6
 MIN_DURATION = 0.0625
@@ -24,8 +25,25 @@ _MIN_CAST_DURATION_QL = 4.0
 _LABEL_FONT_SIZE = 4
 
 
-def _snap(value: float) -> float:
-    return round(value / _SNAP_GRID) * _SNAP_GRID
+_SNAP_GRID_EXACT = Fraction(1, 8)
+_TRIPLET_TOL = 0.01
+
+
+def _snap(value: float) -> Fraction:
+    """Snap to the 1/8-quarter binary grid, or to the 1/12-quarter triplet
+    grid when the value sits on a triplet point.
+
+    Returns an exact Fraction so that start + duration of one note equals
+    the start of the next one bit-for-bit. A binary-only grid flattened
+    triplets (8/3 -> 2.625), which music21 then wrote as an eighth tied
+    to a 32nd.
+    """
+    binary = Fraction(round(value / _SNAP_GRID)) * _SNAP_GRID_EXACT
+    triplet = Fraction(round(value * 12), 12)
+    d_triplet = abs(value - triplet)
+    if triplet != binary and d_triplet < _TRIPLET_TOL and d_triplet < abs(value - binary):
+        return triplet
+    return binary
 
 
 @dataclass(frozen=True)

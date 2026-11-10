@@ -6,17 +6,16 @@ Condensed: samples\preview_condensed_full.musicxml
 
 Section       Src    Out    Missing      Extra   Bars bad  Verdict
 ----------------------------------------------------------------------
-Reeds        1287    595 281.4 (24.7%) 273.3 (24.0%)    59/142      FAIL
-Brass        1548    507   5.0 (0.3%)   2.4 (0.1%)     1/142     PASS*
+Reeds        1287    542 279.8 (24.5%) 273.3 (24.0%)    58/142      FAIL
+Brass        1548    457   0.0 (0.0%)   0.0 (0.0%)     0/142      PASS
 Rhythm        816    742   4.0 (0.4%)   0.0 (0.0%)     1/98      PASS*
 Drums         394    394       0 ev       0 ev     0/1        PASS
 ----------------------------------------------------------------------
-OVERALL: FAIL  (total 4045 src -> 2238 out notes)
+OVERALL: FAIL  (total 4045 src -> 2135 out notes)
 
-[Reeds] out-of-tolerance details (first 59):
-  m72: missing=0.25 extra=0.08
+[Reeds] out-of-tolerance details (first 58):
   m77: missing=2.00 extra=0.33
-  m78: missing=2.67 extra=2.29
+  m78: missing=2.67 extra=2.33
   m79: missing=3.00 extra=4.00
   m80: missing=4.50 extra=5.50
   m81: missing=8.50 extra=4.50
@@ -25,9 +24,9 @@ OVERALL: FAIL  (total 4045 src -> 2238 out notes)
   m84: missing=4.00 extra=0.00
   m85: missing=0.00 extra=4.00
   m92: missing=2.33 extra=1.33
-  m93: missing=2.00 extra=0.88
+  m93: missing=2.00 extra=1.00
   m94: missing=3.33 extra=3.33
-  m95: missing=3.00 extra=2.88
+  m95: missing=3.00 extra=3.00
   m96: missing=2.50 extra=3.00
   m97: missing=3.00 extra=2.50
   m98: missing=6.00 extra=3.00
@@ -42,11 +41,11 @@ OVERALL: FAIL  (total 4045 src -> 2238 out notes)
   m107: missing=4.50 extra=4.50
   m108: missing=3.00 extra=4.00
   m109: missing=4.00 extra=1.00
-  m110: missing=5.83 extra=7.79
-  m111: missing=11.46 extra=9.08
+  m110: missing=5.83 extra=7.83
+  m111: missing=11.33 extra=9.33
   m112: missing=5.50 extra=7.50
-  m113: missing=6.17 extra=6.92
-  m114: missing=2.00 extra=2.88
+  m113: missing=6.17 extra=7.17
+  m114: missing=2.00 extra=3.00
   m115: missing=8.00 extra=7.00
   m116: missing=5.00 extra=5.00
   m117: missing=4.00 extra=4.00
@@ -54,7 +53,7 @@ OVERALL: FAIL  (total 4045 src -> 2238 out notes)
   m120: missing=8.50 extra=8.50
   m121: missing=9.00 extra=4.00
   m122: missing=4.67 extra=5.00
-  m123: missing=2.00 extra=6.62
+  m123: missing=2.00 extra=6.67
   m124: missing=2.50 extra=1.50
   m125: missing=1.00 extra=1.00
   m126: missing=1.67 extra=1.67
@@ -63,7 +62,7 @@ OVERALL: FAIL  (total 4045 src -> 2238 out notes)
   m129: missing=7.00 extra=6.00
   m130: missing=3.50 extra=3.00
   m131: missing=3.33 extra=5.50
-  m132: missing=7.00 extra=5.25
+  m132: missing=7.00 extra=5.33
   m133: missing=3.00 extra=7.00
   m134: missing=7.00 extra=6.50
   m135: missing=2.97 extra=1.00
@@ -73,9 +72,6 @@ OVERALL: FAIL  (total 4045 src -> 2238 out notes)
   m139: missing=5.75 extra=7.75
   m140: missing=15.00 extra=11.00
   m141: missing=5.00 extra=5.00
-
-[Brass] out-of-tolerance details (first 1):
-  m114: missing=1.42 extra=0.42
 
 [Rhythm] out-of-tolerance details (first 1):
   m108: missing=4.00 extra=0.00
