@@ -161,3 +161,21 @@ Rinviato a refresh pre-tesi CAPM. Zero impatto operativo.
 - **Rimanenti per v1**: CLI (orchestrator), validator con report, docs utente, D-038 PDF layout landscape, release v1.0.0.
 - **Monte ore stimato**: ~30h consumate, ~30h residue, 12 settimane. Rischio deadline MOLTO basso ora che le sezioni sono tutte chiuse. CLI+validator+docs stimato 10-15h.
 - **Prossimo passo**: CLI orchestrator (chiama tutti i 4 condenser e produce un singolo MusicXML condensed a 4 sistemi) oppure D-038 PDF layout.
+
+## Sessione 2026-11-10 - M8 CLI MVP
+
+- **Completato**: CLI orchestrator (D-043) end-to-end. Comando 'bbcondenser input.musicxml -o output.musicxml' produce in un colpo il condensed 7-part MusicXML con tutte e 4 le sezioni integrate.
+- **Visual gate**: 80% (Music Expert: 'ragionevole, rifinimenti dopo'). Nessun blocker.
+- **Metrica**: Kronos full 142 bar -> 1.5 MB output, 2588 note totali, 93/93 test verdi, sanitizer R32 attivo (27 rest fix).
+- **Backlog per rifinimenti** (tutti post-v1 MVP):
+  - FR-M8-A: layout polish tra sezioni (bracket, grouping staves, spacing)
+  - FR-M8-B: flag --sections per run parziale (debug)
+  - FR-M8-C: flag --verbose e --quiet
+  - FR-M8-D: gestione errori piu' granulare (es. file corrotti, no-rhythm brani, etc.)
+- **Progresso v1**:
+  - M3 Preprocessor+Classifier OK
+  - M4 Reeds OK, M5 Brass OK, M6 Rhythm OK, M7 Drums OK
+  - M8 CLI OK (MVP)
+  - RIMANENTI: M9 validator (3-5h), M10 D-038 PDF layout (6-10h), M11 docs utente (3-5h), M12 docs PMI finale (2-4h), release v1.0.0 (1-2h)
+- **Monte ore**: ~32h consumate, ~28h residue su budget 60h. ~11 settimane alla deadline 31 gen 2027. Molto buffer.
+- **Prossimo passo raccomandato**: M9 validator (unifica i 4 check_fidelity in un flag --validate del CLI con report testuale).
