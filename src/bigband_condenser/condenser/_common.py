@@ -288,6 +288,34 @@ def _place_event(part, bounds, onset: float, duration: float, slots) -> None:
         )
 
 
+def _insert_gap_rests(measure, start: float, length: float, bar_len: float) -> None:
+    """Fill a gap with rests.
+
+    A rest covering only part of the bar must never be a whole rest:
+    MusicXML readers take a whole rest as 'the entire bar', so a 4-quarter
+    gap inside a 5/4 bar is read back as 5 quarters and every following
+    bar shifts by one beat. Partial gaps of 4 quarters or more are split
+    into half rests plus a remainder.
+    """
+    import music21
+    whole_bar = start <= _GAP_EPS and abs(length - bar_len) <= _GAP_EPS
+    if whole_bar or length < 4.0 - _GAP_EPS:
+        chunks = [length]
+    else:
+        chunks = []
+        remaining = length
+        while remaining > 2.0 + _GAP_EPS:
+            chunks.append(2.0)
+            remaining -= 2.0
+        chunks.append(remaining)
+    cursor = start
+    for ql in chunks:
+        r = music21.note.Rest()
+        r.duration.quarterLength = ql
+        measure.insert(cursor, r)
+        cursor += ql
+
+
 def _fill_measure_rests(measure, bar_len: float) -> None:
     import music21
     if bar_len <= _GAP_EPS:
@@ -297,16 +325,12 @@ def _fill_measure_rests(measure, bar_len: float) -> None:
     for n in notes:
         n_start = float(n.offset)
         if n_start > cursor + _GAP_EPS:
-            r = music21.note.Rest()
-            r.duration.quarterLength = n_start - cursor
-            measure.insert(cursor, r)
+            _insert_gap_rests(measure, cursor, n_start - cursor, bar_len)
         n_end = n_start + float(n.duration.quarterLength)
         if n_end > cursor:
             cursor = n_end
     if cursor < bar_len - _GAP_EPS:
-        r = music21.note.Rest()
-        r.duration.quarterLength = bar_len - cursor
-        measure.insert(cursor, r)
+        _insert_gap_rests(measure, cursor, bar_len - cursor, bar_len)
 
 
 # ========== M4.7 + M4.8: cast tracking, labels, crossing markers ==========

@@ -249,3 +249,23 @@ output Reeds 91, Brass 81 (prima 0); biscrome spurie 0 (prima 65).
 specifica dei sax, non del motore comune. Limite: quintine/settimine non gestite.
 **Test:** `tests/test_snap_triplets.py` (4 test), suite a 97.
 **Nota:** numerazione D-042/D-043 da normalizzare (duplicati).
+
+---
+
+## 2026-11-10 — TK-Reeds-03: pause parziali di semibreve (chiude il FAIL Reeds, rettifica D-042)
+
+**Owner:** Developer
+**Causa radice:** `_fill_measure_rests` riempiva un vuoto di 4/4 dentro una
+battuta in 5/4 (m73) con una pausa di semibreve. I lettori MusicXML la
+interpretano come pausa di battuta intera (5/4): da m74 tutto slittava di
+un movimento. Il condenser Reeds era corretto in memoria.
+**Fix:** `_insert_gap_rests` spezza i vuoti parziali di 4/4 o più in pause
+di minima più resto.
+**Risultato su Kronos:** Reeds da 58/142 a 1/142 (m135, trillo di playback,
+atteso per D-022). OVERALL PASS. Suite a 101 test.
+**Rettifica D-042 del 10/11:** i tre "pattern residui" non esistono.
+L'accordo di 7 note del Soprano era una sigla d'accordo letta come note
+dallo script diagnostico; le legature tra battute erano effetto dello
+slittamento; la frammentazione delle durate era lo snap binario (TK-Reeds-02).
+**Da fare:** riportare il validator a tolleranze strette (Brass 0.25,
+soglia 2% da rivalutare); normalizzare la numerazione D-042/D-043.

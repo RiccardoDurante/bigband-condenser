@@ -41,57 +41,57 @@
       <staff-distance>75</staff-distance>
     </staff-layout>
   </defaults><part-list>
-    <score-part id="Pab5ab518a2be4acd43f3a2549d0f1d26">
+    <score-part id="P016bcede579e4b89b55a0324d6e30065">
       <part-name font-size="9">Reeds 1</part-name>
       <part-abbreviation font-size="8">R1</part-abbreviation>
     </score-part>
-    <score-part id="P0ec767e6d1bc92c8ab54455f40845b11">
+    <score-part id="Pf8cc5d51567d4402c878c1b369c1d80a">
       <part-name font-size="9">Reeds 2</part-name>
       <part-abbreviation font-size="8">R2</part-abbreviation>
     </score-part>
-    <score-part id="P9050304700f5ab8c63459f9335f51624">
+    <score-part id="Pe0bf9b58b2bf8b42ff46ef2364a97b2d">
       <part-name font-size="9">Brass 1</part-name>
       <part-abbreviation font-size="8">B1</part-abbreviation>
     </score-part>
-    <score-part id="Pe83b17a9bf1748823681d7a93aa66b8b">
+    <score-part id="Pf31c051ec8a3d40b358112308753ae09">
       <part-name font-size="9">Brass 2</part-name>
       <part-abbreviation font-size="8">B2</part-abbreviation>
     </score-part>
-    <score-part id="P9282d25749b10cc12e0ed6c7b531ca48">
+    <score-part id="P25c0a7257a88156554c01d1d23421636">
       <part-name font-size="9">Guitar</part-name>
       <part-abbreviation font-size="8">Gtr</part-abbreviation>
-      <score-instrument id="Idb8b587a95aea72e313740697ac4c6cc">
+      <score-instrument id="Ief86a9795db343a34318bfd07d00938e">
         <instrument-name>Electric Guitar</instrument-name>
         <instrument-abbreviation>Elec Gtr</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Idb8b587a95aea72e313740697ac4c6cc">
+      <midi-instrument id="Ief86a9795db343a34318bfd07d00938e">
         <midi-channel>5</midi-channel>
         <midi-program>27</midi-program>
       </midi-instrument>
     </score-part>
-    <score-part id="P2f29d06280d702989b7f9f6a8bb735ac">
+    <score-part id="Paf244087dce52809d595830192b38405">
       <part-name font-size="9">Bass</part-name>
       <part-abbreviation font-size="8">Bs</part-abbreviation>
-      <score-instrument id="Ib9237726fa9e1e55ab6945678e3e8a16">
+      <score-instrument id="Iee39aaba4d8edb9b46d291fb14ec4408">
         <instrument-name>Acoustic Bass</instrument-name>
         <instrument-abbreviation>Ac b</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="Ib9237726fa9e1e55ab6945678e3e8a16">
+      <midi-instrument id="Iee39aaba4d8edb9b46d291fb14ec4408">
         <midi-channel>6</midi-channel>
         <midi-program>33</midi-program>
       </midi-instrument>
     </score-part>
-    <score-part id="P42740ce630259a70987a0feed38080a9">
+    <score-part id="Pa67b6579f962e41a49e4499b5699a11d">
       <part-name font-size="9">Drums</part-name>
       <part-abbreviation font-size="8">Dr</part-abbreviation>
-      <score-instrument id="I39d050c224c18299f3535ea20a1173e5">
+      <score-instrument id="I90db82ee99695c0cc8488818649cc092">
         <instrument-name>Percussion</instrument-name>
         <instrument-abbreviation>Perc</instrument-abbreviation>
       </score-instrument>
     </score-part>
   </part-list>
   
-  <part id="Pab5ab518a2be4acd43f3a2549d0f1d26">
+  <part id="P016bcede579e4b89b55a0324d6e30065">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -1804,8 +1804,13 @@ T.Sx 1</words>
     <measure implicit="no" number="35" width="509">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <rest />
@@ -2216,8 +2221,13 @@ A.Sx</words>
     <measure implicit="no" number="46" width="502">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <direction placement="above">
         <direction-type>
@@ -3066,8 +3076,13 @@ T.Sx 1</words>
     <measure implicit="no" number="70" width="573">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <direction placement="above">
         <direction-type>
@@ -3213,8 +3228,13 @@ T.Sx 1</words>
       </note>
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
@@ -6937,7 +6957,7 @@ A.Sx</words>
     </measure>
   </part>
   
-  <part id="P0ec767e6d1bc92c8ab54455f40845b11">
+  <part id="Pf8cc5d51567d4402c878c1b369c1d80a">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -8330,8 +8350,13 @@ T.Sx 2</words>
     <measure implicit="no" number="35" width="509">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <rest />
@@ -8854,8 +8879,13 @@ T.Sx 2</words>
     <measure implicit="no" number="48" width="502">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <pitch>
@@ -9459,8 +9489,13 @@ Bar.Sx</words>
     <measure implicit="no" number="70" width="573">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <direction placement="below">
         <direction-type>
@@ -9605,8 +9640,13 @@ Bar.Sx</words>
       </note>
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
@@ -9644,22 +9684,32 @@ Bar.Sx</words>
     <measure implicit="no" number="77" width="393">
       <note>
         <rest />
-        <duration>43680</duration>
-        <type>breve</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>3360</duration>
+        <type>eighth</type>
         <time-modification>
-          <actual-notes>24</actual-notes>
-          <normal-notes>13</normal-notes>
-          <normal-type>16th</normal-type>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>eighth</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="yes" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>24</tuplet-number>
-              <tuplet-type>16th</tuplet-type>
+              <tuplet-number>3</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>13</tuplet-number>
-              <tuplet-type>16th</tuplet-type>
+              <tuplet-number>2</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
             </tuplet-normal>
           </tuplet>
         </notations>
@@ -9685,9 +9735,6 @@ Bar.Sx</words>
         </time-modification>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <notations>
-          <tuplet number="1" type="stop" />
-        </notations>
       </note>
       <note>
         <chord />
@@ -9720,16 +9767,6 @@ Bar.Sx</words>
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
-          <tuplet bracket="no" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
           <tuplet number="1" type="stop" />
         </notations>
       </note>
@@ -12638,8 +12675,13 @@ T.Sx 2</words>
     <measure implicit="no" number="128" width="580">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <pitch>
@@ -12877,22 +12919,32 @@ T.Sx 2</words>
     <measure implicit="no" number="131" width="569">
       <note>
         <rest />
-        <duration>43680</duration>
-        <type>breve</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>3360</duration>
+        <type>eighth</type>
         <time-modification>
-          <actual-notes>24</actual-notes>
-          <normal-notes>13</normal-notes>
-          <normal-type>16th</normal-type>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>eighth</normal-type>
         </time-modification>
         <notations>
           <tuplet bracket="yes" number="1" placement="above" type="start">
             <tuplet-actual>
-              <tuplet-number>24</tuplet-number>
-              <tuplet-type>16th</tuplet-type>
+              <tuplet-number>3</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
             </tuplet-actual>
             <tuplet-normal>
-              <tuplet-number>13</tuplet-number>
-              <tuplet-type>16th</tuplet-type>
+              <tuplet-number>2</tuplet-number>
+              <tuplet-type>eighth</tuplet-type>
             </tuplet-normal>
           </tuplet>
         </notations>
@@ -12911,9 +12963,6 @@ T.Sx 2</words>
         </time-modification>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <notations>
-          <tuplet number="1" type="stop" />
-        </notations>
       </note>
       <note>
         <chord />
@@ -12948,16 +12997,6 @@ T.Sx 2</words>
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
-          <tuplet bracket="no" number="1" placement="above" type="start">
-            <tuplet-actual>
-              <tuplet-number>3</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
-            </tuplet-actual>
-            <tuplet-normal>
-              <tuplet-number>2</tuplet-number>
-              <tuplet-type>eighth</tuplet-type>
-            </tuplet-normal>
-          </tuplet>
           <tuplet number="1" type="stop" />
         </notations>
       </note>
@@ -13181,8 +13220,13 @@ T.Sx 2</words>
     <measure implicit="no" number="135" width="608">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <rest />
@@ -13781,7 +13825,7 @@ T.Sx 2</words>
     </measure>
   </part>
   
-  <part id="P9050304700f5ab8c63459f9335f51624">
+  <part id="Pe0bf9b58b2bf8b42ff46ef2364a97b2d">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -15186,8 +15230,13 @@ Cor.2</words>
     <measure implicit="no" number="30" width="502">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <direction placement="above">
         <direction-type>
@@ -23576,8 +23625,13 @@ Cor.2</words>
     <measure implicit="no" number="117" width="568">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <direction placement="above">
         <direction-type>
@@ -27479,7 +27533,7 @@ Tp.4</words>
     </measure>
   </part>
   
-  <part id="Pe83b17a9bf1748823681d7a93aa66b8b">
+  <part id="Pf31c051ec8a3d40b358112308753ae09">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -28433,8 +28487,13 @@ Tp.4</words>
     <measure implicit="no" number="35" width="509">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <rest />
@@ -28914,8 +28973,13 @@ Tp.4</words>
     <measure implicit="no" number="46" width="502">
       <note>
         <rest />
-        <duration>40320</duration>
-        <type>whole</type>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
       </note>
       <note>
         <pitch>
@@ -32230,7 +32294,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="P9282d25749b10cc12e0ed6c7b531ca48">
+  <part id="P25c0a7257a88156554c01d1d23421636">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -39072,7 +39136,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="P2f29d06280d702989b7f9f6a8bb735ac">
+  <part id="Paf244087dce52809d595830192b38405">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -44278,7 +44342,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="P42740ce630259a70987a0feed38080a9">
+  <part id="Pa67b6579f962e41a49e4499b5699a11d">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
