@@ -44,6 +44,17 @@ def _coalesce_notes_in_stream(stream):
             continue
         new_dur = (start2 + float(n2.duration.quarterLength)) - float(n1.offset)
         n1.duration.quarterLength = new_dur
+        # Clean up orphan tie: n1 had tie-out to n2 which we are removing.
+        # The merged n1 no longer needs the outgoing tie.
+        try:
+            if n1.tie is not None and n1.tie.type in ("start", "continue"):
+                # If n2 had tie-out too, propagate it; otherwise drop
+                if n2.tie is not None and n2.tie.type in ("start", "continue"):
+                    pass  # keep n1.tie as 'start' pointing to what n2 was pointing
+                else:
+                    n1.tie = None
+        except Exception:
+            pass
         to_remove.append(n2)
         notes.pop(i + 1)
     for n in to_remove:

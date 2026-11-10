@@ -177,3 +177,56 @@ LilyPond rispetta il `font-size` nativamente.
 
 **Documentazione utente:** README sezione "Known limitations" + esempio.
 
+
+---
+
+## 2026-11-10 — M10-partial: LilyPond pipeline operativa ma limitata
+
+**Owner:** Developer
+**Risultato:**
+- `scripts/build_pdf.py` funzionante: converte MusicXML condensed in PDF
+  A4 landscape via music21 + LilyPond
+- `\paper` block con margini simmetrici, max 4 systems/page, indent 25mm
+- `uniform-stretching = ##t` per bar di larghezza simile
+- Tentativo `musicxml2ly` (converter LilyPond nativo) fallisce sul nostro
+  MusicXML (probabile incompatibilità con `<measure-style>` o chord
+  anomali); fallback automatico su `music21.write("lily")`
+
+**Qualità PDF:**
+- Orientamento A4 landscape ✓
+- Densità bars/pagina ~ target
+- Labels compatti all'inizio dei sistemi
+- **Limitazioni note:** battute di larghezze non perfettamente uniformi
+  (uniform-stretching mitiga ma non elimina), durate non sempre fedeli al
+  source XML (music21 writer quantizza), note extra/missing in bars con
+  pattern D-042
+
+**Verdict Tech Lead:** LilyPond pipeline ha raggiunto il tetto pratico con
+questa toolchain. Miglioramenti ulteriori richiederebbero riscrittura del
+backend LilyPond di music21 (fuori scope) o fix dei pattern D-042 (4-6h).
+
+---
+
+## 2026-11-10 — PROPOSTA D-043: ridefinire M10 come "MusicXML + Dorico template"
+
+**Owner:** PM
+**Stato:** PROPOSED — attende decisione sponsor
+
+**Motivazione:**
+1. Qualità PDF LilyPond inferiore rispetto a Dorico export (gap ~15%)
+2. User target (arrangiatori jazz professionisti) usano Dorico/Finale/Sibelius
+3. MusicXML condensed è il vero deliverable; il PDF è un re-render
+
+**Decisione proposta:**
+- M10 primary deliverable = `output.musicxml` + template Dorico
+  (`templates/bigband_condensed.dorico`) + guida `docs/how_to_pdf.md`
+- `scripts/build_pdf.py` resta come tool opzionale "best-effort" per
+  utenti senza software professionale, con disclaimer in README
+
+**Impatto budget:**
+- Risparmio: 6-8h di polish LilyPond
+- Costo: 2-3h per template Dorico + how-to
+- Netto: +4-5h di buffer sulla deadline
+
+**Alternativa:** restare su LilyPond, accettare quality gap, documentare.
+

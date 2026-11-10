@@ -41,57 +41,57 @@
       <staff-distance>75</staff-distance>
     </staff-layout>
   </defaults><part-list>
-    <score-part id="Pd4a948de7ffe21109b764f516c6a1fc5">
+    <score-part id="P015b468e72f65f12973be668a9c940af">
       <part-name font-size="9">Reeds 1</part-name>
       <part-abbreviation font-size="8">R1</part-abbreviation>
     </score-part>
-    <score-part id="Pa274b28a7dc398a26f38d05bee63ffed">
+    <score-part id="P07a5146d483925aaca13405a4687e277">
       <part-name font-size="9">Reeds 2</part-name>
       <part-abbreviation font-size="8">R2</part-abbreviation>
     </score-part>
-    <score-part id="P6d7f930b573f8ee203ebb6bd7fc71f12">
+    <score-part id="P93598a8a7bf977550e1f21e24044e0d9">
       <part-name font-size="9">Brass 1</part-name>
       <part-abbreviation font-size="8">B1</part-abbreviation>
     </score-part>
-    <score-part id="Pceb45ceab7fa0ce004f1e148cd240bd4">
+    <score-part id="P432ed82f0597499ec9299472555db2ae">
       <part-name font-size="9">Brass 2</part-name>
       <part-abbreviation font-size="8">B2</part-abbreviation>
     </score-part>
-    <score-part id="Pdbcba95a4be8e44753a7ea2288b4c178">
+    <score-part id="Pb10d08c859a8236a8489d3d994544140">
       <part-name font-size="9">Guitar</part-name>
       <part-abbreviation font-size="8">Gtr</part-abbreviation>
-      <score-instrument id="I227ba7f11a8efb7e15b9561e3dcfd843">
+      <score-instrument id="I8641cc6f7b090de3f3682113a7fd7106">
         <instrument-name>Electric Guitar</instrument-name>
         <instrument-abbreviation>Elec Gtr</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I227ba7f11a8efb7e15b9561e3dcfd843">
+      <midi-instrument id="I8641cc6f7b090de3f3682113a7fd7106">
         <midi-channel>5</midi-channel>
         <midi-program>27</midi-program>
       </midi-instrument>
     </score-part>
-    <score-part id="Pb32f6c430f3a90276d3ae01bd8090787">
+    <score-part id="Pf61b524a8a3152419c774a33affa253f">
       <part-name font-size="9">Bass</part-name>
       <part-abbreviation font-size="8">Bs</part-abbreviation>
-      <score-instrument id="I00dbc8cfd5f8b319d5b48d65d407005c">
+      <score-instrument id="I98772bec45a971a11c4638f0655929fc">
         <instrument-name>Acoustic Bass</instrument-name>
         <instrument-abbreviation>Ac b</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I00dbc8cfd5f8b319d5b48d65d407005c">
+      <midi-instrument id="I98772bec45a971a11c4638f0655929fc">
         <midi-channel>6</midi-channel>
         <midi-program>33</midi-program>
       </midi-instrument>
     </score-part>
-    <score-part id="Pd0c2a6dcfd82d6dbf45682cdbe9427d3">
+    <score-part id="P04e095565ed6816712aed4573c829ef7">
       <part-name font-size="9">Drums</part-name>
       <part-abbreviation font-size="8">Dr</part-abbreviation>
-      <score-instrument id="Iadaae3f4dbff99bf83731eed6aaa0458">
+      <score-instrument id="I03124e70f116b0ef8de82c98c97cbbc5">
         <instrument-name>Percussion</instrument-name>
         <instrument-abbreviation>Perc</instrument-abbreviation>
       </score-instrument>
     </score-part>
   </part-list>
   
-  <part id="Pd4a948de7ffe21109b764f516c6a1fc5">
+  <part id="P015b468e72f65f12973be668a9c940af">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -3802,11 +3802,9 @@ T.Sx 2</words>
           <octave>3</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>half</type>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -3830,11 +3828,9 @@ T.Sx 2</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -6818,7 +6814,7 @@ A.Sx</words>
     </measure>
   </part>
   
-  <part id="Pa274b28a7dc398a26f38d05bee63ffed">
+  <part id="P07a5146d483925aaca13405a4687e277">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -7447,13 +7443,11 @@ A.Sx</words>
           <octave>4</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>half</type>
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -7464,11 +7458,9 @@ A.Sx</words>
           <octave>3</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>half</type>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -7494,13 +7486,11 @@ A.Sx</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -7511,11 +7501,9 @@ A.Sx</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -8521,12 +8509,10 @@ T.Sx 2</words>
         </pitch>
         <duration>3780</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>16th</type>
         <dot />
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -8537,23 +8523,23 @@ T.Sx 2</words>
         </pitch>
         <duration>3780</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>16th</type>
         <dot />
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
         <pitch>
           <step>C</step>
+          <alter>0</alter>
           <octave>4</octave>
         </pitch>
         <duration>2520</duration>
         <tie type="stop" />
         <tie type="start" />
         <type>16th</type>
+        <accidental>natural</accidental>
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
@@ -10981,11 +10967,9 @@ T.Sx 2</words>
           <octave>2</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>half</type>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -11011,11 +10995,9 @@ T.Sx 2</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -12383,12 +12365,10 @@ T.Sx 2</words>
         </pitch>
         <duration>3780</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>16th</type>
         <dot />
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -12399,23 +12379,23 @@ T.Sx 2</words>
         </pitch>
         <duration>3780</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>16th</type>
         <dot />
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
         <pitch>
           <step>C</step>
+          <alter>0</alter>
           <octave>4</octave>
         </pitch>
         <duration>2520</duration>
         <tie type="stop" />
         <tie type="start" />
         <type>16th</type>
+        <accidental>natural</accidental>
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
@@ -13574,12 +13554,8 @@ T.Sx 2</words>
           <octave>4</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="start" />
         <type>half</type>
         <accidental>natural</accidental>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note>
         <chord />
@@ -13598,12 +13574,8 @@ T.Sx 2</words>
           <octave>3</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="start" />
         <type>half</type>
         <accidental>natural</accidental>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -13640,7 +13612,7 @@ T.Sx 2</words>
     </measure>
   </part>
   
-  <part id="P6d7f930b573f8ee203ebb6bd7fc71f12">
+  <part id="P93598a8a7bf977550e1f21e24044e0d9">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -16949,11 +16921,9 @@ Cor.2</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -16965,11 +16935,9 @@ Cor.2</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -16980,11 +16948,9 @@ Cor.2</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -24545,14 +24511,8 @@ Cor.2</words>
           <octave>3</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <dot />
-        <notations>
-          <tied type="stop" />
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -28199,7 +28159,7 @@ Tp.4</words>
     </measure>
   </part>
   
-  <part id="Pceb45ceab7fa0ce004f1e148cd240bd4">
+  <part id="P432ed82f0597499ec9299472555db2ae">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -28427,13 +28387,11 @@ Tp.4</words>
           <octave>3</octave>
         </pitch>
         <duration>20160</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>half</type>
         <stem>up</stem>
         <beam number="1">end</beam>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -28459,13 +28417,11 @@ Tp.4</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note>
@@ -28488,10 +28444,12 @@ Tp.4</words>
       <note>
         <pitch>
           <step>F</step>
+          <alter>0</alter>
           <octave>3</octave>
         </pitch>
         <duration>40320</duration>
         <type>whole</type>
+        <accidental>natural</accidental>
       </note>
       <note>
         <chord />
@@ -30408,12 +30366,8 @@ B.Tbn</words>
           <octave>3</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="start" />
         <type>quarter</type>
         <dot />
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note>
         <pitch>
@@ -32807,7 +32761,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="Pdbcba95a4be8e44753a7ea2288b4c178">
+  <part id="Pb10d08c859a8236a8489d3d994544140">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -32932,11 +32886,9 @@ B.Tbn</words>
           <octave>6</octave>
         </pitch>
         <duration>10080</duration>
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-20">down</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-40" bezier-y="26" default-x="7" default-y="20" number="5" placement="above" type="start" />
         </notations>
       </note>
@@ -33130,12 +33082,10 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33146,12 +33096,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33162,12 +33110,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33178,12 +33124,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -33194,12 +33138,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -33210,12 +33152,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -33318,12 +33258,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33334,12 +33272,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33350,12 +33286,10 @@ B.Tbn</words>
           <octave>6</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33366,12 +33300,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -33382,12 +33314,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -33398,12 +33328,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -33415,7 +33343,6 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>43680</duration>
-        <tie type="start" />
         <type>breve</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -33424,7 +33351,6 @@ B.Tbn</words>
         </time-modification>
         <stem default-y="-20">down</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-57" bezier-y="57" default-x="8" default-y="8" number="6" placement="above" type="start" />
         </notations>
       </note>
@@ -33501,12 +33427,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem default-y="-40">down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -33517,12 +33441,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-40">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -33606,12 +33528,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="90">
@@ -33622,12 +33542,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="102">
@@ -33638,12 +33556,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="102">
@@ -33654,12 +33570,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -33736,12 +33650,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="13">
@@ -33752,12 +33664,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="13">
@@ -33768,12 +33678,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="13">
@@ -33784,12 +33692,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -33829,7 +33735,6 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>43680</duration>
-        <tie type="start" />
         <type>breve</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -33838,7 +33743,6 @@ B.Tbn</words>
         </time-modification>
         <stem default-y="10">up</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-101" bezier-y="43" default-x="7" default-y="-7" number="1" type="start" />
         </notations>
       </note>
@@ -33894,14 +33798,10 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <stem default-y="-55">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -33964,12 +33864,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-39.5">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -34077,12 +33975,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
           <glissando line-type="wavy" number="3" type="stop" />
         </notations>
       </note>
@@ -34094,12 +33990,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="102">
@@ -34110,12 +34004,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="102">
@@ -34126,12 +34018,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -34224,12 +34114,10 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -34240,12 +34128,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem>down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -34256,12 +34142,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="13">
@@ -34272,12 +34156,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -34324,13 +34206,9 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="start" />
         <type>quarter</type>
         <dot />
         <stem default-y="-50">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="305">
         <pitch>
@@ -34380,7 +34258,6 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>28560</duration>
-        <tie type="start" />
         <type>whole</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -34388,9 +34265,6 @@ B.Tbn</words>
           <normal-type>32nd</normal-type>
         </time-modification>
         <stem default-y="-55">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="435">
         <pitch>
@@ -34452,12 +34326,8 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="start" />
         <type>whole</type>
         <stem default-y="5">up</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -34543,12 +34413,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="90">
@@ -34559,12 +34427,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="102">
@@ -34575,12 +34441,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="102">
@@ -34591,12 +34455,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -34676,12 +34538,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -34692,12 +34552,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -34708,12 +34566,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -34725,12 +34581,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -34779,14 +34633,10 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="start" />
         <type>quarter</type>
         <dot />
         <stem default-y="15">up</stem>
         <beam number="1">end</beam>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -34972,12 +34822,8 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="start" />
         <type>whole</type>
         <stem default-y="-40">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <barline location="right">
         <bar-style>light-light</bar-style>
@@ -35002,7 +34848,6 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>28560</duration>
-        <tie type="start" />
         <type>whole</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -35011,7 +34856,6 @@ B.Tbn</words>
         </time-modification>
         <stem default-y="-50">down</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-100" bezier-y="36" default-x="7" default-y="8" number="3" placement="above" type="start" />
         </notations>
       </note>
@@ -35069,14 +34913,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <stem default-y="-40">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -35130,12 +34970,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -35188,7 +35026,6 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>43680</duration>
-        <tie type="start" />
         <type>breve</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -35197,7 +35034,6 @@ B.Tbn</words>
         </time-modification>
         <stem default-y="10">up</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-101" bezier-y="43" default-x="7" default-y="-7" number="4" type="start" />
         </notations>
       </note>
@@ -35267,12 +35103,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-55">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -35360,12 +35194,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem default-y="-40">down</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -35376,12 +35208,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-40">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <barline location="right">
@@ -35537,13 +35367,11 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="248">
@@ -35554,12 +35382,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="491">
@@ -35630,15 +35456,11 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <stem>up</stem>
         <beam number="1">end</beam>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="159">
         <chord />
@@ -35647,14 +35469,10 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <stem>up</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -35729,13 +35547,11 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="160">
@@ -35746,12 +35562,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -35827,15 +35641,11 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <stem>up</stem>
         <beam number="1">end</beam>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="159">
         <chord />
@@ -35844,14 +35654,10 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <stem>up</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -36793,12 +36599,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="21">
@@ -36809,12 +36613,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="21">
@@ -36825,12 +36627,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="21">
@@ -36842,12 +36642,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -37041,12 +36839,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="202">
@@ -37057,12 +36853,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="202">
@@ -37073,12 +36867,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <barline location="right">
@@ -38259,12 +38051,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-19.5">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -38573,12 +38363,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-20">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -38703,12 +38491,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -38719,12 +38505,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -38735,12 +38519,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="14">
@@ -38752,12 +38534,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem>down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -39003,7 +38783,6 @@ B.Tbn</words>
           <octave>5</octave>
         </pitch>
         <duration>28560</duration>
-        <tie type="start" />
         <type>whole</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -39012,7 +38791,6 @@ B.Tbn</words>
         </time-modification>
         <stem default-y="-50">down</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-102" bezier-y="39" default-x="7" default-y="5" number="6" placement="above" type="start" />
         </notations>
       </note>
@@ -39084,12 +38862,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-40">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="460">
@@ -39207,7 +38983,6 @@ B.Tbn</words>
           <octave>4</octave>
         </pitch>
         <duration>43680</duration>
-        <tie type="start" />
         <type>breve</type>
         <time-modification>
           <actual-notes>24</actual-notes>
@@ -39216,7 +38991,6 @@ B.Tbn</words>
         </time-modification>
         <stem default-y="10">up</stem>
         <notations>
-          <tied type="start" />
           <slur bezier-x="-99" bezier-y="46" default-x="6" default-y="-7" number="1" type="start" />
         </notations>
       </note>
@@ -39286,12 +39060,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-55">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="460">
@@ -39364,12 +39136,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-40">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <barline location="right">
@@ -39467,12 +39237,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -39835,7 +39603,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="Pb32f6c430f3a90276d3ae01bd8090787">
+  <part id="Pf61b524a8a3152419c774a33affa253f">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -40025,13 +39793,11 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-75">down</stem>
         <beam number="1">end</beam>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40252,12 +40018,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40296,12 +40060,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -40341,12 +40103,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-15">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40384,12 +40144,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -40434,12 +40192,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40478,12 +40234,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -40523,12 +40277,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-15">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40566,12 +40318,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -40612,12 +40362,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-4.5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40655,12 +40403,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-49.5">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -40701,12 +40447,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40734,14 +40478,12 @@ B.Tbn</words>
           <octave>2</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <accidental>flat</accidental>
         <stem default-y="5">up</stem>
         <notations>
-          <tied type="start" />
           <articulations>
             <accent default-x="0" default-y="-57" placement="below" />
           </articulations>
@@ -40774,12 +40516,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40820,12 +40560,8 @@ B.Tbn</words>
           <octave>3</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="start" />
         <type>whole</type>
         <stem default-y="-55">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="403">
         <pitch>
@@ -40871,12 +40607,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -40917,12 +40651,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -40960,12 +40692,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -41006,12 +40736,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41047,12 +40775,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="404">
@@ -41096,12 +40822,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="10">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41159,12 +40883,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41322,12 +41044,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41366,12 +41086,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -41411,12 +41129,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-15">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41454,12 +41170,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -41500,12 +41214,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41548,12 +41260,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -41616,12 +41326,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41658,12 +41366,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="5.5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <barline location="right">
@@ -41701,12 +41407,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41745,12 +41449,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -41790,12 +41492,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-15">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41833,12 +41533,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -41879,12 +41577,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -41922,12 +41618,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="402">
@@ -41968,12 +41662,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42160,12 +41852,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-44.5">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="403">
@@ -42288,12 +41978,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0.5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42329,12 +42017,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-44.5">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="404">
@@ -42382,12 +42068,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="10">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42445,12 +42129,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0.5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42615,12 +42297,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42659,12 +42339,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="316">
@@ -42704,12 +42382,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-15">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42747,12 +42423,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="316">
@@ -42793,12 +42467,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42825,14 +42497,12 @@ B.Tbn</words>
           <octave>2</octave>
         </pitch>
         <duration>35280</duration>
-        <tie type="start" />
         <type>half</type>
         <dot />
         <dot />
         <accidental>sharp</accidental>
         <stem default-y="-5">up</stem>
         <notations>
-          <tied type="start" />
           <articulations>
             <accent default-x="0" default-y="-61" placement="below" />
           </articulations>
@@ -42861,12 +42531,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -42900,13 +42568,9 @@ B.Tbn</words>
           <octave>2</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="start" />
         <type>quarter</type>
         <dot />
         <stem default-y="5">up</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="316">
         <rest />
@@ -43047,12 +42711,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -43102,12 +42764,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-10">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -43160,12 +42820,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -43190,14 +42848,10 @@ B.Tbn</words>
           <octave>3</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="start" />
         <type>quarter</type>
         <dot />
         <accidental>flat</accidental>
         <stem default-y="-50">down</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="376">
         <pitch>
@@ -43247,12 +42901,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -43265,13 +42917,9 @@ B.Tbn</words>
           <octave>2</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="start" />
         <type>whole</type>
         <accidental>flat</accidental>
         <stem default-y="5">up</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -43306,12 +42954,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -43350,13 +42996,9 @@ B.Tbn</words>
           <octave>2</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="start" />
         <type>whole</type>
         <accidental>sharp</accidental>
         <stem default-y="-10">up</stem>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
     </measure>
     
@@ -43394,12 +43036,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44048,12 +43688,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="10.5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44111,12 +43749,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44269,12 +43905,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44313,12 +43947,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="460">
@@ -44358,12 +43990,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-15">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44401,12 +44031,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-45">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="460">
@@ -44447,12 +44075,10 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="-4.5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44490,12 +44116,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-50">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <note default-x="460">
@@ -44553,12 +44177,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="0">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
       <barline location="right">
@@ -44623,12 +44245,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="5">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44776,12 +44396,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="-55">down</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44825,12 +44443,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="10">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44870,12 +44486,10 @@ B.Tbn</words>
         </pitch>
         <duration>5040</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>eighth</type>
         <stem default-y="10">up</stem>
         <notations>
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -44949,12 +44563,10 @@ B.Tbn</words>
           <octave>3</octave>
         </pitch>
         <duration>40320</duration>
-        <tie type="stop" />
         <tie type="start" />
         <type>whole</type>
         <stem default-y="10">up</stem>
         <notations>
-          <tied type="stop" />
           <tied type="start" />
         </notations>
       </note>
@@ -44965,13 +44577,11 @@ B.Tbn</words>
         </pitch>
         <duration>10080</duration>
         <tie type="stop" />
-        <tie type="start" />
         <type>quarter</type>
         <stem default-y="10">up</stem>
         <notations>
           <fermata type="upright" />
           <tied type="stop" />
-          <tied type="start" />
         </notations>
       </note>
     </measure>
@@ -45133,14 +44743,10 @@ B.Tbn</words>
           <octave>3</octave>
         </pitch>
         <duration>15120</duration>
-        <tie type="start" />
         <type>quarter</type>
         <dot />
         <stem default-y="-75">down</stem>
         <beam number="1">end</beam>
-        <notations>
-          <tied type="start" />
-        </notations>
       </note>
       <note default-x="499">
         <rest />
@@ -45203,7 +44809,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="Pd0c2a6dcfd82d6dbf45682cdbe9427d3">
+  <part id="P04e095565ed6816712aed4573c829ef7">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
