@@ -37,6 +37,18 @@ def main(argv=None):
         "-o", "--output", type=Path, required=True,
         help="Path to the output condensed MusicXML file.",
     )
+    parser.add_argument(
+        "--validate", action="store_true",
+        help="Run validation after writing; print report summary.",
+    )
+    parser.add_argument(
+        "--report", type=Path, default=None,
+        help="When set with --validate, save the detailed report to this path.",
+    )
+    parser.add_argument(
+        "--tolerance", type=float, default=0.25,
+        help="Per-bar fidelity tolerance in quarter-length units (default 0.25).",
+    )
     args = parser.parse_args(argv)
 
     if not args.input.exists():
@@ -156,8 +168,30 @@ def main(argv=None):
     except Exception as e:
         _log(f"  sanitizer skipped: {e}")
 
+    # Inject A4 landscape page layout (D-040) so Dorico/Finale/LilyPond
+    # open the condensed score in horizontal orientation with evenly
+    # spaced staves across the 4 systems.
+    try:
+        from bigband_condenser.page_layout import inject_landscape_layout
+        inject_landscape_layout(args.output)
+        _log("  page layout: A4 landscape injected")
+    except Exception as e:
+        _log(f"  warning: page layout injection failed: {e}")
     size_kb = args.output.stat().st_size / 1024
     _log(f"DONE: {args.output} ({size_kb:.1f} KB)")
+
+    if args.validate:
+        _log("")
+        _log("Validating condensed output ...")
+        from bigband_condenser.validator import validate, format_report
+        report = validate(args.input, args.output, tolerance_per_bar=args.tolerance)
+        summary = format_report(report, detailed=False)
+        print(summary)
+        if args.report is not None:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            args.report.write_text(format_report(report, detailed=True), encoding="utf-8")
+            _log(f"Full report written to {args.report}")
+        return 0 if report.passed else 1
     return 0
 
 

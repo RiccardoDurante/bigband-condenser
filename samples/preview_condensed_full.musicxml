@@ -16,82 +16,85 @@
   </identification>
   <defaults>
     <scaling>
-      <millimeters>7</millimeters>
+      <millimeters>7.0556</millimeters>
       <tenths>40</tenths>
     </scaling>
-  </defaults>
-  <part-list>
-    <score-part id="P8a9b40e7444e276bdc520403bcdd8ec7">
-      <part-name>Reeds (upper)</part-name>
-      <part-abbreviation>S. Sx.</part-abbreviation>
+    <page-layout>
+      <page-height>1190</page-height>
+      <page-width>1684</page-width>
+      <page-margins type="both">
+        <left-margin>70</left-margin>
+        <right-margin>70</right-margin>
+        <top-margin>70</top-margin>
+        <bottom-margin>70</bottom-margin>
+      </page-margins>
+    </page-layout>
+    <system-layout>
+      <system-margins>
+        <left-margin>0</left-margin>
+        <right-margin>0</right-margin>
+      </system-margins>
+      <system-distance>90</system-distance>
+      <top-system-distance>110</top-system-distance>
+    </system-layout>
+    <staff-layout>
+      <staff-distance>75</staff-distance>
+    </staff-layout>
+  </defaults><part-list>
+    <score-part id="P34004622a02280b7f0dc118064f27482">
+      <part-name font-size="9">Reeds 1</part-name>
+      <part-abbreviation font-size="8">R1</part-abbreviation>
     </score-part>
-    <score-part id="P6ddc61d73118d037e38d6af16fc75895">
-      <part-name>Reeds (lower)</part-name>
-      <part-abbreviation>S. Sx.</part-abbreviation>
+    <score-part id="P3df3ed0312dbc6b02395812bd17ee5bb">
+      <part-name font-size="9">Reeds 2</part-name>
+      <part-abbreviation font-size="8">R2</part-abbreviation>
     </score-part>
-    <score-part id="P68ffdd6ba258bcebb4a1be272d31cff8">
-      <part-name>Brass (upper)</part-name>
-      <part-abbreviation>S. Sx.</part-abbreviation>
+    <score-part id="P01522136e61de945ef79763762b306e9">
+      <part-name font-size="9">Brass 1</part-name>
+      <part-abbreviation font-size="8">B1</part-abbreviation>
     </score-part>
-    <score-part id="Pa4f1ef1716ec0cbbfff2aeb67e26f872">
-      <part-name>Brass (lower)</part-name>
-      <part-abbreviation>S. Sx.</part-abbreviation>
+    <score-part id="P4c5a3f16d7613f3b931e18578f2f3bf8">
+      <part-name font-size="9">Brass 2</part-name>
+      <part-abbreviation font-size="8">B2</part-abbreviation>
     </score-part>
-    <score-part id="P78f52c4b21a4220b95918a507addfb6c">
-      <part-name>Rhythm (treble)</part-name>
-      <part-abbreviation>E.Gtr.</part-abbreviation>
-      <score-instrument id="I503f0802799c1ef5371f3c155a8ea90c">
+    <score-part id="P5437bc10a8bd5299918af4a326cd2cb3">
+      <part-name font-size="9">Guitar</part-name>
+      <part-abbreviation font-size="8">Gtr</part-abbreviation>
+      <score-instrument id="Iada2c4b547693b4e1967b153e6ab730d">
         <instrument-name>Electric Guitar</instrument-name>
         <instrument-abbreviation>Elec Gtr</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I503f0802799c1ef5371f3c155a8ea90c">
+      <midi-instrument id="Iada2c4b547693b4e1967b153e6ab730d">
         <midi-channel>5</midi-channel>
         <midi-program>27</midi-program>
       </midi-instrument>
     </score-part>
-    <score-part id="P4818c8bfe23f97830dbe6791d76d0bad">
-      <part-name>Rhythm (bass)</part-name>
-      <part-abbreviation>A.B.</part-abbreviation>
-      <score-instrument id="I9c9c33978c97f299db37ff608682105f">
+    <score-part id="Pcef395e70eb229bc696e842fa8f4cdc4">
+      <part-name font-size="9">Bass</part-name>
+      <part-abbreviation font-size="8">Bs</part-abbreviation>
+      <score-instrument id="I075515de2c8370522750236faaeca396">
         <instrument-name>Acoustic Bass</instrument-name>
         <instrument-abbreviation>Ac b</instrument-abbreviation>
       </score-instrument>
-      <midi-instrument id="I9c9c33978c97f299db37ff608682105f">
+      <midi-instrument id="I075515de2c8370522750236faaeca396">
         <midi-channel>6</midi-channel>
         <midi-program>33</midi-program>
       </midi-instrument>
     </score-part>
-    <score-part id="P7d6457941be1e595504e33a748e9d008">
-      <part-name>Drums</part-name>
-      <part-abbreviation>D. S. 1</part-abbreviation>
-      <score-instrument id="I216188532d3f597571502258bc7e5ea6">
+    <score-part id="P4b66be1fd5358b7169090be227aea3b6">
+      <part-name font-size="9">Drums</part-name>
+      <part-abbreviation font-size="8">Dr</part-abbreviation>
+      <score-instrument id="I0cea4027022f9429c8e28764faf2575d">
         <instrument-name>Percussion</instrument-name>
         <instrument-abbreviation>Perc</instrument-abbreviation>
       </score-instrument>
     </score-part>
   </part-list>
   
-  <part id="P8a9b40e7444e276bdc520403bcdd8ec7">
+  <part id="P34004622a02280b7f0dc118064f27482">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>6</right-margin>
-          </system-margins>
-          <top-system-distance>182</top-system-distance>
-        </system-layout>
         <measure-numbering>none</measure-numbering>
       </print>
       <attributes>
@@ -525,24 +528,7 @@
     
     <measure implicit="no" number="12" width="590">
       <print new-page="yes" page-number="3">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>5</right-margin>
-          </system-margins>
-          <top-system-distance>162</top-system-distance>
-        </system-layout>
-      </print>
+        </print>
       <note>
         <rest measure="yes" />
         <duration>50400</duration>
@@ -963,17 +949,7 @@ A.Sx</words>
     
     <measure implicit="no" number="20" width="590">
       <print new-page="yes" page-number="4">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="7" default-y="55" font-size="14" halign="center" valign="middle">A</rehearsal>
@@ -1289,17 +1265,7 @@ A.Sx</words>
     
     <measure implicit="no" number="28" width="590">
       <print new-page="yes" page-number="5">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="88" font-size="14" halign="center" valign="middle">B</rehearsal>
@@ -1814,17 +1780,7 @@ A.Sx</words>
     
     <measure implicit="no" number="36" width="662">
       <print new-page="yes" page-number="6">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="57" font-size="14" halign="center" valign="middle">C</rehearsal>
@@ -2111,17 +2067,7 @@ A.Sx</words>
     
     <measure implicit="no" number="43" width="590">
       <print new-page="yes" page-number="7">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="57" font-size="14" halign="center" valign="middle">D</rehearsal>
@@ -2509,17 +2455,7 @@ T.Sx 1</words>
     
     <measure implicit="no" number="51" width="590">
       <print new-page="yes" page-number="8">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="6" default-y="53" font-size="14" halign="center" valign="middle">E</rehearsal>
@@ -2585,17 +2521,7 @@ T.Sx 1</words>
     
     <measure implicit="no" number="59" width="590">
       <print new-page="yes" page-number="9">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="17" default-y="66" font-size="14" halign="center" valign="middle">F</rehearsal>
@@ -2971,17 +2897,7 @@ T.Sx 1</words>
     
     <measure implicit="no" number="67" width="662">
       <print new-page="yes" page-number="10">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="55" font-size="14" halign="center" valign="middle">G</rehearsal>
@@ -3211,17 +3127,7 @@ T.Sx 1</words>
     
     <measure implicit="no" number="74" width="482">
       <print new-page="yes" page-number="11">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="4" default-y="66" font-size="14" halign="center" valign="middle">H</rehearsal>
@@ -3692,17 +3598,7 @@ T.Sx 1</words>
     
     <measure implicit="no" number="84" width="622">
       <print new-page="yes" page-number="12">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -3811,17 +3707,7 @@ T.Sx 1</words>
     
     <measure implicit="no" number="92" width="590">
       <print new-page="yes" page-number="13">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="12" default-y="65" font-size="14" halign="center" valign="middle">J</rehearsal>
@@ -4391,17 +4277,7 @@ A.Sx</words>
     
     <measure implicit="no" number="100" width="662">
       <print new-page="yes" page-number="14">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="75" font-size="14" halign="center" valign="middle">K</rehearsal>
@@ -4665,17 +4541,7 @@ A.Sx</words>
     
     <measure implicit="no" number="107" width="585">
       <print new-page="yes" page-number="15">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="20" default-y="48" font-size="14" halign="center" valign="middle">L</rehearsal>
@@ -5392,17 +5258,7 @@ A.Sx</words>
     
     <measure implicit="no" number="115" width="694">
       <print new-page="yes" page-number="16">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>5</beats>
@@ -5708,17 +5564,7 @@ A.Sx</words>
     
     <measure implicit="no" number="122" width="662">
       <print new-page="yes" page-number="17">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="28" default-y="86" font-size="14" halign="center" valign="middle">N</rehearsal>
@@ -6040,17 +5886,7 @@ A.Sx</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes" page-number="18">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="10" default-y="57" font-size="14" halign="center" valign="middle">O</rehearsal>
@@ -6504,17 +6340,7 @@ A.Sx</words>
     
     <measure implicit="no" number="136" width="788">
       <print new-page="yes" page-number="19">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -7061,27 +6887,10 @@ A.Sx</words>
     </measure>
   </part>
   
-  <part id="P6ddc61d73118d037e38d6af16fc75895">
+  <part id="P3df3ed0312dbc6b02395812bd17ee5bb">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>6</right-margin>
-          </system-margins>
-          <top-system-distance>182</top-system-distance>
-        </system-layout>
         <measure-numbering>none</measure-numbering>
       </print>
       <attributes>
@@ -7892,24 +7701,7 @@ A.Sx</words>
     
     <measure implicit="no" number="12" width="590">
       <print new-page="yes" page-number="3">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>5</right-margin>
-          </system-margins>
-          <top-system-distance>162</top-system-distance>
-        </system-layout>
-      </print>
+        </print>
       <note>
         <rest measure="yes" />
         <duration>50400</duration>
@@ -8147,17 +7939,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="20" width="590">
       <print new-page="yes" page-number="4">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="7" default-y="55" font-size="14" halign="center" valign="middle">A</rehearsal>
@@ -8279,17 +8061,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="28" width="590">
       <print new-page="yes" page-number="5">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="88" font-size="14" halign="center" valign="middle">B</rehearsal>
@@ -8512,17 +8284,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="36" width="662">
       <print new-page="yes" page-number="6">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="57" font-size="14" halign="center" valign="middle">C</rehearsal>
@@ -8880,17 +8642,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="43" width="590">
       <print new-page="yes" page-number="7">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="57" font-size="14" halign="center" valign="middle">D</rehearsal>
@@ -9283,17 +9035,7 @@ Bar.Sx</words>
     
     <measure implicit="no" number="51" width="590">
       <print new-page="yes" page-number="8">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="6" default-y="53" font-size="14" halign="center" valign="middle">E</rehearsal>
@@ -9359,17 +9101,7 @@ Bar.Sx</words>
     
     <measure implicit="no" number="59" width="590">
       <print new-page="yes" page-number="9">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="17" default-y="66" font-size="14" halign="center" valign="middle">F</rehearsal>
@@ -9677,17 +9409,7 @@ Bar.Sx</words>
     
     <measure implicit="no" number="67" width="662">
       <print new-page="yes" page-number="10">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="55" font-size="14" halign="center" valign="middle">G</rehearsal>
@@ -9918,17 +9640,7 @@ Bar.Sx</words>
     
     <measure implicit="no" number="74" width="482">
       <print new-page="yes" page-number="11">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="4" default-y="66" font-size="14" halign="center" valign="middle">H</rehearsal>
@@ -10450,17 +10162,7 @@ Bar.Sx</words>
     
     <measure implicit="no" number="84" width="622">
       <print new-page="yes" page-number="12">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -10564,17 +10266,7 @@ Bar.Sx</words>
     
     <measure implicit="no" number="92" width="590">
       <print new-page="yes" page-number="13">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="12" default-y="65" font-size="14" halign="center" valign="middle">J</rehearsal>
@@ -11132,17 +10824,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="100" width="662">
       <print new-page="yes" page-number="14">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="75" font-size="14" halign="center" valign="middle">K</rehearsal>
@@ -11452,17 +11134,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="107" width="585">
       <print new-page="yes" page-number="15">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="20" default-y="48" font-size="14" halign="center" valign="middle">L</rehearsal>
@@ -12598,17 +12270,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="115" width="694">
       <print new-page="yes" page-number="16">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>5</beats>
@@ -12983,17 +12645,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="122" width="662">
       <print new-page="yes" page-number="17">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="28" default-y="86" font-size="14" halign="center" valign="middle">N</rehearsal>
@@ -13297,17 +12949,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes" page-number="18">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="10" default-y="57" font-size="14" halign="center" valign="middle">O</rehearsal>
@@ -13848,17 +13490,7 @@ T.Sx 2</words>
     
     <measure implicit="no" number="136" width="788">
       <print new-page="yes" page-number="19">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -14462,27 +14094,10 @@ T.Sx 2</words>
     </measure>
   </part>
   
-  <part id="P68ffdd6ba258bcebb4a1be272d31cff8">
+  <part id="P01522136e61de945ef79763762b306e9">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>6</right-margin>
-          </system-margins>
-          <top-system-distance>182</top-system-distance>
-        </system-layout>
         <measure-numbering>none</measure-numbering>
       </print>
       <attributes>
@@ -15259,24 +14874,7 @@ Tp.4</words>
     
     <measure implicit="no" number="12" width="590">
       <print new-page="yes" page-number="3">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>5</right-margin>
-          </system-margins>
-          <top-system-distance>162</top-system-distance>
-        </system-layout>
-      </print>
+        </print>
       <note>
         <rest measure="yes" />
         <duration>50400</duration>
@@ -15667,17 +15265,7 @@ Cor.2</words>
     
     <measure implicit="no" number="20" width="590">
       <print new-page="yes" page-number="4">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="7" default-y="55" font-size="14" halign="center" valign="middle">A</rehearsal>
@@ -15836,17 +15424,7 @@ Cor.2</words>
     
     <measure implicit="no" number="28" width="590">
       <print new-page="yes" page-number="5">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="88" font-size="14" halign="center" valign="middle">B</rehearsal>
@@ -16093,17 +15671,7 @@ Tp.4</words>
     
     <measure implicit="no" number="36" width="662">
       <print new-page="yes" page-number="6">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="57" font-size="14" halign="center" valign="middle">C</rehearsal>
@@ -16747,17 +16315,7 @@ Tp.2</words>
     
     <measure implicit="no" number="43" width="590">
       <print new-page="yes" page-number="7">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="57" font-size="14" halign="center" valign="middle">D</rehearsal>
@@ -17684,17 +17242,7 @@ Cor.2</words>
     
     <measure implicit="no" number="51" width="590">
       <print new-page="yes" page-number="8">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="6" default-y="53" font-size="14" halign="center" valign="middle">E</rehearsal>
@@ -17760,17 +17308,7 @@ Cor.2</words>
     
     <measure implicit="no" number="59" width="590">
       <print new-page="yes" page-number="9">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="17" default-y="66" font-size="14" halign="center" valign="middle">F</rehearsal>
@@ -18213,17 +17751,7 @@ Cor.2</words>
     
     <measure implicit="no" number="67" width="662">
       <print new-page="yes" page-number="10">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="55" font-size="14" halign="center" valign="middle">G</rehearsal>
@@ -19407,17 +18935,7 @@ Cor.2</words>
     
     <measure implicit="no" number="74" width="482">
       <print new-page="yes" page-number="11">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="4" default-y="66" font-size="14" halign="center" valign="middle">H</rehearsal>
@@ -20507,17 +20025,7 @@ Cor.2</words>
     
     <measure implicit="no" number="84" width="622">
       <print new-page="yes" page-number="12">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -20662,17 +20170,7 @@ Cor.2</words>
     
     <measure implicit="no" number="92" width="590">
       <print new-page="yes" page-number="13">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="12" default-y="65" font-size="14" halign="center" valign="middle">J</rehearsal>
@@ -21647,17 +21145,7 @@ Tp.4</words>
     
     <measure implicit="no" number="100" width="662">
       <print new-page="yes" page-number="14">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="75" font-size="14" halign="center" valign="middle">K</rehearsal>
@@ -22442,17 +21930,7 @@ Cor.2</words>
     
     <measure implicit="no" number="107" width="585">
       <print new-page="yes" page-number="15">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="20" default-y="48" font-size="14" halign="center" valign="middle">L</rehearsal>
@@ -25983,17 +25461,7 @@ Cor.2</words>
     
     <measure implicit="no" number="115" width="694">
       <print new-page="yes" page-number="16">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>5</beats>
@@ -26948,17 +26416,7 @@ Cor.2</words>
     
     <measure implicit="no" number="122" width="662">
       <print new-page="yes" page-number="17">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="28" default-y="86" font-size="14" halign="center" valign="middle">N</rehearsal>
@@ -28035,17 +27493,7 @@ Cor.2</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes" page-number="18">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="10" default-y="57" font-size="14" halign="center" valign="middle">O</rehearsal>
@@ -29057,17 +28505,7 @@ Cor.2</words>
     
     <measure implicit="no" number="136" width="788">
       <print new-page="yes" page-number="19">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -30085,27 +29523,10 @@ Tp.4</words>
     </measure>
   </part>
   
-  <part id="Pa4f1ef1716ec0cbbfff2aeb67e26f872">
+  <part id="P4c5a3f16d7613f3b931e18578f2f3bf8">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>6</right-margin>
-          </system-margins>
-          <top-system-distance>182</top-system-distance>
-        </system-layout>
         <measure-numbering>none</measure-numbering>
       </print>
       <attributes>
@@ -30447,24 +29868,7 @@ Tp.4</words>
     
     <measure implicit="no" number="12" width="590">
       <print new-page="yes" page-number="3">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-        <system-layout>
-          <system-margins>
-            <left-margin>0</left-margin>
-            <right-margin>5</right-margin>
-          </system-margins>
-          <top-system-distance>162</top-system-distance>
-        </system-layout>
-      </print>
+        </print>
       <note>
         <rest measure="yes" />
         <duration>50400</duration>
@@ -30567,17 +29971,7 @@ Tp.4</words>
     
     <measure implicit="no" number="20" width="590">
       <print new-page="yes" page-number="4">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="7" default-y="55" font-size="14" halign="center" valign="middle">A</rehearsal>
@@ -30998,17 +30392,7 @@ Tp.4</words>
     
     <measure implicit="no" number="28" width="590">
       <print new-page="yes" page-number="5">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="88" font-size="14" halign="center" valign="middle">B</rehearsal>
@@ -31095,17 +30479,7 @@ Tp.4</words>
     
     <measure implicit="no" number="36" width="662">
       <print new-page="yes" page-number="6">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="57" font-size="14" halign="center" valign="middle">C</rehearsal>
@@ -31451,17 +30825,7 @@ Tp.4</words>
     
     <measure implicit="no" number="43" width="590">
       <print new-page="yes" page-number="7">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="21" default-y="57" font-size="14" halign="center" valign="middle">D</rehearsal>
@@ -31875,17 +31239,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="51" width="590">
       <print new-page="yes" page-number="8">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="6" default-y="53" font-size="14" halign="center" valign="middle">E</rehearsal>
@@ -31951,17 +31305,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="59" width="590">
       <print new-page="yes" page-number="9">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="17" default-y="66" font-size="14" halign="center" valign="middle">F</rehearsal>
@@ -32146,17 +31490,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="67" width="662">
       <print new-page="yes" page-number="10">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="55" font-size="14" halign="center" valign="middle">G</rehearsal>
@@ -32315,17 +31649,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="74" width="482">
       <print new-page="yes" page-number="11">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="4" default-y="66" font-size="14" halign="center" valign="middle">H</rehearsal>
@@ -32763,17 +32087,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="84" width="622">
       <print new-page="yes" page-number="12">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -32871,17 +32185,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="92" width="590">
       <print new-page="yes" page-number="13">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="12" default-y="65" font-size="14" halign="center" valign="middle">J</rehearsal>
@@ -33148,17 +32452,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="100" width="662">
       <print new-page="yes" page-number="14">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="11" default-y="75" font-size="14" halign="center" valign="middle">K</rehearsal>
@@ -33600,17 +32894,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="107" width="585">
       <print new-page="yes" page-number="15">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="20" default-y="48" font-size="14" halign="center" valign="middle">L</rehearsal>
@@ -34015,17 +33299,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="115" width="694">
       <print new-page="yes" page-number="16">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>5</beats>
@@ -34223,17 +33497,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="122" width="662">
       <print new-page="yes" page-number="17">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="28" default-y="86" font-size="14" halign="center" valign="middle">N</rehearsal>
@@ -34612,17 +33876,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes" page-number="18">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <direction placement="above">
         <direction-type>
           <rehearsal default-x="10" default-y="57" font-size="14" halign="center" valign="middle">O</rehearsal>
@@ -34926,17 +34180,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="136" width="788">
       <print new-page="yes" page-number="19">
-        <page-layout>
-          <page-height>3158</page-height>
-          <page-width>4466</page-width>
-          <page-margins>
-            <left-margin>222</left-margin>
-            <right-margin>135</right-margin>
-            <top-margin>162</top-margin>
-            <bottom-margin>54</bottom-margin>
-          </page-margins>
-        </page-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -35143,13 +34387,10 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="P78f52c4b21a4220b95918a507addfb6c">
+  <part id="P5437bc10a8bd5299918af4a326cd2cb3">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
         <measure-numbering>none</measure-numbering>
       </print>
       <attributes>
@@ -35349,10 +34590,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="12" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -35933,10 +35171,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="20" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -36562,10 +35797,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="28" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -37115,10 +36347,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="36" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -37690,10 +36919,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="43" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -38234,10 +37460,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="51" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -38351,10 +37574,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="59" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -39183,10 +38403,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="67" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -39600,10 +38817,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="74" width="482">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -40386,10 +39600,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="84" width="622">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -40790,10 +40001,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="92" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -41173,10 +40381,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="100" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -41519,10 +40724,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="107" width="585">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -42016,10 +41218,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="115" width="694">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>5</beats>
@@ -42510,10 +41709,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="122" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -43018,10 +42214,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -43372,10 +42565,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="136" width="788">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>172</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -43512,7 +42702,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="P4818c8bfe23f97830dbe6791d76d0bad">
+  <part id="Pcef395e70eb229bc696e842fa8f4cdc4">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -46554,10 +45744,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="67" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>120</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -49796,10 +48983,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>117</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -50262,10 +49446,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="136" width="788">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>117</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <time>
           <beats>4</beats>
@@ -50503,7 +49684,7 @@ B.Tbn</words>
     </measure>
   </part>
   
-  <part id="P7d6457941be1e595504e33a748e9d008">
+  <part id="P4b66be1fd5358b7169090be227aea3b6">
     
     <measure implicit="yes" number="0" width="263">
       <print new-page="yes">
@@ -51731,10 +50912,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="43" width="590">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>115</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -54044,10 +53222,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="100" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>104</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -56373,10 +55548,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="122" width="662">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>105</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>
@@ -56701,10 +55873,7 @@ B.Tbn</words>
     
     <measure implicit="no" number="129" width="657">
       <print new-page="yes">
-        <staff-layout number="1">
-          <staff-distance>101</staff-distance>
-        </staff-layout>
-      </print>
+        </print>
       <attributes>
         <staff-details print-object="yes" />
       </attributes>

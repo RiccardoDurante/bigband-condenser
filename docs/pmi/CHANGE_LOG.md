@@ -86,3 +86,55 @@ changelog:
 ## Change Request
 
 _Nessuna al momento._
+
+---
+
+## 2026-11-10 — D-040: Output layout = A4 landscape
+
+**Owner:** Developer
+**Richiesto da:** Sponsor
+**Contesto:** Preview output in portrait produceva 3 misure/pagina con
+spaziature irregolari tra sistemi.
+**Decisione:**
+- `<page-layout>` A4 landscape (page-width 1684, page-height 1190 tenths)
+- `<system-distance>` 90, `<staff-distance>` 75, `<top-system-distance>` 110
+- Strip di tutti i `<page-layout>`, `<system-layout>`, `<staff-layout>`
+  locali dentro gli elementi `<print>` (override del `<defaults>` globale)
+**Impatto:** M10 PDF (D-038) si allinea a landscape. CLI inietta layout
+dopo la write via `page_layout.inject_landscape_layout`.
+**Supersedes:** nessuna.
+
+---
+
+## 2026-11-10 — D-041: Part labels compatti (jazz-standard)
+
+**Owner:** Developer
+**Richiesto da:** Sponsor
+**Contesto:** part-name verbose ereditati dal source (`Reeds (upper)`,
+`S. Sx.`, ...) spingevano i righi per far spazio alle etichette.
+**Decisione:**
+- Mapping: Reeds 1/R1, Reeds 2/R2, Brass 1/B1, Brass 2/B2,
+  Guitar/Gtr, Bass/Bs, Piano/Pno, Drums/Dr
+- Font-size: 9pt per `<part-name>`, 8pt per `<part-abbreviation>`
+- Strip di `<part-name-display>` e `<part-abbreviation-display>` ereditati
+**Rischio noto (R-NEW-01):** Dorico può ignorare il `font-size` MusicXML
+e usare l'Engraving Options locale. Da verificare nel PDF finale (M10).
+LilyPond rispetta il `font-size` nativamente.
+**Supersedes:** nessuna.
+
+---
+
+## 2026-11-10 — M9 Validator chiuso
+
+**Owner:** Developer
+**Contesto:** Fidelity validator unificato per le 4 sezioni, CLI integrato
+(`--validate`, `--report`, `--tolerance`).
+**Risultati su Kronos Kai Kairos (142 misure, 20 strumenti):**
+- Drums: `PASS` strict (0/1)
+- Brass: `PASS*` (1/142 = 0.7%, sotto soglia 2%)
+- Rhythm: `PASS*` (1/98 = 1.0%, 44 slash-region bars escluse)
+- Reeds: `FAIL` (59/142 = 41.5%) — bug noto, TK-Reeds-01
+**Semantica:** `PASS` = 0 bars bad. `PASS*` = bars_bad/bars_checked <= 2%.
+`FAIL` = oltre soglia.
+**Tolleranze per sezione:** Reeds 0.25q, Brass 0.75q, Rhythm 0.25q.
+
